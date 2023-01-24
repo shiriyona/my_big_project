@@ -1,0 +1,225 @@
+.cartItems { 
+    position: absolute;
+    right: 100%;
+    top: 90%
+}
+.list-group {
+  background-color: var(--3pchel);
+  /* overflow: auto; */
+  -webkit-overflow-scrolling: touch;
+  flex-shrink: 1;
+
+    /* top: 10;
+    padding-left: 101px;
+    margin-bottom: 0;
+    /* left: 100%; */
+    /* right: 13%;
+    position: absolute;  */
+    /* width: 40px; */
+}
+
+.example-viewport {
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+  }
+  
+  .example-item {
+    height: 50px;
+  }
+
+  .formCart {
+    /* border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+    height: 100%;
+    width: 20%;
+    top: 6%;
+    padding-left: 101px;
+    margin-bottom: 0;
+
+    right: 1%;
+    position: absolute; */
+
+    position: absolute;
+    /* overflow: hidden; */
+    /* height: 100%; */
+    width: 20%;
+    top: 6%;
+    right:4%;
+    transition: max-height var(--transitionDuration);
+    transition-delay: var(--transitionDelay);
+    max-height: 0;
+  }
+
+  form{
+    width: 360px;
+    padding: 0;
+    display: block;
+    border-radius: 0px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  .hh{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+
+  .example-viewport {
+    /* height: 200px; */
+    width: 300px;
+    border: none;
+
+  }
+
+button {
+  z-index: 2;
+  color: #fff;
+  background-color: black;
+  width: 100%
+  
+}
+
+strong {
+  font-weight: 700;
+}
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+  z-index: 2;
+  color: #fff;
+  background-color: black;
+  border-color: black;
+}
+  
+
+
+
+.lgaLJA {
+  position: fixed;
+  z-index: 100;
+  right: 20px;
+  top: 20px;
+}
+
+.MuiIconButton-root {
+  flex: 0 0 auto;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 12px;
+  overflow: visible;
+  font-size: 3rem;
+  text-align: center;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 50%;
+}
+
+.MuiButtonBase-root {
+  color: inherit;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  display: inline-flex;
+  outline: 0;
+  padding: 0;
+  position: relative;
+  align-items: center;
+  user-select: none;
+  border-radius: 0;
+  vertical-align: middle;
+  /* -moz-appearance: none; */
+  justify-content: center;
+  text-decoration: none;
+  background-color: transparent;
+  /* -webkit-appearance: none; */
+  -webkit-tap-highlight-color: transparent;
+  font-size: 3rem;
+}
+
+.MuiIconButton-label {
+  width: 100%;
+  display: flex;
+  align-items: inherit;
+  justify-content: inherit;
+}
+
+.MuiIconButton-root {
+  flex: 0 0 auto;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 12px;
+  overflow: visible;
+  font-size: 3rem;
+  text-align: center;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 50%;
+}
+
+.MuiSvgIcon-root[_ngcontent-tnw-c92] {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-size: 3rem;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  flex-shrink: 0;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.MuiBadge-root {
+  display: inline-flex;
+  position: relative;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.MuiSvgIcon-root {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-size: 1.5rem;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+svg:not(:root) {
+  overflow-clip-margin: content-box;
+  overflow: hidden;
+}
+
+.MuiBadge-anchorOriginTopRightRectangle {
+  top: 0;
+  right: 0;
+  transform: scale(1) translate(50%, -50%);
+  transform-origin: 100% 0%;
+}
+
+.MuiBadge-colorError {
+  color: #fff;
+  background-color: #f44336;
+}
+
+.MuiBadge-badge {
+  height: 20px;
+  display: flex;
+  padding: 0 6px;
+  z-index: 1;
+  position: absolute;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+  min-width: 20px;
+  box-sizing: border-box;
+  transition: transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  align-items: center;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1;
+  align-content: center;
+  border-radius: 10px;
+  flex-direction: row;
+  justify-content: center;
+}

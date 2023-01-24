@@ -1,0 +1,12 @@
+button {
+    /* left: 890px; */
+    position:absolute;
+    height: 26px;
+    text-align: center;
+    margin: auto;  
+}
+
+.list-group-item {
+    width: 72%;
+    height: 50%;
+}

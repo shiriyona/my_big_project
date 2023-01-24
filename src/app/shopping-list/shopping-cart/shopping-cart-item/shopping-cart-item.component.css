@@ -1,0 +1,16 @@
+cart-item {
+    position:absolute;
+    right: 0%;
+}
+
+button {
+    float: left;
+    position: absolute;
+    height: 26px;
+    text-align: center;
+    margin: auto;
+    left: 230px;
+    top: -28px;
+    background-color: black;
+}
+

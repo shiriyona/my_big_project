@@ -1,0 +1,46 @@
+<app-shopping-cart class="iconCart"></app-shopping-cart>
+<div id="print11">
+  <div class="row">
+    <div class="partScreen">
+    <div class="childCartList fullScreen" [ngClass]="{'partScreen': printClick , 'fullScreen': !printClick}">
+      <!-- <li class="list-group-item" *ngFor="let productItems of cartItems"></li>
+      <app-shopping-cart [cartItems]="cartItems"></app-shopping-cart> -->
+    </div>
+  </div>
+</div>
+</div>
+  <!-- <button  type="button" class="btn btn-success btn-md" (click)="printThisPage('print11')">
+  <div *ngIf="printClick === true" class="fullCart" class="alert alert-info">Your Cart</div>
+    <span class="glyphicon glyphicon-print"></span> Print
+  </button>  -->
+
+<div class="row">
+  <div class="col-md-4" *ngFor="let ingredient of ingredients | paginate:{
+    itemsPerPage: tableSize,
+     currentPage: page,
+      totalItem: count
+    }; let i index">
+    <app-shopping-item  
+      [productItem]="ingredient"></app-shopping-item>  
+  </div>
+</div> 
+<div><br>
+  <pagination-controls
+    previousLabel="Prev"
+    nextLabel="Next"
+    (pageChange)="onTableDataChange($event)"
+    >
+  </pagination-controls>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="scripts.js">
+
+</script>
+
+<!-- <app-shopping-paginator></app-shopping-paginator> -->
+
+
+
+
