@@ -16,6 +16,7 @@ export class UserItemComponent implements OnInit {
 
  @Input() user: Users
  isSelectedItem= false
+ panelOpenState = false;
 
   constructor(private usersService: UsersService) { }
 

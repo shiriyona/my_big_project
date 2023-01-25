@@ -13,6 +13,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatIconModule} from '@angular/material/icon';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 import { AppComponent } from './app.component';
@@ -45,6 +46,7 @@ import { DrawingModule } from './drawings/drawing.module';
     NgxPaginationModule,
     ScrollingModule,
     MatIconModule,
+    MatExpansionModule,
     UsersModule,
     ShoppingListModule,
     DrawingModule

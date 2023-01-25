@@ -1,6 +1,5 @@
-<div>
+<!-- <div>
 <tr class="tr"  (click)="(expandedElement = expandedElement === user ? null : user); $event.stopPropagation()">
-    <!-- <th>#</th> -->
     <td class="firstName" > {{ user.firstName }} </td>
     <td class="lastName"> {{ user.lastName }}</td> 
 </tr></div>
@@ -14,8 +13,31 @@
   
   </ng-container>
  <tr class="userDetails" [class.example-expanded-row]="expandedElement === user"
- (click)="expandedElement = expandedElement === user ? null : user">
+ (click)="expandedElement = expandedElement === user ? null : user"> -->
   <!-- <td class="userID">ID: {{ user.id }}, </td>  <td  class="userCountry">Country: {{ user.country }}, </td> 
   <td class="userCity">City: {{ user.city }}, </td> <td class="userAge">Age: {{ user.age }}</td></tr>   -->
+  <table>
+  <mat-accordion>
 
- 
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false"
+                         >
+      <mat-expansion-panel-header hideToggle>
+        <!-- <mat-panel-title> -->
+    
+        <!-- </mat-panel-title> -->  
+        <mat-expansion-panel hideToggle>
+        <tr>
+            <td class="firstName" > {{ user.firstName }} </td>
+            <td class="lastName"> {{ user.lastName }}</td>
+        </tr> 
+      </mat-expansion-panel>
+      
+      </mat-expansion-panel-header>
+    
+     <tr *ngIf="panelOpenState" class="userDetails"> 
+        <p class="userID">ID: {{ user.id }} </p>  <p  class="userCountry">Country: {{ user.country }} </p> <p class="userCity">City: {{ user.city }} </p> <p class="userAge">Age: {{ user.age }}</p>
+       <img class="bd-placeholder-img card-img-top p-2" width="50%" [src]="user.img" > </tr>
+    </mat-expansion-panel>
+  </mat-accordion>
+ </table>

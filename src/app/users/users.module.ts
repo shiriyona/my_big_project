@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { UsersRoutingModule } from './users-routing.module';
 import { UsersComponent } from './users.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatExpansionModule} from '@angular/material/expansion';
 import { UsersService } from './services/users.service';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { UserItemComponent } from './components/users-list/user-item/user-item.component';
@@ -27,6 +28,7 @@ import { UserItemComponent } from './components/users-list/user-item/user-item.c
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
+    MatExpansionModule,
     UsersRoutingModule
   ],
   providers: [UsersService],
