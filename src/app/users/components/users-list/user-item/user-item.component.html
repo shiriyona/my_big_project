@@ -21,13 +21,13 @@
 
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false"
-                         >
+                         hideToggle>
+                  
       <mat-expansion-panel-header hideToggle>
-        <!-- <mat-panel-title> -->
-    
-        <!-- </mat-panel-title> -->  
+        <!-- <mat-panel-title>        
+        </mat-panel-title>   -->
         <mat-expansion-panel hideToggle>
-        <tr>
+        <tr class="regular">
             <td class="firstName" > {{ user.firstName }} </td>
             <td class="lastName"> {{ user.lastName }}</td>
         </tr> 
@@ -41,3 +41,4 @@
     </mat-expansion-panel>
   </mat-accordion>
  </table>
+

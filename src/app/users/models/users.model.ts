@@ -5,7 +5,9 @@ export class Users {
     country: string;
     city: string;  
     age: number;
+    desc: string
     img: string;
+
   
   
     constructor(firstName: string, lastName: string, id: number, country: string, city: string, age: number, img: string) {   
@@ -14,7 +16,9 @@ export class Users {
       this.id = id;
       this.country = country;
       this.city = city;
-      this.age = age; 
+      this.age = age;
+      // this.desc=desc 
       this.img = img;
+
     }
 }

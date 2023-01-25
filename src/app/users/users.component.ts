@@ -1,36 +1,38 @@
 import { Component, OnInit } from '@angular/core';
-import {animate, state, style, transition, trigger} from '@angular/animations';
-import { MatTableDataSource, MatSort } from '@angular/material';
-import { DataSource } from '@angular/cdk/table';
+import { Users } from './models/users.model';
+import { UsersService } from './services/users.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css'],
-  animations: [
-    trigger('detailExpand', [
-      state('collapsed', style({height: '0px', minHeight: '0'})),
-      state('expanded', style({height: '*'})),
-      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
-    ]),
-  ],
+  styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
+  user: Users
+  users: any
   panelOpenState = false;
+  loadUsersSubscription: Subscription;  
   
 
-  constructor() { }
+  constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
+    this.getUsers()
   }
 
+  getUsers() {
+    this.loadUsersSubscription =  this.usersService.getUsers().subscribe(res => {
+       this.users = res;
+     });
+   }
+
+   openRow(user){
+    user.isOpen = !user.isOpen;
 }
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-  description: string;
+
 }
+
+
 

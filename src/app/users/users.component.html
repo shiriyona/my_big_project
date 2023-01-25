@@ -1,1 +1,23 @@
-<app-users-list></app-users-list>
+
+<div class="tbl-users">
+    <div class="header">
+      <div class="first-name col">First Name</div>
+      <div class="last-name col">Last Name</div>
+    </div>
+    <div class="content">
+      <div class="full-width" *ngFor="let user of users">
+        <div class="my-row" (dblclick)="openRow(user)">
+            <div class="first-name">{{user.firstName}}</div>
+            <div class="last-name">{{user.lastName}}</div>
+        </div>
+        <div *ngIf="user.isOpen" class="inner-row">
+            <div class="user-id">ID: {{ user.id }} </div>
+            <div class="user-country">Country: {{ user.country }} </div> 
+            <div class="user-city">City: {{ user.city }} </div>
+            <div class="user-age">Age: {{ user.age }}</div>
+            <img class="bd-placeholder-img card-img-top p-2 user-img" [src]="user.img">
+        </div> 
+      </div>
+    </div>
+   </div>
+  

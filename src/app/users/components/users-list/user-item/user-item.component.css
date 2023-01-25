@@ -7,8 +7,26 @@ table {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
-    width: 1000px;
+    width: 1140px;
+    /* position: absolute; */
+    /* left:-0.3px;  */
+     /* height: 100px;  */
   }
+  .regular {
+    position: absolute;
+    width: 1140px;
+    left:-0.3px;
+    text-align: left;
+  }
+  .userDetails {
+    position: absolute;
+    width: 1140px;
+    left:-0.3px;
+    text-align: left;
+  }
+  /* .firstName {
+    height: 100px;
+  } */
   .userDetails{
     padding: 8px;
     background-color: #f2f2f2
@@ -20,3 +38,11 @@ table {
     background-color: #04AA6D;
     color: white;
   }
+  .mat-expansion-panel-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 0px;
+    border-radius: inherit;
+    position: absolute;
+}

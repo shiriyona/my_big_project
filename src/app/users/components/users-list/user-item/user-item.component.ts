@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Users } from 'src/app/users/models/users.model';
 import { UsersService } from 'src/app/users/services/users.service';
-import { PeriodicElement } from 'src/app/users/users.component';
 
 @Component({
   selector: 'app-user-item',
