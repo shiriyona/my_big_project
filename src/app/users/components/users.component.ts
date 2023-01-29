@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Users } from './models/users.model';
-import { UsersService } from './services/users.service';
+import { Users } from '../models/users.model';
+import { UsersService } from '../services/users.service';
 import { Subscription } from 'rxjs';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { DialogContentExampleDialog } from './dialog';
 
 @Component({
   selector: 'app-users',
@@ -15,7 +17,13 @@ export class UsersComponent implements OnInit {
   loadUsersSubscription: Subscription;  
   
 
-  constructor(private usersService: UsersService) { }
+  constructor(private usersService: UsersService,private dialog: MatDialog) {}
+
+  openDialog() {
+    this.dialog.open(DialogContentExampleDialog);
+  }
+
+
 
   ngOnInit(): void {
     this.getUsers()
@@ -31,8 +39,6 @@ export class UsersComponent implements OnInit {
     user.isOpen = !user.isOpen;
 }
 
-
 }
-
 
 

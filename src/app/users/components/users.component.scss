@@ -1,0 +1,115 @@
+.tbl-users {
+       .header {
+          display: flex;
+          width: 100%;
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          font-weight: bold;    
+          background-color: #ede6e6;   
+          .col{
+               border: 1px solid #dddddd;
+               text-align: left;
+               padding: 8px;
+
+               }
+                 
+           .content { 
+                       
+               .full-width {
+                                 
+                    width: 100%;;        
+               }         
+               .my-row {             
+                    display: flex;             
+                    width: 100%; 
+                    border: 1px solid #dddddd;
+                    text-align: left;
+                    padding: 8px;
+                                 
+                    .inner-row {
+                     min-height: 100px;
+                    }
+               }
+          }
+     }
+
+}
+.my-row {
+     display: flex;
+     width: 100%;
+     font-family: arial, sans-serif;
+     border-collapse: collapse;  
+     cursor: pointer;
+ }
+
+ .first-name{
+     // border: 1px solid #dddddd;
+     width: 100%;
+     border: 1px solid #dddddd;
+     text-align: left;
+     padding: 8px;
+ }
+ .last-name{
+     // border: 1px solid #dddddd;
+     width: 100%;
+     border: 1px solid #dddddd;
+     text-align: left;
+     padding: 8px;
+ }
+ .inner-row{
+     padding: 8px;
+     border: 1px solid #dddddd;
+     min-height: 100px;
+     display: flex;
+     background-color: #dddddd;
+ }
+
+ .user-country{
+     margin-top: 1.5em;
+     padding-bottom: 1em;
+     position: relative;
+     right: 30px;
+ }
+
+ .user-city{
+     margin-top: 3em;
+     padding-bottom: 1em;
+     position: relative;
+     right: 106px;
+ }
+
+ .user-age{
+     position: sticky;
+     left: 761px;
+ }
+
+ .user-status{
+     position: sticky;
+     left: 761px;
+     margin-top: 1.5em;    
+ }
+
+ img {
+     width: 12%;
+     left: 1200px;
+     position: sticky;     
+ }
+
+ .edit-user-button{
+     position: sticky;
+     left: 761px;
+     width: 80px;
+     margin-top: 4.5em;    
+     height: 30px;
+ }
+
+
+
+// .tbl-users * {
+//      color: blue;
+   
+//  }
+//  .content > * {
+//      color:red;
+//  }
+

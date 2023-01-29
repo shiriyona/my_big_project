@@ -5,19 +5,20 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from '@angular/common';
 import { UsersRoutingModule } from './users-routing.module';
-import { UsersComponent } from './users.component';
+import { UsersComponent } from './components/users.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatDialogModule} from '@angular/material/dialog';
 import { UsersService } from './services/users.service';
-import { UsersListComponent } from './components/users-list/users-list.component';
-import { UserItemComponent } from './components/users-list/user-item/user-item.component';
+import { DialogContentExampleDialog } from './components/dialog';
+
 
 
 @NgModule({
   declarations: [
     UsersComponent,
-    UsersListComponent,
-    UserItemComponent
+    DialogContentExampleDialog
+  
 
   ],
   imports: [
@@ -29,6 +30,7 @@ import { UserItemComponent } from './components/users-list/user-item/user-item.c
     MatInputModule,
     MatTableModule,
     MatExpansionModule,
+    MatDialogModule,
     UsersRoutingModule
   ],
   providers: [UsersService],
