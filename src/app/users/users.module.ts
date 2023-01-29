@@ -5,12 +5,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from '@angular/common';
 import { UsersRoutingModule } from './users-routing.module';
-import { UsersComponent } from './components/users.component';
+import { DialogContentExampleDialog, UsersComponent } from './components/users.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UsersService } from './services/users.service';
-import { DialogContentExampleDialog } from './components/dialog';
 
 
 
@@ -18,8 +17,6 @@ import { DialogContentExampleDialog } from './components/dialog';
   declarations: [
     UsersComponent,
     DialogContentExampleDialog
-  
-
   ],
   imports: [
     CommonModule,
