@@ -11,6 +11,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatIconModule} from '@angular/material/icon';
 
+
 import { ShoppingListComponent } from './shopping-list.component';
 import { ShoppingItemComponent } from './shopping-item/shopping-item.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';

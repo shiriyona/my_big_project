@@ -1,5 +1,5 @@
 import { Component, Input, IterableDiffers, OnInit, ViewChild } from '@angular/core';
-import { MatMenuTrigger } from '@angular/material';
+// import { MatMenuTrigger } from '@angular/material';
 import { CartItem } from '../models/cart.model'; 
 import { Ingredient } from '../models/ingredient.model';
 import { CartService } from '../services/cart.service';
@@ -89,11 +89,11 @@ export class ShoppingCartComponent implements OnInit {
     document.close();
   }
 
-  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
+  // @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
-  someMethod() {
-    this.trigger.openMenu();
-  }
+  // someMethod() {
+  //   this.trigger.openMenu();
+  // }
 
 
   // private addItem(): void {

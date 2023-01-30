@@ -20,12 +20,6 @@ export class UsersComponent implements OnInit {
   constructor(private usersService: UsersService,public dialog: MatDialog) {
   }
 
-  openDialog() {
-    this.dialog.open(DialogContentExampleDialog);
-  }
-
-
-
   ngOnInit(): void {
     this.getUsers()
   }
@@ -38,6 +32,14 @@ export class UsersComponent implements OnInit {
 
    openRow(user){
     user.isOpen = !user.isOpen;
+}
+
+openDialog() {
+  const dialogRef = this.dialog.open(DialogContentExampleDialog);
+
+  dialogRef.afterClosed().subscribe(result => {
+    console.log(`Dialog result: ${result}`);
+  });
 }
 
 }
