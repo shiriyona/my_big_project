@@ -15,9 +15,12 @@ export class UsersComponent implements OnInit {
   users: any
   panelOpenState = false;
   loadUsersSubscription: Subscription;  
+  userColor: boolean = false;
   
 
   constructor(private usersService: UsersService,public dialog: MatDialog) {
+    // this.g(this.user);
+
   }
 
   ngOnInit(): void {
@@ -32,6 +35,12 @@ export class UsersComponent implements OnInit {
 
    openRow(user){
     user.isOpen = !user.isOpen;
+}
+
+g(user){
+  if (this.user.id%2===1) {
+    this.userColor = true;
+  }
 }
 
 openDialog() {

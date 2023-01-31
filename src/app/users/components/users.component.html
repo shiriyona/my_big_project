@@ -4,11 +4,13 @@
       <div class="last-name col">Last Name</div>
     </div>
     <div class="content">
-      <div class="full-width" *ngFor="let user of users" >
-        <div class="my-row" (dblclick)="openRow(user)">
+      
+      <div class="full-width" *ngFor="let user of users">
+          <div class="my-row" (dblclick)="openRow(user)" [ngClass]="{'userColor': user.id%2 , 'fullScreen': !user.id%2}" >
             <div class="first-name">{{user.firstName}}</div>
             <div class="last-name">{{user.lastName}}</div>
-        </div>
+            <!-- <div class="last-name">{{user.id%2}}</div> -->
+          </div>
         <div *ngIf="user.isOpen" class="inner-row">
             <div class="user-id">ID: {{user.id}} </div>
             <div class="user-country">Country: {{user.country}} </div>
