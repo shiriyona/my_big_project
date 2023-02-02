@@ -3,6 +3,7 @@ import { Users } from '../models/users.model';
 import { UsersService } from '../services/users.service';
 import { Subscription } from 'rxjs';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { DownloadFileService } from '../services/download-file.service';
 
 
 @Component({
@@ -57,4 +58,41 @@ openDialog() {
   selector: 'dialog-content-example-dialog',
   templateUrl: 'dialog-content-example-dialog.html',
 })
-export class DialogContentExampleDialog {}
+export class DialogContentExampleDialog {
+  user: Users
+  // Variable to store shortLink from api response
+  shortLink: string = "";
+  loading: boolean = false; // Flag variable
+  file: File = null; // Variable to store file
+  uploadImg = false
+
+  // Inject service 
+  constructor(private fileUploadService: DownloadFileService) { }
+
+  ngOnInit(): void {
+  }
+
+  // On file Select
+  onChange(event) {
+    this.uploadImg = true
+    this.file = event.target.files[0];
+  }
+
+  // OnClick of button Upload
+  onUpload() {
+      this.loading = !this.loading;
+      console.log(this.file);
+      this.fileUploadService.upload(this.file).subscribe(
+          (event: any) => {
+              if (typeof (event) === 'object') {
+
+                  // Short link via api response
+                  this.shortLink = event.link;
+                  this.loading = false; // Flag variable 
+                }
+            }
+        );
+
+   
+    }
+}

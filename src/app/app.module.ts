@@ -2,6 +2,7 @@ import { NgModule, NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { MatSelectModule} from '@angular/material/select';
@@ -34,7 +35,8 @@ import { DrawingModule } from './drawings/drawing.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule, 
+    FormsModule,
+    HttpClientModule, 
     ReactiveFormsModule,
     RouterModule.forRoot([]),
     AppRoutingModule, 
