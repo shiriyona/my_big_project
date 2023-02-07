@@ -24,6 +24,7 @@ import { UsersModule } from './users/users.module';
 import { ShoppingListModule } from './shopping-list/shoppingList.module';
 import { ShoppingCartComponent } from './shopping-list/shopping-cart/shopping-cart.component';
 import { DrawingModule } from './drawings/drawing.module';
+import { ProvidersModule } from './providers/providers.module';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { DrawingModule } from './drawings/drawing.module';
     MatDialogModule,
     UsersModule,
     ShoppingListModule,
-    DrawingModule
+    DrawingModule,
+    ProvidersModule
   ],
   exports:[ MatTableModule ],
   providers: [],

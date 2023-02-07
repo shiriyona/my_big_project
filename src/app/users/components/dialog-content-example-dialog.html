@@ -12,35 +12,14 @@
 <input><br>
 <p>status:</p>
 <input><br>
-<div class="text-center">
-  <input class="form-control" type="file" 
-          (change)="onChange($event)">
-
-  <button (click)="onUpload()" 
-      class="btn btn-success">
-      Upload 
-  </button>
-</div>
-
-<!-- Shareable short link of  uploaded file -->
-<div class="container text-center jumbotron"
-  *ngIf="shortLink">
-  <h2> Visit Here</h2>
-  <a href="{{shortLink}}">{{shortLink}}<img class="bd-placeholder-img card-img-top p-2 user-img" [src]="shortLink"></a>
-</div>
-
-<div class="container" *ngIf="uploadImg===false">
-  <h3><img class="bd-placeholder-img card-img-top p-2 user-img" [src]=""></h3>
-</div>
-
-<div class="container" *ngIf="uploadImg">
-  <h3><img class="bd-placeholder-img card-img-top p-2 user-img" [src]="shortLink.name"></h3>
-</div>
-
-<!--Flag variable is used here-->
-<div class="container" *ngIf="loading">
-  <h3>Loading ...</h3>
-</div>
+<label class="image-upload-container btn btn-bwm"> 
+  <!-- <span>Select Image</span><br> -->
+  <input #imageInput
+         type="file"
+         accept="image/*"
+         (change)="processFile(imageInput)"> <br>
+          <img class="imagUpload" [src]="img">
+</label>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <!-- <button mat-button mat-dialog-close>Cancel</button> -->

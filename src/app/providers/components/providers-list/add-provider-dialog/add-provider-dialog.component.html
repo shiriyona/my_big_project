@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>details</h2>
+<mat-dialog-content class="mat-typography">
+<p>first name:</p>
+<input #firstNameInput><br>
+<p>last name:</p>
+<input #lastNameInput><br>
+<p>phone:</p>
+<input #phoneInput><br>
+<p>id:</p>
+<input #idInput><br>
+<p>email:</p>
+<input #emailInput><br>
+<p>addres:</p>
+<input #addresInput><br>
+<p>description:</p>
+<input #descriptionInput><br>
+<p>img:</p>
+<input #imgInput><br>
+<p>position:</p>
+<input #positionInput><br>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <!-- <button mat-button mat-dialog-close>Cancel</button> -->
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="addProvider()">add</button>
+</mat-dialog-actions>
+

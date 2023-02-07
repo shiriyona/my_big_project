@@ -19,7 +19,7 @@
             <div class="user-status">Status: {{user.status}} </div>
             <img class="bd-placeholder-img card-img-top p-2 user-img" [src]="user.img">
             <!-- <button class="btn btn-dark edit-user-button">edit</button> -->
-            <button mat-button  class="btn btn-dark edit-user-button" (click)="openDialog()">edit</button>
+            <button mat-button  class="btn btn-dark edit-user-button" (click)="openDialog(user.img)">edit</button>
         </div> 
       </div>
     </div>
