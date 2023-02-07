@@ -18,8 +18,6 @@ export class AddProviderDialogComponent implements OnInit {
   @ViewChild('imgInput') imgInputRef: ElementRef;
   @ViewChild('positionInput') positionInputRef: ElementRef;
 
-
-
  
   @Output() providerAdded = new EventEmitter<Provider>()
 
