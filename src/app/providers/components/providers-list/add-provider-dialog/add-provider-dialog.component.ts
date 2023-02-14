@@ -1,6 +1,7 @@
 import { outputAst } from '@angular/compiler';
 import { Component, OnInit, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
 import { Provider } from 'src/app/providers/models/providers.model';
+import { ProvidersService } from 'src/app/providers/services/providers.service';
 
 @Component({
   selector: 'app-add-provider-dialog',
@@ -21,7 +22,7 @@ export class AddProviderDialogComponent implements OnInit {
  
   @Output() providerAdded = new EventEmitter<Provider>()
 
-  constructor() { }
+  constructor(private proService: ProvidersService) { }
 
   ngOnInit(): void {
   }
@@ -37,6 +38,7 @@ export class AddProviderDialogComponent implements OnInit {
     const proPosition =this.positionInputRef.nativeElement.value
     const newProvider = new Provider(proFirstName, proLastName, proPhone, proId, proEmail, proAddres, proImg, proPosition)
     this.providerAdded.emit(newProvider)
+    this.proService.addProviderToTheList(newProvider);
   }
 
 }

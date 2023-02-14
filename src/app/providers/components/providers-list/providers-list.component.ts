@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import { Provider } from '../../models/providers.model';
 import { ProvidersService } from '../../services/providers.service';
@@ -30,6 +30,9 @@ export class ProvidersListComponent implements OnInit {
     this.getProviders();
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+  }
+
   getProviders(){
     this.dataSource = this.providersService.sendProviders()
   }
@@ -44,7 +47,12 @@ export class ProvidersListComponent implements OnInit {
 
   onProviderAdded(provider: Provider) {
     this.dataSource.push({provider})
+    console.log(this.dataSource);
   }
+
+  refresh(): void {
+    this.getProviders();
+}
 
   openAddProviderDialog() {
     const dialogRef = this.dialog.open(AddProviderDialogComponent);

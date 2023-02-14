@@ -122,6 +122,15 @@ export class ProvidersService {
   sendProviders():Observable<any> {
     return of(this.providerDetails.slice());
   }
+
+  addProviderToTheList(provider: Provider){
+    this.providerDetails.push(provider);
+    this.sendNewProviders()
+  }
+
+  sendNewProviders() {
+    return of(this.providerDetails.slice());
+  }
   
 
   constructor() { }

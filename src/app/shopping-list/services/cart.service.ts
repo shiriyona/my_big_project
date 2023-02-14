@@ -4,42 +4,37 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CartItem } from '../models/cart.model';
 import { Ingredient } from '../models/ingredient.model'; 
+import { ShoppingItem } from '../models/shoppingItem.model';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
+  private allProducts: ShoppingItem[];
+  productNumber: number;
+  cartTotal= 4;
 
   // constructor(private http: HttpClient) { }
 
-  // getCartItems(): Observable<CartItem[]> {
-  //   return this.http.get<CartItem[]>("cartUrl").pipe(
-  //     map((result: any[]) => {
-  //       let cartItems: CartItem[] = [];
 
-  //       for (let item of result) {
-  //         let productExists = false
-
-  //         for (let i in cartItems) {
-  //           if (cartItems[i].productId === item.product.id) {
-  //             cartItems[i].qty++
-  //             productExists = true
-  //             break;
-  //           }
-  //         }
-
-  //         if (!productExists) {
-  //           cartItems.push(new CartItem(item.id, item.product));
-  //         }
-  //       }
-
-  //       return cartItems;
-  //     })
-  //   );
-  // }
-
-  // addProductToCart(product: Ingredient): Observable<any> {
-  //   return this.http.post("cartUrl", { product });
-  // }
+   onProductNumberPayment(productNumber){
+     this.productNumber = productNumber
+   }
+ 
+   onSumPayment(cartTotal):void{
+     this.cartTotal=cartTotal;
+   }
+ 
+   onPaymentPage(){
+     return this.allProducts;
+   
+   }
+   onProductNumberPaymentPage():number{
+     return this.productNumber
+   }
+ 
+   onSumPaymentPage():number{
+     return this.cartTotal
+   }
 }

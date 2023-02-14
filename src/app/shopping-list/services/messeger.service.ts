@@ -11,7 +11,7 @@ export class MessengerService {
   subject = new Subject();
   private allProducts: ShoppingItem[];
   productNumber: number;
-  cartTotal: number;
+  cartTotal= 4;
   
   constructor() { }
 
@@ -24,23 +24,21 @@ export class MessengerService {
     return this.subject.asObservable()
   }
 
-  onPayment(products): CartItem[]{
-    // return this.products.slice();
-    this.allProducts=products;
-  //  this.allProducts.push(products);
-  //  console.log()
-   return this.allProducts;
+  onPayment(products){
+    this.allProducts.push(products)
+   console.log(this.allProducts)
+  //  return this.allProducts;
   }
 
   onProductNumberPayment(productNumber){
-    this.productNumber=productNumber
+    this.productNumber = productNumber
   }
 
   onSumPayment(cartTotal):void{
     this.cartTotal=cartTotal;
   }
 
-  onPaymentPage():CartItem[]{
+  onPaymentPage(){
     return this.allProducts;
   
   }

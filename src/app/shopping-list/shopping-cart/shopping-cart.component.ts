@@ -89,44 +89,6 @@ export class ShoppingCartComponent implements OnInit {
     document.close();
   }
 
-  // @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
-
-  // someMethod() {
-  //   this.trigger.openMenu();
-  // }
-
-
-  // private addItem(): void {
-  //   const el = this.wrapper.nativeElement.querySelector('.mat-badge-content');
-
-  //   this.createAnimation(badgeAnimation, el).play();
-  //   this.items += 1;
-  // }
-
-  // private moveItem(): void {
-  //   // const el = this.svg.nativeElement;
-  //   // let player: AnimationPlayer = this.createAnimation(circleAnimation, el);
-
-  //   player.onDone(() => {
-  //     this.addItem();
-  //   });
-
-  //   player.play();
-  // }
-
-  private createAnimation(animation: AnimationMetadata, el: Element): AnimationPlayer {
-    const factory = this.builder.build(animation);
-    let player: AnimationPlayer = factory.create(el);
-
-    player.onDone(() => {
-      if (player) {
-        player.destroy();
-        player = null;
-      }
-    });
-
-    return player;
-  }
 
   public ngOnDestroy(): void {
     if (this.clickSubscription) {

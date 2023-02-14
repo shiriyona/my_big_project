@@ -1,5 +1,6 @@
-<button (click)="openAddProviderDialog()">add provider</button><br>
-<app-add-provider-dialog (providerAdded)="onProviderAdded($event)"></app-add-provider-dialog>
+<button (click)="openAddProviderDialog()" >add provider</button><br>
+<button (click)="refresh()">change list</button><br>
+<!-- <app-add-provider-dialog (providerAdded)="onProviderAdded($event)"></app-add-provider-dialog> -->
 <table mat-table 
        [dataSource]="dataSource" multiTemplateDataRows
        class="mat-elevation-z8">
