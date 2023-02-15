@@ -9,7 +9,7 @@ import { ShoppingItem } from '../models/shoppingItem.model';
 export class MessengerService {
 
   subject = new Subject();
-  private allProducts: ShoppingItem[];
+  private allProducts = [];
   productNumber: number;
   cartTotal= 4;
   
@@ -25,9 +25,8 @@ export class MessengerService {
   }
 
   onPayment(products){
-    this.allProducts.push(products)
+    this.allProducts = products;
    console.log(this.allProducts)
-  //  return this.allProducts;
   }
 
   onProductNumberPayment(productNumber){
@@ -35,12 +34,11 @@ export class MessengerService {
   }
 
   onSumPayment(cartTotal):void{
-    this.cartTotal=cartTotal;
+    this.cartTotal = cartTotal;
   }
 
   onPaymentPage(){
     return this.allProducts;
-  
   }
   onProductNumberPaymentPage():number{
     return this.productNumber
@@ -51,9 +49,9 @@ export class MessengerService {
   }
 
   deleteMsg(product){
-    console.log(product)
+    // console.log(product)
     
-    this.subject.next(product.splice())
+    // this.subject.next(product.splice())
     
    
     // this.subject.error(product)

@@ -13,8 +13,7 @@ import { Location } from '@angular/common'
   styleUrls: ['./shopping-payment-list.component.css']
 })
 export class ShoppingPaymentListComponent implements OnInit {
-  cartItems;
-  productItems;
+  cartItems: ShoppingItem[];
   items=[]
 
   cartTotal = 0;
