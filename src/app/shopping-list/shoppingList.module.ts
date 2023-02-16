@@ -20,8 +20,9 @@ import { ShoppingPaymentListComponent } from './shopping-payment-list/shopping-p
 import { ShoppingPaymentItemComponent } from './shopping-payment-list/shopping-payment-item/shopping-payment-item.component';
 import { ShoppingCartPrintComponent } from './shopping-cart-print/shopping-cart-print.component';
 import { ShoppingListService } from './services/shopping-list.service';
-import { MessengerService } from './services/messeger.service';
+import { MessengerService } from '../shopping-services/messeger.service';
 import { ShoppingListRoutingModule } from './shoppingList-routing.module';
+import { ShoppingCartListComponent } from './shopping-cart-list/shopping-cart-list.component';
 
 
 
@@ -33,7 +34,8 @@ import { ShoppingListRoutingModule } from './shoppingList-routing.module';
     ShoppingCartItemComponent,
     ShoppingPaymentListComponent,
     ShoppingPaymentItemComponent,
-    ShoppingCartPrintComponent
+    ShoppingCartPrintComponent,
+    ShoppingCartListComponent
 
 
   ],

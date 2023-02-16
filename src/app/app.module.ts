@@ -25,6 +25,7 @@ import { ShoppingListModule } from './shopping-list/shoppingList.module';
 import { ShoppingCartComponent } from './shopping-list/shopping-cart/shopping-cart.component';
 import { DrawingModule } from './drawings/drawing.module';
 import { ProvidersModule } from './providers/providers.module';
+import { MessengerService } from './shopping-services/messeger.service';
 
 
 @NgModule({
@@ -58,7 +59,7 @@ import { ProvidersModule } from './providers/providers.module';
     ProvidersModule
   ],
   exports:[ MatTableModule ],
-  providers: [],
+  providers: [MessengerService],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA,
      CUSTOM_ELEMENTS_SCHEMA]

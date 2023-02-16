@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CartItem } from '../models/cart.model'; 
 import { ShoppingItem } from '../models/shoppingItem.model'; 
-import { MessengerService } from '../services/messeger.service';
+import { MessengerService } from '../../shopping-services/messeger.service';
 import { Router } from '@angular/router'
 import { Location } from '@angular/common'
 

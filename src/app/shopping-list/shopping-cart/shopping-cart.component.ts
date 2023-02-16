@@ -3,7 +3,7 @@ import { Component, Input, IterableDiffers, OnInit, ViewChild } from '@angular/c
 import { CartItem } from '../models/cart.model'; 
 import { Ingredient } from '../models/ingredient.model';
 import { CartService } from '../services/cart.service';
-import { MessengerService } from '../services/messeger.service';
+import { MessengerService } from '../../shopping-services/messeger.service';
 
 import {  ElementRef } from '@angular/core';
 import { AnimationBuilder, transition, trigger, style, animate, state, keyframes, query, stagger, sequence, group, AnimationMetadata, AnimationPlayer } from '@angular/animations';

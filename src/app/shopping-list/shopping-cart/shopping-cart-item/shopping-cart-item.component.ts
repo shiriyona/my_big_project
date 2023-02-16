@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ShoppingItem } from '../../models/shoppingItem.model';
-import { MessengerService } from '../../services/messeger.service';
+import { MessengerService } from '../../../shopping-services/messeger.service';
 
 @Component({
   selector: 'app-shopping-cart-item',
