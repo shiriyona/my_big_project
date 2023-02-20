@@ -3,7 +3,7 @@ import { Component, Input, IterableDiffers, OnInit, ViewChild } from '@angular/c
 import { CartItem } from '../models/cart.model'; 
 import { Ingredient } from '../models/ingredient.model';
 import { CartService } from '../services/cart.service';
-import { MessengerService } from '../../shopping-services/messeger.service';
+import { MessengerService } from '../services/messeger.service';
 
 import {  ElementRef } from '@angular/core';
 import { AnimationBuilder, transition, trigger, style, animate, state, keyframes, query, stagger, sequence, group, AnimationMetadata, AnimationPlayer } from '@angular/animations';
@@ -12,6 +12,8 @@ import { AnimationBuilder, transition, trigger, style, animate, state, keyframes
 import { throttleTime } from 'rxjs/operators';
 import { Subscription, fromEvent } from 'rxjs';
 import { ShoppingItem } from '../models/shoppingItem.model'; 
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 // import { fromEvent } from 'rxjs/observable/fromEvent';
 // import { badgeAnimation, circleAnimation } from '../animations/animaions';
 
@@ -32,11 +34,11 @@ export class ShoppingCartComponent implements OnInit {
 
   cartTotal = 0;
   productNumber = 0;
-  @Input() productItems:ShoppingItem[]
+  @Input() productItems
 
   constructor(
     private msg: MessengerService,
-    private cartService: CartService, private builder: AnimationBuilder
+    private cartService: CartService, private router: Router, public dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -98,10 +100,20 @@ export class ShoppingCartComponent implements OnInit {
 
   onPagmentPage(cartItems) {
     // this.productItems.push(cartItems)
+    this.cartService.onPaymentItems(cartItems);
+    this.cartService.onPaymentNumber(this.productNumber)
+    this.cartService.onPymentSum(this.cartTotal)
     this.msg.onPayment(cartItems);
     this.msg.onProductNumberPayment(this.productNumber);
     this.msg.onSumPayment(this.cartTotal);
   }
+
+  navigate() {
+    this.router.navigate(['/shopping-cart']);
+
+}
+
+
 }
 
 

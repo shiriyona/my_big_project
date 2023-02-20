@@ -24,8 +24,8 @@
 </div>
 
 <mat-menu #menu="matMenu"  #aboveMenu="matMenu" yPosition="above" class="cartMenu">
-<div class="formCart" > 
-  <h3 class="hh">Cart</h3><br>
+
+  <h3 class="hh">Cart</h3><br> 
   <ul  *ngIf="cartItems.length > 0" class="list-group">
     <!-- <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
     <li class="list-group-item" *ngFor="let item of cartItems">
@@ -50,11 +50,14 @@
     <br>
    
    <!-- <li routerLinkActive="active"><a routerLink="/shopping-cart-print">jj</a></li> -->
-    <button class="btn btn-sm btn-primary" (click)="onPagmentPage(cartItems)" routerLink="/shopping-payment">
+   <li routerLinkActive="active"><a routerLink="/shopping-payment-page"><button class="btn btn-sm btn-primary" (click)="onPagmentPage(cartItems)">
+
+
+    
       <strong>Payment</strong>
-     </button>
+     </button>   </a></li>
   </ul>
-  <li class="list-group-item" *ngFor="let item of productItems"></div>
-</mat-menu>
+   <li class="list-group-item" *ngFor="let item of productItems">
+</mat-menu> 
 
 

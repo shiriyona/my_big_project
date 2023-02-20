@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { ProvidersListComponent } from './components/providers-list/providers-list.component';
 import { ProvidersRoutingModule } from './providers-routing.module';
@@ -35,6 +36,7 @@ import { AddProviderDialogComponent } from './components/providers-list/add-prov
     MatTableModule,
     MatExpansionModule,
     MatDialogModule,
+    MatTabsModule,
     ProvidersRoutingModule
   ],
   providers: [ProvidersService],

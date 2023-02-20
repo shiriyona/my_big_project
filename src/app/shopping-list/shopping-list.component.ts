@@ -7,7 +7,7 @@ import { Ingredient } from './models/ingredient.model';
 
 
 import { CartService } from './services/cart.service';
-import { MessengerService } from '../shopping-services/messeger.service';
+import { MessengerService } from './services/messeger.service';
 import { ShoppingListService } from './services/shopping-list.service';
 
 export class item {

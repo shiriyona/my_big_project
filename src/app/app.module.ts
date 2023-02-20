@@ -16,23 +16,38 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatIconModule} from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { UsersModule } from './users/users.module';
-import { ShoppingListModule } from './shopping-list/shoppingList.module';
+// import { ShoppingListModule } from './shopping-list/shoppingList.module';
 import { ShoppingCartComponent } from './shopping-list/shopping-cart/shopping-cart.component';
 import { DrawingModule } from './drawings/drawing.module';
 import { ProvidersModule } from './providers/providers.module';
-import { MessengerService } from './shopping-services/messeger.service';
+import { MessengerService } from './shopping-list/services/messeger.service';
+
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { ShoppingItemComponent } from './shopping-list/shopping-item/shopping-item.component';
+import { ShoppingCartItemComponent } from './shopping-list/shopping-cart/shopping-cart-item/shopping-cart-item.component';
+import { ShoppingPaymentListComponent } from './shopping-list/shopping-payment-list/shopping-payment-list.component';
+import { ShoppingPaymentItemComponent } from './shopping-list/shopping-payment-list/shopping-payment-item/shopping-payment-item.component';
+import { ShoppingListService } from './shopping-list/services/shopping-list.service';
+import { TabComponent } from './shared/tab/tab.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent, 
-    // ShoppingCartComponent  
+    ShoppingListComponent,
+    ShoppingItemComponent,   
+    ShoppingCartComponent,
+    ShoppingCartItemComponent,
+    ShoppingPaymentListComponent,
+    ShoppingPaymentItemComponent,
+    TabComponent
  ],
   imports: [
     BrowserModule,
@@ -53,13 +68,14 @@ import { MessengerService } from './shopping-services/messeger.service';
     MatIconModule,
     MatExpansionModule,
     MatDialogModule,
+    MatTabsModule,
     UsersModule,
-    ShoppingListModule,
+    // ShoppingListModule,
     DrawingModule,
     ProvidersModule
   ],
   exports:[ MatTableModule ],
-  providers: [MessengerService],
+  providers: [ShoppingListService, MessengerService],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA,
      CUSTOM_ELEMENTS_SCHEMA]

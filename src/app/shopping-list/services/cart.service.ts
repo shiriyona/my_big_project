@@ -11,18 +11,22 @@ import { ShoppingItem } from '../models/shoppingItem.model';
   providedIn: 'root'
 })
 export class CartService {
-  private allProducts: ShoppingItem[];
+  private allProducts;
   productNumber: number;
   cartTotal= 4;
 
-  // constructor(private http: HttpClient) { }
+  constructor() { }
+
+  onPaymentItems(products){
+    this.allProducts = products;
+  }
 
 
-   onProductNumberPayment(productNumber){
+  onPaymentNumber(productNumber){
      this.productNumber = productNumber
    }
  
-   onSumPayment(cartTotal):void{
+   onPymentSum(cartTotal):void{
      this.cartTotal=cartTotal;
    }
  

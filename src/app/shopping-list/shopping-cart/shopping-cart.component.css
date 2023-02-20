@@ -2,20 +2,6 @@
   /* width: 360px; */
 }
 
-.formCart{
-    /* min-width: 112px; */
-  /* max-width: 480px; */
-  /* width: 400px; */
-  height: 400px;
-  overflow: visible;
-  /* -webkit-overflow-scrolling: touch; */
-  /* max-height: calc(100vh - 48px); */
-  border-radius: 4px;
-  outline: 0;
-  /* min-height: 64px; */
-  position: relative;
-}
-
 .list-group-item{
   width: 300px;
 }

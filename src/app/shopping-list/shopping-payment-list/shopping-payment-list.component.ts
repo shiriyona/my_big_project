@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CartItem } from '../models/cart.model'; 
 import { ShoppingItem } from '../models/shoppingItem.model'; 
-import { MessengerService } from '../../shopping-services/messeger.service';
+import { MessengerService } from '../services/messeger.service';
 import { Router } from '@angular/router'
 import { Location } from '@angular/common'
+import { CartService } from '../services/cart.service';
 
 
 
@@ -20,8 +21,7 @@ export class ShoppingPaymentListComponent implements OnInit {
   productNumber = 0;
 
   constructor(
-    private msg: MessengerService, private location: Location
-  ) { }
+    private msg: MessengerService, private cartService: CartService, private location: Location ) { }
 
   ngOnInit() {
     // this.msg.getMsg().subscribe((product: CartItem) => {
@@ -41,9 +41,9 @@ export class ShoppingPaymentListComponent implements OnInit {
   }
 
   getProducts(){
-    this.cartItems = this.msg.onPaymentPage()
-    this.productNumber  = this.msg.onProductNumberPaymentPage()
-    this.cartTotal = this.msg.onSumPaymentPage()
+    this.cartItems = this.cartService.onPaymentPage()
+    this.productNumber  = this.cartService.onProductNumberPaymentPage()
+    this.cartTotal = this.cartService.onSumPaymentPage()
   }
 
   printThisPage1(id){
