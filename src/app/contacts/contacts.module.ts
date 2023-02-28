@@ -10,20 +10,28 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTabsModule} from '@angular/material/tabs';
 
-import { ProvidersListComponent } from './components/providers-list/providers-list.component';
-import { ProvidersRoutingModule } from './providers-routing.module';
+import { ContactsRoutingModule } from './contacts-routing.module';
 import { ProvidersService } from './services/providers.service';
+import { UsersService } from './services/users.service';
+import { DownloadFileService } from './services/download-file.service';
+import { TabComponent } from './components/tab/tab.component';
+import { ProvidersListComponent } from './components/providers-list/providers-list.component';
 import { ProviderDialogComponent } from './components/providers-list/provider-dialog/provider-dialog.component';
 import { AddProviderDialogComponent } from './components/providers-list/add-provider-dialog/add-provider-dialog.component';
+import { DialogContentExampleDialog, UsersComponent } from './components/users/users.component';
+
 
 
 
 
 @NgModule({
   declarations: [
+    TabComponent,
     ProvidersListComponent,
     ProviderDialogComponent,
-    AddProviderDialogComponent
+    AddProviderDialogComponent,
+    UsersComponent,
+    DialogContentExampleDialog
   ],
   imports: [
     CommonModule,
@@ -37,8 +45,8 @@ import { AddProviderDialogComponent } from './components/providers-list/add-prov
     MatExpansionModule,
     MatDialogModule,
     MatTabsModule,
-    ProvidersRoutingModule
+    ContactsRoutingModule
   ],
-  providers: [ProvidersService],
+  providers: [ProvidersService, UsersService, DownloadFileService],
 })
-export class ProvidersModule { }
+export class ContactsModule { }

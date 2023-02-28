@@ -18,14 +18,11 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTabsModule} from '@angular/material/tabs';
 
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { UsersModule } from './users/users.module';
 // import { ShoppingListModule } from './shopping-list/shoppingList.module';
 import { ShoppingCartComponent } from './shopping-list/shopping-cart/shopping-cart.component';
 import { DrawingModule } from './drawings/drawing.module';
-import { ProvidersModule } from './providers/providers.module';
 import { MessengerService } from './shopping-list/services/messeger.service';
 
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
@@ -34,8 +31,10 @@ import { ShoppingCartItemComponent } from './shopping-list/shopping-cart/shoppin
 import { ShoppingPaymentListComponent } from './shopping-list/shopping-payment-list/shopping-payment-list.component';
 import { ShoppingPaymentItemComponent } from './shopping-list/shopping-payment-list/shopping-payment-item/shopping-payment-item.component';
 import { ShoppingListService } from './shopping-list/services/shopping-list.service';
-import { TabComponent } from './shared/tab/tab.component';
-
+import { ContactsModule } from './contacts/contacts.module';
+import { SigningPadComponent } from './shopping-list/shopping-payment-list/checkout/signing-pad/signing-pad.component';
+import { CheckoutComponent } from './shopping-list/shopping-payment-list/checkout/checkout.component';
+import { CartService } from './shopping-list/services/cart.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +46,8 @@ import { TabComponent } from './shared/tab/tab.component';
     ShoppingCartItemComponent,
     ShoppingPaymentListComponent,
     ShoppingPaymentItemComponent,
-    TabComponent
+    SigningPadComponent  ,
+    CheckoutComponent
  ],
   imports: [
     BrowserModule,
@@ -69,15 +69,13 @@ import { TabComponent } from './shared/tab/tab.component';
     MatExpansionModule,
     MatDialogModule,
     MatTabsModule,
-    UsersModule,
+    ContactsModule,
     // ShoppingListModule,
     DrawingModule,
-    ProvidersModule
   ],
   exports:[ MatTableModule ],
-  providers: [ShoppingListService, MessengerService],
+  providers: [ShoppingListService, MessengerService, CartService],
   bootstrap: [AppComponent],
-  schemas: [NO_ERRORS_SCHEMA,
-     CUSTOM_ELEMENTS_SCHEMA]
+  schemas: []
 })
 export class AppModule { }

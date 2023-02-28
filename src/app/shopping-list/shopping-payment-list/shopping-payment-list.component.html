@@ -17,9 +17,9 @@
     </button>  -->  <li class="list-group-item active">
           <strong>items</strong> {{ this.productNumber }} <br>
           <strong>Total</strong> {{ this.cartTotal | currency:'$' }}    
-        </li>    <br>
-       
-        <button class="paymentButton" class="btn btn-sm btn-primary">
-  
-          <strong>Payment</strong>
-  </button>
+        </li><br>
+
+        <li routerLinkActive="active"><a routerLink="/checkout">
+          <button class="btn btn-sm btn-primary" >
+            <strong>Checkout</strong>
+           </button></a></li>

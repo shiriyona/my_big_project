@@ -11,9 +11,10 @@ import { ShoppingItem } from '../models/shoppingItem.model';
   providedIn: 'root'
 })
 export class CartService {
+  deletedproduct
   private allProducts;
-  productNumber: number;
-  cartTotal= 4;
+  productNumber = 0;
+  cartTotal= 0;
 
   constructor() { }
 

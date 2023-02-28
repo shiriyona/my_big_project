@@ -1,7 +1,7 @@
 import { outputAst } from '@angular/compiler';
 import { Component, OnInit, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
-import { Provider } from 'src/app/providers/models/providers.model';
-import { ProvidersService } from 'src/app/providers/services/providers.service';
+import { Provider } from 'src/app/contacts/models/providers.model';
+import { ProvidersService } from 'src/app/contacts/services/providers.service'; 
 
 @Component({
   selector: 'app-add-provider-dialog',

@@ -27,33 +27,19 @@
 
   <h3 class="hh">Cart</h3><br> 
   <ul  *ngIf="cartItems.length > 0" class="list-group">
-    <!-- <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
-    <li class="list-group-item" *ngFor="let item of cartItems">
-      <app-shopping-cart-item [cartItem]="item"></app-shopping-cart-item>    
-    </li> 
-  </cdk-virtual-scroll-viewport>  -->
-   <!-- <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
-    <div *cdkVirtualFor="let item of cartItems; templateCacheSize: 0" class="list-group-item">{{item}}</div>
-    <app-shopping-cart-item [cartItem]="item"></app-shopping-cart-item> 
-  </cdk-virtual-scroll-viewport>  -->
 
-     <!-- <cdk-virtual-scroll-viewport itemSize="5" class="example-viewport">  -->
+  <!-- <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport"> -->
       <li class="list-group-item" *ngFor="let item of cartItems">
         <app-shopping-cart-item [cartItem]="item"></app-shopping-cart-item>    
       </li> 
-     <!-- </cdk-virtual-scroll-viewport>    -->
-
+ <!-- </cdk-virtual-scroll-viewport> -->
     <li class="list-group-item active">
       <strong>items</strong> {{ productNumber }} <br>
       <strong>Total</strong> {{ cartTotal | currency:'$' }}    
     </li>    
     <br>
-   
-   <!-- <li routerLinkActive="active"><a routerLink="/shopping-cart-print">jj</a></li> -->
-   <li routerLinkActive="active"><a routerLink="/shopping-payment-page"><button class="btn btn-sm btn-primary" (click)="onPagmentPage(cartItems)">
-
-
-    
+   <li routerLinkActive="active"><a routerLink="/shopping-payment-page">
+    <button class="btn btn-sm btn-primary" (click)="onPagmentPage(cartItems)">
       <strong>Payment</strong>
      </button>   </a></li>
   </ul>

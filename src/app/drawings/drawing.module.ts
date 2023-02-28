@@ -13,7 +13,6 @@ import {MatIconModule} from '@angular/material/icon';
 
 
 import { DrawingsComponent } from './components/drawing/drawings.component';
-import { SigningPadComponent } from './components/signing-pad/signing-pad.component';
 import { DrawingRoutingModule } from './drawing-routing.module';
 
 
@@ -21,7 +20,6 @@ import { DrawingRoutingModule } from './drawing-routing.module';
 @NgModule({
   declarations: [
     DrawingsComponent,
-    SigningPadComponent
   ],
   imports: [
     CommonModule,

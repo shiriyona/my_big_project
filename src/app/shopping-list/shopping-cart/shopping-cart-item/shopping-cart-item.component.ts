@@ -16,12 +16,8 @@ export class ShoppingCartItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  deleteItem() {
-    this.msg.deleteMsg(this.cartItem);
-    
-    // delete [this.data.indexOf(msg)];
-    // this.deleteItem(msg)
-    // this.msg.deleteMsg(msg);
+  onMinus() {
+    this.msg.deleteProduct(this.cartItem);
   }
 
 }

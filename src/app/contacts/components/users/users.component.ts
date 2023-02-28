@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Users } from '../models/users.model';
-import { UsersService } from '../services/users.service';
+import { User } from '../../models/users.model'; 
+import { UsersService } from '../../services/users.service'; 
 import { Subscription } from 'rxjs';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
-import { DownloadFileService } from '../services/download-file.service';
+import { DownloadFileService } from '../../services/download-file.service'; 
 
 
 @Component({
@@ -13,7 +13,7 @@ import { DownloadFileService } from '../services/download-file.service';
 })
 export class UsersComponent implements OnInit {
   @Input() img
-  user: Users
+  user: User
   users: any
   panelOpenState = false;
   loadUsersSubscription: Subscription;  

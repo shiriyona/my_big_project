@@ -45,12 +45,10 @@ export class ShoppingCartComponent implements OnInit {
     this.msg.getMsg().subscribe((product: CartItem) => {
       this.addProductToCart(product)   
     });
+    this.msg.getDeletedMsg().subscribe((product: CartItem) => {
+      this.deleteProductToCart(product)   
+    });
 
-    // const el = this.wrapper.nativeElement.querySelector('.mat-flat-button');
-
-    // this.clickSubscription = fromEvent(el, 'click')
-    //   .pipe(throttleTime(300))
-    //   .subscribe(() => this.moveItem());
   }
 
   addProductToCart(product: CartItem) {
@@ -81,6 +79,26 @@ export class ShoppingCartComponent implements OnInit {
     this.productNumber += (item.qty)
   }) 
   }
+
+  deleteProductToCart(product){
+  //   let productEixst = false;
+  //   for (let i in this.cartItems) {
+  //     if(this.cartItems[i].productId === product.id){
+  //      this.cartItems[i].qty--
+  //      productEixst = true;
+  //      this.productNumber--
+  //      break;
+  //     }
+  //   }
+  //   if(!productEixst){
+  //     this.cartItems.splice(product) 
+  //   }
+
+  // this.cartItems.forEach(item=>{
+  //   this.cartTotal += (item.qty* item.price)
+  //   this.productNumber += (item.qty)
+  // }) 
+  }
   printThisPage(id){
     var printContents = document.getElementById(id).innerHTML;
 	  var originalContents = document.body.innerHTML;
@@ -101,19 +119,9 @@ export class ShoppingCartComponent implements OnInit {
   onPagmentPage(cartItems) {
     // this.productItems.push(cartItems)
     this.cartService.onPaymentItems(cartItems);
-    this.cartService.onPaymentNumber(this.productNumber)
-    this.cartService.onPymentSum(this.cartTotal)
-    this.msg.onPayment(cartItems);
-    this.msg.onProductNumberPayment(this.productNumber);
-    this.msg.onSumPayment(this.cartTotal);
+    this.cartService.onPaymentNumber(this.productNumber);
+    this.cartService.onPymentSum(this.cartTotal);
   }
-
-  navigate() {
-    this.router.navigate(['/shopping-cart']);
-
-}
-
-
 }
 
 
