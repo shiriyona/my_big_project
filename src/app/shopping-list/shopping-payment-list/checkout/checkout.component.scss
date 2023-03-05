@@ -56,6 +56,10 @@ body {
     margin-bottom: 10px;
     display: block;
   }
+  mat-label {
+    margin-bottom: 10px;
+    display: block;
+  }
   
   .icon-container {
     margin-bottom: 20px;
@@ -101,5 +105,21 @@ body {
       margin-bottom: 20px;
     }
   }
+
+  mat-form-field {
+    width: 100%;
+    padding: 0.75em 0.75em 0 0.75em;
+    margin: 4px 0;
+    width: 100%;
+  }
+
+.orderForm{
+	background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 18px;
+  width: 30%;
+  margin: auto;
+}
 
   

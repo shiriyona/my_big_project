@@ -33,8 +33,9 @@ import { ShoppingPaymentItemComponent } from './shopping-list/shopping-payment-l
 import { ShoppingListService } from './shopping-list/services/shopping-list.service';
 import { ContactsModule } from './contacts/contacts.module';
 import { SigningPadComponent } from './shopping-list/shopping-payment-list/checkout/signing-pad/signing-pad.component';
-import { CheckoutComponent } from './shopping-list/shopping-payment-list/checkout/checkout.component';
+import { CheckoutComponent, CheckOutDialog } from './shopping-list/shopping-payment-list/checkout/checkout.component';
 import { CartService } from './shopping-list/services/cart.service';
+import { CheckoutItemComponent } from './shopping-list/shopping-payment-list/checkout/checkout-item/checkout-item.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,10 @@ import { CartService } from './shopping-list/services/cart.service';
     ShoppingPaymentListComponent,
     ShoppingPaymentItemComponent,
     SigningPadComponent  ,
-    CheckoutComponent
+    CheckoutComponent,
+    CheckoutItemComponent,
+    CheckOutDialog
+    
  ],
   imports: [
     BrowserModule,

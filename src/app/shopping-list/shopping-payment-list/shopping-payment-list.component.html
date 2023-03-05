@@ -12,14 +12,12 @@
   
   </div>
     </div>
-    <!-- <button  type="button" class="btn btn-success btn-md" (click)="printThisPage1('printThisCart')">
-          <span class="glyphicon glyphicon-print"></span> Print
-    </button>  -->  <li class="list-group-item active">
+     <li class="list-group-item active">
           <strong>items</strong> {{ this.productNumber }} <br>
-          <strong>Total</strong> {{ this.cartTotal | currency:'$' }}    
+          <strong>Total</strong> {{ this.cartTotal }}$ 
         </li><br>
 
-        <li routerLinkActive="active"><a routerLink="/checkout">
-          <button class="btn btn-sm btn-primary" >
+     
+          <button class="btn btn-sm btn-primary" routerLink="/checkout">
             <strong>Checkout</strong>
-           </button></a></li>
+           </button>
