@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CartItem } from '../models/cart.model';
 import { Ingredient } from '../models/ingredient.model'; 
-import { ShoppingItem } from '../models/shoppingItem.model';
 
 
 @Injectable({

@@ -1,10 +1,13 @@
 import { Ingredient } from '../models/ingredient.model';
 import { Ingredient as firstIngredient } from '../models/ingredient.model'; 
 import { Ingredient as secondIngredient } from '../models/ingredient.model';
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { ShoppingItem } from '../models/shoppingItem.model';
 import { Observable, of } from 'rxjs';
 
+@Injectable({
+  providedIn: 'root'
+})
 export class ShoppingListService {
   ingredientsChanged = new EventEmitter<ShoppingItem[]>();
   public amount=0;

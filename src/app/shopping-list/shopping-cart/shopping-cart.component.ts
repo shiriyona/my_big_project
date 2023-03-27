@@ -23,31 +23,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
+  
   @ViewChild('svg', { read: ElementRef }) public svg: any;
   @ViewChild('wrapper', { read: ElementRef }) public wrapper: any;
 
-  public items: number = 0;
+  @Input() cartItems=[];
+  @Input() productItems;
+
   private clickSubscription: Subscription;
 
-
-  @Input() cartItems=[];
+  items: number = 0;
   resetCart=false
-
   cartTotal = 0;
   productNumber = 0;
-  @Input() productItems
 
   constructor(
     private msg: MessengerService,
-    private cartService: CartService, private router: Router, public dialog: MatDialog
+    private cartService: CartService, 
+    private router: Router, 
+    public dialog: MatDialog
   ) { }
 
   ngOnInit() {
     this.msg.getMsg().subscribe((product: CartItem) => {
       this.addProductToCart(product)   
-    });
-    this.msg.getDeletedMsg().subscribe((product: CartItem) => {
-      this.deleteProductToCart(product)   
     });
     this.resetAll(this.msg.resetCart())
 
