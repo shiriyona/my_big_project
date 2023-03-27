@@ -118,12 +118,14 @@ export class ProvidersService {
       description: `Deal is a company With a standard weight of 10`,
     },
   ];
- 
-  sendProviders():Observable<any> {
+
+  constructor() { }
+
+  sendProviders(): Observable<any> {
     return of(this.providerDetails.slice());
   }
 
-  addProviderToTheList(provider: Provider){
+  addProviderToTheList(provider: Provider) {
     this.providerDetails.push(provider);
     this.sendNewProviders()
   }
@@ -131,7 +133,5 @@ export class ProvidersService {
   sendNewProviders() {
     return of(this.providerDetails.slice());
   }
-  
 
-  constructor() { }
 }

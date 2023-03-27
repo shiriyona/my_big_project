@@ -5,10 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatTableModule} from '@angular/material/table';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTableModule } from '@angular/material/table';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { ContactsRoutingModule } from './contacts-routing.module';
 import { ProvidersService } from './services/providers.service';
@@ -19,9 +19,6 @@ import { ProvidersListComponent } from './components/providers-list/providers-li
 import { ProviderDialogComponent } from './components/providers-list/provider-dialog/provider-dialog.component';
 import { AddProviderDialogComponent } from './components/providers-list/add-provider-dialog/add-provider-dialog.component';
 import { DialogContentExampleDialog, UsersComponent } from './components/users/users.component';
-
-
-
 
 
 @NgModule({
@@ -35,7 +32,7 @@ import { DialogContentExampleDialog, UsersComponent } from './components/users/u
   ],
   imports: [
     CommonModule,
-    FormsModule, 
+    FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
     MatSelectModule,
@@ -47,6 +44,7 @@ import { DialogContentExampleDialog, UsersComponent } from './components/users/u
     MatTabsModule,
     ContactsRoutingModule
   ],
-  providers: [ProvidersService, UsersService, DownloadFileService],
+  providers: [],
 })
+
 export class ContactsModule { }

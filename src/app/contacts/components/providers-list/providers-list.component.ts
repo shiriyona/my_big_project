@@ -1,8 +1,8 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
-import {animate, state, style, transition, trigger} from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Provider } from '../../models/providers.model';
 import { ProvidersService } from '../../services/providers.service';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { ProviderDialogComponent } from './provider-dialog/provider-dialog.component';
 import { AddProviderDialogComponent } from './add-provider-dialog/add-provider-dialog.component';
 
@@ -12,8 +12,8 @@ import { AddProviderDialogComponent } from './add-provider-dialog/add-provider-d
   styleUrls: ['./providers-list.component.css'],
   animations: [
     trigger('detailExpand', [
-      state('collapsed', style({height: '0px', minHeight: '0'})),
-      state('expanded', style({height: '*'})),
+      state('collapsed', style({ height: '0px', minHeight: '0' })),
+      state('expanded', style({ height: '*' })),
       transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
     ]),
   ],
@@ -33,30 +33,30 @@ export class ProvidersListComponent implements OnInit {
   ngOnChanges(changes: SimpleChanges) {
   }
 
-  getProviders(){
+  getProviders() {
     this.dataSource = this.providersService.sendProviders()
   }
 
   openEditProviderDialog() {
     const dialogRef = this.dialog.open(ProviderDialogComponent);
-  
+
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
   }
 
   onProviderAdded(provider: Provider) {
-    this.dataSource.push({provider})
+    this.dataSource.push({ provider })
     console.log(this.dataSource);
   }
 
   refresh(): void {
     this.getProviders();
-}
+  }
 
   openAddProviderDialog() {
     const dialogRef = this.dialog.open(AddProviderDialogComponent);
-  
+
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });

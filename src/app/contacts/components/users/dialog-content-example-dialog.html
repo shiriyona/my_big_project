@@ -1,27 +1,22 @@
 <h2 mat-dialog-title>details</h2>
 <mat-dialog-content class="mat-typography">
   <p>first name:</p>
-<input><br>
-<p>last name</p>
-<input><br>
-<p>country:</p>
-<input><br>
-<p>city:</p>
-<input><br>
-<p>age:</p>
-<input><br>
-<p>status:</p>
-<input><br>
-<label class="image-upload-container btn btn-bwm"> 
-  <!-- <span>Select Image</span><br> -->
-  <input #imageInput
-         type="file"
-         accept="image/*"
-         (change)="processFile(imageInput)"> <br>
-          <img class="imagUpload" [src]="img">
-</label>
+  <input><br>
+  <p>last name</p>
+  <input><br>
+  <p>country:</p>
+  <input><br>
+  <p>city:</p>
+  <input><br>
+  <p>age:</p>
+  <input><br>
+  <p>status:</p>
+  <input><br>
+  <label class="image-upload-container btn btn-bwm">
+    <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)"> <br>
+    <img class="imagUpload" [src]="img">
+  </label>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <!-- <button mat-button mat-dialog-close>Cancel</button> -->
   <button mat-button [mat-dialog-close]="true" cdkFocusInitial>save</button>
 </mat-dialog-actions>

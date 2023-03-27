@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { User } from '../../models/users.model'; 
-import { UsersService } from '../../services/users.service'; 
+import { User } from '../../models/users.model';
+import { UsersService } from '../../services/users.service';
 import { Subscription } from 'rxjs';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
-import { DownloadFileService } from '../../services/download-file.service'; 
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { DownloadFileService } from '../../services/download-file.service';
 
 
 @Component({
@@ -16,12 +16,11 @@ export class UsersComponent implements OnInit {
   user: User
   users: any
   panelOpenState = false;
-  loadUsersSubscription: Subscription;  
+  loadUsersSubscription: Subscription;
   userColor: boolean = false;
-  
 
-  constructor(private usersService: UsersService,public dialog: MatDialog) {
-    // this.g(this.user);
+
+  constructor(private usersService: UsersService, public dialog: MatDialog) {
 
   }
 
@@ -30,29 +29,29 @@ export class UsersComponent implements OnInit {
   }
 
   getUsers() {
-    this.loadUsersSubscription =  this.usersService.getUsers().subscribe(res => {
-       this.users = res;
-     });
-   }
-
-   openRow(user){
-    user.isOpen = !user.isOpen;
-}
-
-g(user){
-  if (this.user.id%2===1) {
-    this.userColor = true;
+    this.loadUsersSubscription = this.usersService.getUsers().subscribe(res => {
+      this.users = res;
+    });
   }
-}
 
-openDialog(img) {
-  const dialogRef = this.dialog.open(DialogContentExampleDialog);
+  openRow(user) {
+    user.isOpen = !user.isOpen;
+  }
 
-  dialogRef.afterClosed().subscribe(result => {
-    console.log(`Dialog result: ${result}`);
-  });
-  this.usersService.sendImg(img);
-}
+  g(user) {
+    if (this.user.id % 2 === 1) {
+      this.userColor = true;
+    }
+  }
+
+  openDialog(img) {
+    const dialogRef = this.dialog.open(DialogContentExampleDialog);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+    this.usersService.sendImg(img);
+  }
 
 }
 
@@ -60,7 +59,7 @@ class ImageSnippet {
   pending: boolean = false;
   status: string = 'init';
 
-  constructor(public src: string, public file: File) {}
+  constructor(public src: string, public file: File) { }
 }
 
 
@@ -73,7 +72,7 @@ export class DialogContentExampleDialog {
   img
   selectedFile: ImageSnippet;
 
-  constructor(private imageService: DownloadFileService, private usersService: UsersService){
+  constructor(private imageService: DownloadFileService, private usersService: UsersService) {
     this.getImg()
   }
 
@@ -83,13 +82,10 @@ export class DialogContentExampleDialog {
   }
 
   getImg() {
-    this.img=this.usersService.getImg();
+    this.img = this.usersService.getImg();
   }
 
   private onError() {
-    // this.selectedFile.pending = false;
-    // this.selectedFile.status = 'fail';
-    // this.selectedFile.src = '';
   }
 
   processFile(imageInput: any) {
@@ -108,7 +104,7 @@ export class DialogContentExampleDialog {
         (err) => {
           this.onError();
         })
-        this.img=this.selectedFile.src
+      this.img = this.selectedFile.src
     });
 
     reader.readAsDataURL(file);

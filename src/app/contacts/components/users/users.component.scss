@@ -1,117 +1,117 @@
 .tbl-users {
-       .header {
-          display: flex;
-          width: 100%;
-          font-family: arial, sans-serif;
-          border-collapse: collapse;
-          font-weight: bold;    
-          background-color: #E8E8E8;   
-          .col{
-               border: 1px solid #dddddd;
-               text-align: left;
-               padding: 8px;
+    .header {
+        display: flex;
+        width: 100%;
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        font-weight: bold;
+        background-color: #E8E8E8;
 
-               }
-                 
-           .content { 
-                       
-               .full-width {
-                                 
-                    width: 100%;;        
-               }         
-               .my-row {             
-                    display: flex;             
-                    width: 100%; 
-                    border: 1px solid #dddddd;
-                    text-align: left;
-                    padding: 8px;
-                                 
-                    .inner-row {
-                     min-height: 100px;
-                    }
-               }
-          }
-     }
+        .col {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        .content {
+
+            .full-width {
+                width: 100%;
+            }
+
+            .my-row {
+                display: flex;
+                width: 100%;
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+
+                .inner-row {
+                    min-height: 100px;
+                }
+            }
+        }
+    }
 
 }
+
 .my-row {
-     display: flex;
-     width: 100%;
-     font-family: arial, sans-serif;
-     border-collapse: collapse;  
-     cursor: pointer;
- }
+    display: flex;
+    width: 100%;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    cursor: pointer;
+}
 
- .first-name{
-     // border: 1px solid #dddddd;
-     width: 100%;
-     border: 1px solid #dddddd;
-     text-align: left;
-     padding: 8px;
- }
- .last-name{
-     // border: 1px solid #dddddd;
-     width: 100%;
-     border: 1px solid #dddddd;
-     text-align: left;
-     padding: 8px;
- }
- .inner-row{
-     padding: 8px;
-     border: 1px solid #dddddd;
-     min-height: 100px;
-     display: flex;
-     background-color: #dddddd;
- }
+.first-name {
+    width: 100%;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
 
- .user-country{
-     margin-top: 1.5em;
-     padding-bottom: 1em;
-     position: relative;
-     right: 30px;
- }
+.last-name {
+    width: 100%;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
 
- .user-city{
-     margin-top: 3em;
-     padding-bottom: 1em;
-     position: relative;
-     right: 106px;
- }
+.inner-row {
+    padding: 8px;
+    border: 1px solid #dddddd;
+    min-height: 100px;
+    display: flex;
+    background-color: #dddddd;
+}
 
- .user-age{
-     position: sticky;
-     left: 761px;
- }
+.user-country {
+    margin-top: 1.5em;
+    padding-bottom: 1em;
+    position: relative;
+    right: 30px;
+}
 
- .user-status{
-     position: sticky;
-     left: 761px;
-     margin-top: 1.5em;    
- }
+.user-city {
+    margin-top: 3em;
+    padding-bottom: 1em;
+    position: relative;
+    right: 106px;
+}
 
- img {
-     width: 12%;
-     left: 1200px;
-     position: sticky;     
- }
+.user-age {
+    position: sticky;
+    left: 761px;
+}
 
- .edit-user-button{
-     position: sticky;
-     left: 761px;
-     width: 80px;
-     margin-top: 4.5em;    
-     height: 30px;
- }
+.user-status {
+    position: sticky;
+    left: 761px;
+    margin-top: 1.5em;
+}
 
-.userColor{
+img {
+    width: 12%;
+    left: 1200px;
+    position: sticky;
+}
+
+.edit-user-button {
+    position: sticky;
+    left: 761px;
+    width: 80px;
+    margin-top: 4.5em;
+    height: 30px;
+}
+
+.userColor {
     background-color: #F0F0F0;
-   
- }
 
- .imagUpload {
+}
+
+.imagUpload {
     width: 150px;
     left: -29%;
     position: relative;
     height: 150px;
- }
-
+}

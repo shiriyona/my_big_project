@@ -1,17 +1,14 @@
 import { Component, Input, IterableDiffers, OnInit, ViewChild } from '@angular/core';
 // import { MatMenuTrigger } from '@angular/material';
-import { CartItem } from '../models/cart.model'; 
+import { CartItem } from '../models/cart.model';
 import { Ingredient } from '../models/ingredient.model';
 import { CartService } from '../services/cart.service';
 import { MessengerService } from '../services/messeger.service';
 
-import {  ElementRef } from '@angular/core';
-import { AnimationBuilder, transition, trigger, style, animate, state, keyframes, query, stagger, sequence, group, AnimationMetadata, AnimationPlayer } from '@angular/animations';
-
-// import { Subscription } from 'rxjs/Subscription';
+import { ElementRef } from '@angular/core';
 import { throttleTime } from 'rxjs/operators';
 import { Subscription, fromEvent } from 'rxjs';
-import { ShoppingItem } from '../models/shoppingItem.model'; 
+import { ShoppingItem } from '../models/shoppingItem.model';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 // import { fromEvent } from 'rxjs/observable/fromEvent';
@@ -23,95 +20,93 @@ import { Router } from '@angular/router';
   styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
-  
+
   @ViewChild('svg', { read: ElementRef }) public svg: any;
   @ViewChild('wrapper', { read: ElementRef }) public wrapper: any;
 
-  @Input() cartItems=[];
+  @Input() cartItems = [];
   @Input() productItems;
 
   private clickSubscription: Subscription;
 
   items: number = 0;
-  resetCart=false
+  resetCart = false
   cartTotal = 0;
   productNumber = 0;
 
   constructor(
     private msg: MessengerService,
-    private cartService: CartService, 
-    private router: Router, 
+    private cartService: CartService,
+    private router: Router,
     public dialog: MatDialog
   ) { }
 
   ngOnInit() {
     this.msg.getMsg().subscribe((product: CartItem) => {
-      this.addProductToCart(product)   
+      this.addProductToCart(product)
     });
     this.resetAll(this.msg.resetCart())
 
   }
 
   addProductToCart(product: CartItem) {
-
     let productEixst = false;
-
     for (let i in this.cartItems) {
-      if(this.cartItems[i].productId === product.id){
-       this.cartItems[i].qty++
-       productEixst = true;
-       this.productNumber++
-       break;
+      if (this.cartItems[i].productId === product.id) {
+        this.cartItems[i].qty++
+        productEixst = true;
+        this.productNumber++
+        break;
       }
     }
-    if(!productEixst){
+    if (!productEixst) {
       this.cartItems.push({
         productId: product.id,
         productName: product.name,
         qty: 1,
         price: product.price
-      }) 
+      })
     }
 
-  this.productNumber=0;
-  this.cartTotal=0;
-  this.cartItems.forEach(item=>{
-    this.cartTotal += (item.qty* item.price)
-    this.productNumber += (item.qty)
-  }) 
+    this.productNumber = 0;
+    this.cartTotal = 0;
+    this.cartItems.forEach(item => {
+      this.cartTotal += (item.qty * item.price)
+      this.productNumber += (item.qty)
+    })
   }
 
   resetAll(reset) {
-    if(reset===true){
-    this.cartItems.forEach(c => c.reset()); // or whatever you want to do to it here
-    this.msg.resetAll(this.resetCart)
-  }
+    if (reset === true) {
+      this.cartItems.forEach(c => c.reset()); // or whatever you want to do to it here
+      this.msg.resetAll(this.resetCart)
+    }
 
   }
 
-  deleteProductToCart(product){
-  //   let productEixst = false;
-  //   for (let i in this.cartItems) {
-  //     if(this.cartItems[i].productId === product.id){
-  //      this.cartItems[i].qty--
-  //      productEixst = true;
-  //      this.productNumber--
-  //      break;
-  //     }
-  //   }
-  //   if(!productEixst){
-  //     this.cartItems.splice(product) 
-  //   }
+  deleteProductToCart(product) {
+    //   let productEixst = false;
+    //   for (let i in this.cartItems) {
+    //     if(this.cartItems[i].productId === product.id){
+    //      this.cartItems[i].qty--
+    //      productEixst = true;
+    //      this.productNumber--
+    //      break;
+    //     }
+    //   }
+    //   if(!productEixst){
+    //     this.cartItems.splice(product) 
+    //   }
 
-  // this.cartItems.forEach(item=>{
-  //   this.cartTotal += (item.qty* item.price)
-  //   this.productNumber += (item.qty)
-  // }) 
+    // this.cartItems.forEach(item=>{
+    //   this.cartTotal += (item.qty* item.price)
+    //   this.productNumber += (item.qty)
+    // }) 
   }
-  printThisPage(id){
+  printThisPage(id) {
     var printContents = document.getElementById(id).innerHTML;
-	  var originalContents = document.body.innerHTML;
-		document.body.innerHTML = printContents;
+    var originalContents = document.body.innerHTML;
+    document.body.innerHTML = printContents;
     window.print();
     document.body.innerHTML = originalContents;
     window.close();
