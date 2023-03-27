@@ -36,6 +36,8 @@ import { SigningPadComponent } from './shopping-list/shopping-payment-list/check
 import { CheckoutComponent, CheckOutDialog } from './shopping-list/shopping-payment-list/checkout/checkout.component';
 import { CartService } from './shopping-list/services/cart.service';
 import { CheckoutItemComponent } from './shopping-list/shopping-payment-list/checkout/checkout-item/checkout-item.component';
+import { loginModule } from './login/login.module';
+import { LoginService } from './login.service';
 
 @NgModule({
   declarations: [
@@ -50,8 +52,7 @@ import { CheckoutItemComponent } from './shopping-list/shopping-payment-list/che
     SigningPadComponent  ,
     CheckoutComponent,
     CheckoutItemComponent,
-    CheckOutDialog
-    
+    CheckOutDialog  
  ],
   imports: [
     BrowserModule,
@@ -76,9 +77,10 @@ import { CheckoutItemComponent } from './shopping-list/shopping-payment-list/che
     ContactsModule,
     // ShoppingListModule,
     DrawingModule,
+    loginModule
   ],
   exports:[ MatTableModule ],
-  providers: [ShoppingListService, MessengerService, CartService],
+  providers: [ShoppingListService, MessengerService, CartService, LoginService],
   bootstrap: [AppComponent],
   schemas: []
 })

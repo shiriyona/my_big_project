@@ -7,15 +7,15 @@
 }
 
 .cartMenu {
-  min-width: 112px;
+  min-width: 202px;
   max-width: 350px;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
+  /* -webkit-overflow-scrolling: touch; */
   max-height: calc(100vh - 48px);
   border-radius: 4px;
   outline: 0;
-  min-height: 64px;
-  position: absolute;
+  min-height: 204px;
+  /* position: absolute; */
 }
 
 button {
@@ -29,9 +29,14 @@ button {
   background-color: black;
 }
 
+.list-group{
+  overflow: hidden;
+}
+
 .list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
   z-index: 2;
   color: #fff;
   background-color: black;
   border-color: black;
+  overflow: hidden;
 }

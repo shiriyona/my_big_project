@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MessengerService } from 'src/app/shopping-list/services/messeger.service';
 
 @Component({
   selector: 'app-checkout-item',

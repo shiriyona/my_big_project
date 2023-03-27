@@ -10,8 +10,17 @@ export class MessengerService {
 
   subject = new Subject();
   deletedproduct
+  reset=false
   
   constructor() { }
+
+  resetAll(resetCart){
+    this.reset=resetCart
+  }
+
+  resetCart(){
+    return this.reset;
+  }
 
   sendMsg(product) {
     console.log(product)

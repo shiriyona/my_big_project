@@ -31,6 +31,7 @@ export class ShoppingCartComponent implements OnInit {
 
 
   @Input() cartItems=[];
+  resetCart=false
 
   cartTotal = 0;
   productNumber = 0;
@@ -48,6 +49,7 @@ export class ShoppingCartComponent implements OnInit {
     this.msg.getDeletedMsg().subscribe((product: CartItem) => {
       this.deleteProductToCart(product)   
     });
+    this.resetAll(this.msg.resetCart())
 
   }
 
@@ -78,6 +80,14 @@ export class ShoppingCartComponent implements OnInit {
     this.cartTotal += (item.qty* item.price)
     this.productNumber += (item.qty)
   }) 
+  }
+
+  resetAll(reset) {
+    if(reset===true){
+    this.cartItems.forEach(c => c.reset()); // or whatever you want to do to it here
+    this.msg.resetAll(this.resetCart)
+  }
+
   }
 
   deleteProductToCart(product){

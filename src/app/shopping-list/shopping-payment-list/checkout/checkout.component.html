@@ -36,9 +36,10 @@
               <div class="col-50">
                 <mat-form-field appearance="fill">
                   <label for="zip">Zip</label>
-                  <input matInput type="text" id="zip" name="zip" placeholder="10001" formControlName="zip" required>
-                <mat-error *ngIf="checkOutForm.invalid">please enter a valid name</mat-error>
-                </mat-form-field><br>               
+                  <input matInput type="number" id="zip" name="zip" placeholder="10001" formControlName="zip">  
+                <!-- <mat-error *ngIf="checkOutForm.invalid">please enter a valid state</mat-error> -->
+                </mat-form-field><br> 
+                      
               </div>
             </div>
           </div>
@@ -54,26 +55,28 @@
             </div>
             <mat-form-field appearance="fill">
               <label for="cname">Name on Card</label>
-              <input matInput type="text" id="cname" name="cardname" placeholder="John More Doe"  formControlName="nameOnCard" required>
+              <input matInput type="text" id="cname" name="cardname" placeholder="John More Doe" formControlName="nameOnCard" required>
             <mat-error *ngIf="checkOutForm.invalid">please enter a valid card name</mat-error>
             </mat-form-field><br> 
             <mat-form-field appearance="fill">  
               <label for="ccnum">Credit card number</label>
-              <input matInput type="number" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"  formControlName="cardNumber" required>
+              <input matInput type="number" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" formControlName="cardNumber" required>
               <mat-error *ngIf="checkOutForm.invalid">please enter a valid credit number</mat-error>
               </mat-form-field><br> 
               <mat-form-field appearance="fill">
                 <label for="expmonth">Exp Month</label>
-                <input matInput type="number" id="expmonth" name="expmonth" placeholder="September"  formControlName="expMonth" required>
+                <input matInput type="number" id="expmonth" name="expmonth" placeholder="September" formControlName="expMonth" required>
                 <mat-error *ngIf="checkOutForm.invalid">please enter a valid exp month</mat-error>
                 </mat-form-field><br> 
-
-   
-         
+ 
             <div class="row">
               <div class="col-50">
-                <label for="expyear">Exp Year</label>
-                <input matInput type="text" id="expyear" name="expyear" placeholder="2018" formControlName="expYear" required>
+                <mat-form-field appearance="fill">
+                  <label for="expyear">Exp Year</label>
+                  <input matInput type="number" id="expyear" name="expyear" placeholder="2018" formControlName="expYear" required>  
+                <mat-error *ngIf="checkOutForm.invalid">please enter a valid exp month</mat-error>
+                </mat-form-field><br> 
+                
               </div>
               <div class="col-50">
                 <mat-form-field appearance="fill">
@@ -89,32 +92,34 @@
         <!-- <label>
           <input type="checkbox" checked="checked" name="sameadr"> Save details
         </label> -->
-        <mat-form-field appearance="fill">
+        <!-- <mat-form-field appearance="fill"> -->
           <label for="sign-pad">Sign Up</label>
-          <app-signing-pad  matInput type="number" id="s" name="sign-pad" placeholder="352"  ></app-signing-pad>
+          <app-signing-pad  matInput type="number" id="s" name="sign-pad" placeholder="352" ></app-signing-pad>
           <!-- <input matInput type="number" id="s" name="sign-pad" placeholder="352"  formControlName="signPad" required> -->
-          <mat-error *ngIf="checkOutForm.invalid">please enter a valid sign-pad</mat-error>
-          </mat-form-field><br> 
-        
-        <button type="submit" value="Continue to checkout" class="btn" routerLink="/shopping-list" (click)="openDialog()" ></button>
+          <!-- <mat-error *ngIf="checkOutForm.invalid">please enter a valid sign-pad</mat-error>
+          </mat-form-field><br>  -->
+     
+        <input type="submit" value="Continue to checkout" class="btn" (click)="getErrorMessage()" (click)="openDialog()"
+        >
+        <!-- routerLink="/shopping-list"  -->
       </form>
     </div>
   </div>
   <div class="col-25">
     <div class="container">
-      <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-<mat-menu #menu="matMenu">
-  <li class="list-group-item" *ngFor="let item of cartItems">
-    <app-checkout-item [cartItem]="item"></app-checkout-item> 
-</mat-menu>
-    <ul mat-button [matMenuTriggerFor]="menu">  
-      <h4 class="cart">Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>{{productNumber}}</b></span></h4>
+      <!-- <button mat-button (click)="openCart()"></button>
+    <div *ngIf="cart===true" class="inner-row">
+      <li class="list-group-item" *ngFor="let item of cartItems">
+      <app-checkout-item [cartItem]="item"></app-checkout-item> 
+    </div>  -->
+   <ul >  
+      <h4 class="cart" (dblclick)="openCart()">Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>{{productNumber}}</b></span></h4>
       <hr> 
     </ul>
-      <mat-menu #menu="matMenu"  #aboveMenu="matMenu" yPosition="above" class="cartMenu">
+    <div *ngIf="cart===true" class="inner-row">
       <li class="list-group-item" *ngFor="let item of cartItems">
-        <app-checkout-item [cartItem]="item"></app-checkout-item> 
-      </mat-menu>
+      <app-checkout-item [cartItem]="item"></app-checkout-item> 
+    </div> 
       
       <p>Total <span class="price" style="color:black"><b>{{cartTotal}}</b></span></p>
     </div>

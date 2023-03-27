@@ -4,9 +4,16 @@ button {
     height: 26px;
     text-align: center;
     margin: auto;  
+    margin-top: 6px;
 }
 
 .list-group-item {
     width: 72%;
     height: 50%;
+}
+
+img {
+    vertical-align: middle;
+    width: 230px;
+    height: 170px;
 }
