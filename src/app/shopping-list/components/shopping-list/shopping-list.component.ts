@@ -3,12 +3,12 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy
 import {
   ElementRef,
 } from '@angular/core';
-import { Ingredient } from './models/ingredient.model';
+import { Ingredient } from '../../models/ingredient.model';
 
 
-import { CartService } from './services/cart.service';
-import { MessengerService } from './services/messeger.service';
-import { ShoppingListService } from './services/shopping-list.service';
+import { CartService } from '../../services/cart.service';
+import { MessengerService } from '../../services/messeger.service';
+import { ShoppingListService } from '../../services/shopping-list.service';
 
 export class item {
   name: string;

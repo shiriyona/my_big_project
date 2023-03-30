@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Ingredient } from '../models/ingredient.model'; 
-import { ShoppingItem } from '../models/shoppingItem.model'; 
-import { MessengerService } from '../services/messeger.service';
+import { Ingredient } from '../../../models/ingredient.model'; 
+import { ShoppingItem } from '../../../models/shoppingItem.model'; 
+import { MessengerService } from '../../../services/messeger.service';
 
 @Component({
   selector: 'app-shopping-item',
