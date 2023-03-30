@@ -7,7 +7,8 @@ import { MessengerService } from 'src/app/shopping-list/services/messeger.servic
   styleUrls: ['./checkout-item.component.css']
 })
 export class CheckoutItemComponent implements OnInit {
-  @Input() cartItem
+  @Input() cartItem;
+  
   constructor() { }
 
   ngOnInit(): void {

@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { of, Subject } from 'rxjs'
-import { CartItem } from '../models/cart.model'; 
-import { ShoppingItem } from '../models/shoppingItem.model'; 
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +36,5 @@ export class MessengerService {
   getDeletedMsg() {
     return this.deletedproduct;  
   }
-
 
 }

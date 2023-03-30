@@ -1,30 +1,29 @@
-.iconCart{
+.iconCart {
   right: -130px;
   position: absolute;
   top: -64px;
 }
 
 .plus-minus-input {
-    align-items: center;
-  
-    .input-group-field {
-      text-align: center;
-      margin-left: 0.5rem;
-      margin-right: 0.5rem;
-      padding: 1rem;
-  
-      &::-webkit-inner-spin-button,
-      ::-webkit-outer-spin-button {
-        appearance: none;
-      }
+  align-items: center;
+
+  .input-group-field {
+    text-align: center;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 1rem;
+    &::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+      appearance: none;
     }
-  
-.input-group-button {
+  }
+
+  .input-group-button {
     .circle {
-    border-radius: 50%;
-    padding: 0.25em 0.8em;
+      border-radius: 50%;
+      padding: 0.25em 0.8em;
     }
-}
+  }
 }
 
 
@@ -41,21 +40,23 @@ button {
   cursor: pointer;
   font-family: 'Roboto Condensed', sans-serif;
   border-radius: 50px;
-  
+
 }
-      button:focus{
-          outline: none !important;
-      }
+
+button:focus {
+  outline: none !important;
+}
+
 span {
   float: right;
 }
-      
-      p{
-          font-size: 14px;
-      }
+
+p {
+  font-size: 14px;
+}
+
 .shopping-cart {
   display: inline-block;
-  // background: url(cart.png) no-repeat 0 0;
   width: 24px;
   height: 24px;
   margin: 0 10px 0 0;

@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Ingredient } from '../../../models/ingredient.model'; 
-import { ShoppingItem } from '../../../models/shoppingItem.model'; 
+import { ShoppingItem } from '../../../models/shoppingItem.model';
 import { MessengerService } from '../../../services/messeger.service';
 
 @Component({
@@ -11,7 +10,7 @@ import { MessengerService } from '../../../services/messeger.service';
 export class ShoppingItemComponent implements OnInit {
   @Input() productItem: ShoppingItem;
 
-  constructor( private msg: MessengerService,) { }
+  constructor(private msg: MessengerService) { }
 
   ngOnInit(): void {
   }

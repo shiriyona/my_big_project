@@ -1,18 +1,11 @@
-import { Component, Input, IterableDiffers, OnInit, ViewChild } from '@angular/core';
-// import { MatMenuTrigger } from '@angular/material';
-import { CartItem } from '../models/cart.model';
-import { Ingredient } from '../models/ingredient.model';
-import { CartService } from '../services/cart.service';
-import { MessengerService } from '../services/messeger.service';
-
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { CartItem } from '../../../models/cart.model';
+import { CartService } from '../../../services/cart.service';
+import { MessengerService } from '../../../services/messeger.service';
 import { ElementRef } from '@angular/core';
-import { throttleTime } from 'rxjs/operators';
-import { Subscription, fromEvent } from 'rxjs';
-import { ShoppingItem } from '../models/shoppingItem.model';
+import { Subscription } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-// import { fromEvent } from 'rxjs/observable/fromEvent';
-// import { badgeAnimation, circleAnimation } from '../animations/animaions';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -20,15 +13,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
-
   @ViewChild('svg', { read: ElementRef }) public svg: any;
   @ViewChild('wrapper', { read: ElementRef }) public wrapper: any;
-
   @Input() cartItems = [];
   @Input() productItems;
-
   private clickSubscription: Subscription;
-
   items: number = 0;
   resetCart = false
   cartTotal = 0;
@@ -78,31 +67,11 @@ export class ShoppingCartComponent implements OnInit {
 
   resetAll(reset) {
     if (reset === true) {
-      this.cartItems.forEach(c => c.reset()); // or whatever you want to do to it here
+      this.cartItems.forEach(c => c.reset()); 
       this.msg.resetAll(this.resetCart)
     }
-
   }
 
-  deleteProductToCart(product) {
-    //   let productEixst = false;
-    //   for (let i in this.cartItems) {
-    //     if(this.cartItems[i].productId === product.id){
-    //      this.cartItems[i].qty--
-    //      productEixst = true;
-    //      this.productNumber--
-    //      break;
-    //     }
-    //   }
-    //   if(!productEixst){
-    //     this.cartItems.splice(product) 
-    //   }
-
-    // this.cartItems.forEach(item=>{
-    //   this.cartTotal += (item.qty* item.price)
-    //   this.productNumber += (item.qty)
-    // }) 
-  }
   printThisPage(id) {
     var printContents = document.getElementById(id).innerHTML;
     var originalContents = document.body.innerHTML;
@@ -121,7 +90,6 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   onPagmentPage(cartItems) {
-    // this.productItems.push(cartItems)
     this.cartService.onPaymentItems(cartItems);
     this.cartService.onPaymentNumber(this.productNumber);
     this.cartService.onPymentSum(this.cartTotal);

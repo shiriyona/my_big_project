@@ -1,0 +1,11 @@
+<div id="printCart">
+  <div class="cart-item">
+    <img class="bd-placeholder-img card-img-top p-2" width="100%" [src]="cartItem.imageUrl">
+    <span>{{ cartItem.productName }}: </span> <span> {{ cartItem.price }}$</span><br>
+    <strong> total price: </strong> {{ (cartItem.qty *cartItem.price) }} '$'<br>
+    <strong> items:</strong> {{cartItem.qty}} <br>
+    <div class="btn-group">
+      <button type="button" class="btn btn-sm btn-primary product-btn" (click)="onMinus()">-</button>
+    </div>
+  </div>
+</div>

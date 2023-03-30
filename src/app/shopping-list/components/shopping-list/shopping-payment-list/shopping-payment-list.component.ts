@@ -1,11 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CartItem } from '../models/cart.model'; 
-import { ShoppingItem } from '../models/shoppingItem.model'; 
-import { MessengerService } from '../services/messeger.service';
-import { Router } from '@angular/router'
+import { ShoppingItem } from '../../../models/shoppingItem.model';
+import { MessengerService } from '../../../services/messeger.service';
 import { Location } from '@angular/common'
-import { CartService } from '../services/cart.service';
-
+import { CartService } from '../../../services/cart.service';
 
 
 @Component({
@@ -15,45 +12,38 @@ import { CartService } from '../services/cart.service';
 })
 export class ShoppingPaymentListComponent implements OnInit {
   cartItems: ShoppingItem[];
-  items=[]
-
+  items = []
   cartTotal = 0;
   productNumber = 0;
 
-  constructor(
-    private msg: MessengerService, private cartService: CartService, private location: Location ) { }
+  constructor(private cartService: CartService, private location: Location) { }
 
   ngOnInit() {
-    // this.msg.getMsg().subscribe((product: CartItem) => {
-    //   this.addProductToCart(product)   
-    // });
     this.getProducts();
   }
 
-  printThisPage(id){
+  printThisPage(id) {
     var printContents = document.getElementById(id).innerHTML;
-	  var originalContents = document.body.innerHTML;
-		document.body.innerHTML = printContents;
+    var originalContents = document.body.innerHTML;
+    document.body.innerHTML = printContents;
     window.print();
     document.body.innerHTML = originalContents;
     window.close();
     document.close();
   }
 
-  getProducts(){
+  getProducts() {
     this.cartItems = this.cartService.onPaymentPage()
-    this.productNumber  = this.cartService.onProductNumberPaymentPage()
+    this.productNumber = this.cartService.onProductNumberPaymentPage()
     this.cartTotal = this.cartService.onSumPaymentPage()
   }
 
-  printThisPage1(id){
+  printThisPage1(id) {
     var printContents = document.getElementById(id).innerHTML;
-		var originalContents = document.body.innerHTML;
-		document.body.innerHTML = printContents;
-    // window.onafterprint = window.close; 
+    var originalContents = document.body.innerHTML;
+    document.body.innerHTML = printContents;
     window.focus();
     window.print();
-    // window.close();
     document.body.innerHTML = originalContents;
     window.close();
   }

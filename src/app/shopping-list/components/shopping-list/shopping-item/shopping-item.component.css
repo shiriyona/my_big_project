@@ -1,9 +1,8 @@
 button {
-    /* left: 890px; */
-    position:absolute;
+    position: absolute;
     height: 26px;
     text-align: center;
-    margin: auto;  
+    margin: auto;
     margin-top: 6px;
 }
 

@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from '../../services/cart.service';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {MatDialog} from '@angular/material/dialog';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import {
-  trigger,state,style,animate,transition
+  trigger, state, style, animate, transition
 } from '@angular/animations';
 import { Router } from '@angular/router';
-import { MessengerService } from '../../services/messeger.service';
+import { CartService } from 'src/app/shopping-list/services/cart.service';
+import { MessengerService } from 'src/app/shopping-list/services/messeger.service';
+
 
 
 @Component({
@@ -18,7 +19,7 @@ import { MessengerService } from '../../services/messeger.service';
       state('show', style({
         opacity: 1
       })),
-      state('hide',   style({
+      state('hide', style({
         opacity: 0
       })),
       transition('show => hide', animate('600ms ease-out')),
@@ -55,59 +56,52 @@ export class CheckoutComponent implements OnInit {
     this.getProducts();
   }
 
-  getProducts(){
+  getProducts() {
     this.cartItems = this.cartService.onPaymentPage()
-    this.productNumber  = this.cartService.onProductNumberPaymentPage()
+    this.productNumber = this.cartService.onProductNumberPaymentPage()
     this.cartTotal = this.cartService.onSumPaymentPage()
   }
 
-  openCart(){
-    if(this.cart===false) {
-      this.cart=true
+  openCart() {
+    if (this.cart === false) {
+      this.cart = true
     }
-    else if(this.cart===true) {
-      this.cart=false
+    else if (this.cart === true) {
+      this.cart = false
     }
   }
 
-  getErrorMessage() {  
- 
+  getErrorMessage() {
     console.warn(this.checkOutForm.value);
     console.log(this.checkOutForm);
-    // this.checkOutForm.reset();
     if (this.checkOutForm.invalid) {
       return 'You must enter a value';
     }
-    else   
-    {
+    else {
       this.checkOutFormFull = true
     }
-
     return this.checkOutForm.hasError('email') ? 'Not a valid email' : '';
   }
 
-  onCheckOut(){
+  onCheckOut() {
     console.warn(this.checkOutForm.value);
     console.log(this.checkOutForm);
     this.checkOutForm.reset();
   }
 
   openDialog() {
-    if (this.checkOutFormFull===true) {
-      this.resetCart=true
+    if (this.checkOutFormFull === true) {
+      this.resetCart = true
       this.msg.resetAll(this.resetCart);
-      // this.router.forEach(c => c.reset()(['/shopping-list']));
       this.router.navigate(['/shopping-list'])
-    const dialogRef = this.dialog.open(CheckOutDialog);
+      const dialogRef = this.dialog.open(CheckOutDialog);
 
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-
-    
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+      });
+    }
   }
-}
 }
 
 @Component({
@@ -118,7 +112,7 @@ export class CheckoutComponent implements OnInit {
       state('show', style({
         opacity: 1
       })),
-      state('hide',   style({
+      state('hide', style({
         opacity: 0
       })),
       transition('show => hide', animate('600ms ease-out')),
@@ -135,15 +129,14 @@ export class CheckOutDialog {
     return this.show ? 'show' : 'hide'
   }
 
-
   toggle() {
     this.show = !this.show;
   }
 
-  printThisPage(id){
+  printThisPage(id) {
     var printContents = document.getElementById(id).innerHTML;
-	  var originalContents = document.body.innerHTML;
-		document.body.innerHTML = printContents;
+    var originalContents = document.body.innerHTML;
+    document.body.innerHTML = printContents;
     window.print();
     document.body.innerHTML = originalContents;
     window.close();

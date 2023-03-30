@@ -14,7 +14,6 @@ import {
             (touchstart)="onMouseDown($event)" #signPad width="350" height="200">
     </canvas>
     <button (click)="clearSignature()">Clear</button>
-    <!-- <button (click)="saveSignature()">Save</button> -->
   `,
   styles: [
     `
@@ -43,9 +42,9 @@ import {
   ],
 })
 export class SigningPadComponent {
-  @ViewChild('signPad', { static: false })
-  signPad!: ElementRef<HTMLCanvasElement>;
+  @ViewChild('signPad', { static: false })  
   @Output() signatureSaved = new EventEmitter();
+  signPad!: ElementRef<HTMLCanvasElement>;
   private signatureImg?: string;
   private sigPadElement: any;
   private context: any;
@@ -102,4 +101,5 @@ export class SigningPadComponent {
     const y = cords.clientY - bounds.top;
     return { x, y };
   }
+  
 }

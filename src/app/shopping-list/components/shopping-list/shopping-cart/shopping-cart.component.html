@@ -1,0 +1,23 @@
+<ul mat-button [matMenuTriggerFor]="menu"><span>{{ productNumber }}</span>
+  <li content="width=device-width, initial-scale=1" class="fa fa-shopping-cart" style="font-size: 36px;"
+    ng-reflect-router-link-active="">
+  </li>
+</ul>
+<mat-menu #menu="matMenu" #aboveMenu="matMenu" yPosition="above" class="cartMenu">
+  <h3 class="hh">Cart</h3><br>
+  <ul *ngIf="cartItems.length > 0" class="list-group">
+    <li class="list-group-item" *ngFor="let item of cartItems">
+      <app-shopping-cart-item [cartItem]="item"></app-shopping-cart-item>
+    </li>
+    <li class="list-group-item active">
+      <strong>items</strong> {{ productNumber }} <br>
+      <strong>Total</strong> {{ cartTotal | currency:'$' }}
+    </li>
+    <br>
+    <li routerLinkActive="active"><a routerLink="shopping-list/shopping-payment">
+        <button class="btn btn-sm btn-primary" (click)="onPagmentPage(cartItems)">
+          <strong>Payment</strong>
+        </button> </a></li>
+  </ul>
+  <li class="list-group-item" *ngFor="let item of productItems">
+</mat-menu>
