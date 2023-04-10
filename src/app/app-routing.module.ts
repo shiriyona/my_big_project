@@ -8,7 +8,7 @@ const appRoutes: Routes = [
     { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.loginModule)},
     {
         path: '',
-        redirectTo: 'shopping-list',
+        redirectTo: 'login',
         pathMatch: 'full'
     }
 ];

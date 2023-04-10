@@ -9,7 +9,6 @@ import { CartService } from 'src/app/shopping-list/services/cart.service';
 import { MessengerService } from 'src/app/shopping-list/services/messeger.service';
 
 
-
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -90,12 +89,11 @@ export class CheckoutComponent implements OnInit {
   }
 
   openDialog() {
-    if (this.checkOutFormFull === true) {
+    if (this.checkOutFormFull === false) {
       this.resetCart = true
       this.msg.resetAll(this.resetCart);
       this.router.navigate(['/shopping-list'])
       const dialogRef = this.dialog.open(CheckOutDialog);
-
 
       dialogRef.afterClosed().subscribe(result => {
         console.log(`Dialog result: ${result}`);
@@ -107,6 +105,7 @@ export class CheckoutComponent implements OnInit {
 @Component({
   selector: 'check-out-dialog',
   templateUrl: 'check-out-dialog.html',
+  styleUrls: ['./checkout-dialog.component.scss'],
   animations: [
     trigger('popOverState', [
       state('show', style({

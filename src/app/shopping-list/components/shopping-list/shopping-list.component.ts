@@ -1,7 +1,5 @@
 import { ChangeDetectorRef, Component, Input, OnInit, ViewChild } from '@angular/core';
-import {
-  ElementRef,
-} from '@angular/core';
+import { ElementRef } from '@angular/core';
 import { Ingredient } from '../../models/ingredient.model';
 import { MessengerService } from '../../services/messeger.service';
 import { ShoppingListService } from '../../services/shopping-list.service';
@@ -47,7 +45,7 @@ export class ShoppingListComponent implements OnInit {
   }
 
   postList() {
-    this.slService.getIngredients().subscribe((response) => {
+    this.slService.getShoppingItems().subscribe((response) => {
       this.ingredients = response;
       console.log(this.ingredients);
     });

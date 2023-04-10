@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -7,19 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  username : string ="";
+username : string ="";
 password : string ="";
 show: boolean= false;
-makeLogin=false
+madeLogin=false
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
 
   submit(){
   console.log("user name is " + this.username)
-  this.makeLogin=true
+  console.log(this.madeLogin)
+  this.madeLogin = true;
+  this.loginService.login(this.madeLogin)
   this.clear();
   }
 

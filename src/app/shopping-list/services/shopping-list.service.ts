@@ -1,4 +1,3 @@
-import { Ingredient } from '../models/ingredient.model';
 import { Ingredient as firstIngredient } from '../models/ingredient.model'; 
 import { EventEmitter, Injectable } from '@angular/core';
 import { ShoppingItem } from '../models/shoppingItem.model';
@@ -31,31 +30,27 @@ export class ShoppingListService {
     new ShoppingItem(16, 'dianthus chinensis', 3, '../../../../assets/img/my-dianthus-chinensis-flower.jpg'),
   ];
 
-
-  getIngredients():Observable<any> {
+  getShoppingItems():Observable<any> {
     return  of(this.shoppingItems.slice());
   }
 
-  addIngredient(ShoppingItem: ShoppingItem) {
+  addShoppingItem(ShoppingItem: ShoppingItem) {
     this.shoppingItems.push(ShoppingItem);
     this.shoppingItemsChanged.emit(this.shoppingItems.slice());
   }
 
-  addIngredients(items: ShoppingItem[]) {
+  addShoppingItems(items: ShoppingItem[]) {
     this.shoppingItems.push(...items);
     this.shoppingItemsChanged.emit(this.shoppingItems.slice());
   }
 
   onAddItem() {
     for (let item of this.shoppingItems) {
-      this.addIngredient(item);
+      this.addShoppingItem(item);
     }
     this.shoppingItems.push(...this.shoppingItems);
     this.shoppingItemsChanged.emit(this.shoppingItems.slice());
   }
-
-
-
 
   onPlusItem(item: ShoppingItem) {
     this.shoppingItems.push(firstIngredient[this.amount++])

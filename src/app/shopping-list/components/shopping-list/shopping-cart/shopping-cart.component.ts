@@ -35,7 +35,6 @@ export class ShoppingCartComponent implements OnInit {
       this.addProductToCart(product)
     });
     this.resetAll(this.msg.resetCart())
-
   }
 
   addProductToCart(product: CartItem) {
@@ -81,7 +80,6 @@ export class ShoppingCartComponent implements OnInit {
     window.close();
     document.close();
   }
-
 
   public ngOnDestroy(): void {
     if (this.clickSubscription) {
