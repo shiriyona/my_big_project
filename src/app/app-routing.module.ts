@@ -5,10 +5,9 @@ const appRoutes: Routes = [
     { path: 'flowers', loadChildren: () => import('./contacts/contacts.module').then(m => m.ContactsModule)},
     { path: 'shopping-list', loadChildren: () => import('./shopping-list/shoppingList.module').then(m => m.ShoppingListModule)},
     { path: 'drawing', loadChildren: () => import('./drawings/drawing.module').then(m => m.DrawingModule)},
-    { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.loginModule)},
     {
         path: '',
-        redirectTo: 'login',
+        redirectTo: 'flowers',
         pathMatch: 'full'
     }
 ];

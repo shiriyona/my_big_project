@@ -23,6 +23,8 @@ export class MessengerService {
   sendMsg(product) {
     console.log(product)
     this.subject.next(product)
+    // this.subject.next(
+    //   this.subject.getValue().filter(song => (song.id !== id))
   }
 
   getMsg() {

@@ -52,7 +52,8 @@ import { ShoppingListModule } from './shopping-list/shoppingList.module';
     ContactsModule,
     DrawingModule,
     loginModule,
-    ShoppingListModule
+    ShoppingListModule,
+    loginModule
   ],
   exports: [MatTableModule],
   providers: [],

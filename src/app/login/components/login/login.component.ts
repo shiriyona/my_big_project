@@ -7,28 +7,26 @@ import { LoginService } from '../../services/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-username : string ="";
-password : string ="";
-show: boolean= false;
-madeLogin=false
+  username: string = "";
+  password: string = "";
+  show: boolean = false;
+  madeLogin = false;
 
   constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
 
-  submit(){
-  console.log("user name is " + this.username)
-  console.log(this.madeLogin)
-  this.madeLogin = true;
-  this.loginService.login(this.madeLogin)
-  this.clear();
+  submit() {
+    console.log("user name is " + this.username);
+    this.madeLogin = true;
+    this.loginService.login(this.madeLogin)
+    this.clear();
   }
 
-  clear(){
-  this.username ="";
-  this.password = "";
-  this.show = true;
-}
+  clear() {
+    this.username = "";
+    this.password = "";
+    this.show = true;
+  }
 }
