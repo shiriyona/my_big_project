@@ -8,13 +8,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
 import { LoginComponent } from './components/login/login.component';
+import { LogOutComponent } from './components/login/log-out/log-out.component';
 
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    LogOutComponent
   ],
   imports: [
     CommonModule,
@@ -28,8 +31,9 @@ import { LoginComponent } from './components/login/login.component';
     MatExpansionModule,
     MatDialogModule,
     MatTabsModule,
+    MatMenuModule
   ],
   providers: [],
-  exports: [LoginComponent]
+  exports: [LoginComponent, LogOutComponent]
 })
 export class loginModule { }

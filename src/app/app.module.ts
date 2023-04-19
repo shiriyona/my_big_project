@@ -24,10 +24,11 @@ import { ContactsModule } from './contacts/contacts.module';
 import { loginModule } from './login/login.module';
 import { ShoppingListModule } from './shopping-list/shoppingList.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

@@ -89,7 +89,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   openDialog() {
-    if (this.checkOutFormFull === false) {
+    if (this.checkOutFormFull === true) {
       this.resetCart = true
       this.msg.resetAll(this.resetCart);
       this.router.navigate(['/shopping-list'])

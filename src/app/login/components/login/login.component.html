@@ -1,14 +1,18 @@
-<br><form class="loginForm">
+<br><form class="loginForm" [formGroup]="loginForm">
     <h3>Login</h3>
-<mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Last Name</mat-label>
-    <input matInput placeholder="Enter your userName" name="usename"
-    [(ngModel)] ="username">
-    </mat-form-field>
-<mat-form-field class="example-full-width" appearance="fill">
-<mat-label>Password</mat-label>
-<input matInput placeholder="Enter your password" value="" name="password" type="password" [(ngModel)]= "password">
-</mat-form-field>
-<button class="submit" mat-raised-button color="primary" (click)="submit()">Submit</button>
+    <mat-form-field appearance="fill">
+        <label for="fname"><i class="fa fa-user"></i> UserName</label>
+        <input matInput type="text" id="username" name="usename" placeholder="Enter your userName"
+          formControlName="fullName" required>
+        <mat-error *ngIf="loginForm.invalid">please enter a valid userName</mat-error>
+      </mat-form-field><br>
+      <mat-form-field appearance="fill">
+        <label for="fname"><i class="fa fa-user"></i> Password</label>
+        <input matInput id="username" name="password" type="password" placeholder="Enter your userName"
+          formControlName="password" required>
+        <mat-error *ngIf="loginForm.invalid">please enter a valid password</mat-error>
+      </mat-form-field><br>
+<button class="submit" mat-raised-button color="primary" (click)="getErrorMessage()" (click)="submit()">Submit</button>
 <span *ngIf="show"> <button mat-button color="accent">Login success !!</button></span>
 </form>
+
