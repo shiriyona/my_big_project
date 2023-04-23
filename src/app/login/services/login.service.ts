@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class LoginService {
   madeLogin = false;
   userImg: '../../../../assets/img/icon_user.png';
-  userLogin = "";
+  loginBackgroundImg: '../../../../assets/img/water-background.jpg';
 
   constructor() {
   }
@@ -14,8 +14,21 @@ export class LoginService {
   onInit() { }
 
   login(login) {
-    console.log(this.madeLogin)
     this.madeLogin = login;
+    localStorage.setItem("loggenIn", this.madeLogin + '');
+  }
+
+  checkLogin() {
+    if (localStorage.getItem('loggenIn') === 'true') {
+      this.madeLogin = true;
+    } else {
+      this.madeLogin = false;
+    }
+  }
+
+  logout () {
+    this.madeLogin = false;
+    localStorage.setItem("loggenIn", this.madeLogin + '');
   }
 
   // clickCounter() {

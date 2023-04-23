@@ -13,6 +13,8 @@ export class LoginComponent implements OnInit {
   password: string = "123456";
   show: boolean = false;
   madeLogin = false;
+  correctName = false;
+  correctPassword= false;
 
   loginForm = new FormGroup({
     fullName: new FormControl('', [Validators.required]),
@@ -27,13 +29,19 @@ export class LoginComponent implements OnInit {
   getErrorMessage() {
     console.warn(this.loginForm.value);
     console.log(this.loginForm);
+    if (this.loginForm.value.fullName === this.username){
+      this.correctName = true;
+    }
+    if (this.loginForm.value.password === this.password){
+      this.correctPassword = true;
+    }
     if (this.loginForm.invalid) {
       return 'You must enter a value';
     }
     else if (this.loginForm.value.fullName === this.username && this.loginForm.value.password === this.password){
       this.madeLogin = true
     }
-    return this.loginForm.hasError('email') ? 'Not a valid email' : '';
+    return this.loginForm.hasError('fullName') ? 'Not a valid email' : '';
   }
 
   submit() {

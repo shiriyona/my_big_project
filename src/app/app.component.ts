@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginService } from './login/services/login.service';
-import { useLocalStorage } from './useLocalStorage';
+
 
 @Component({
   selector: 'app-root',
@@ -14,6 +14,7 @@ export class AppComponent {
   constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
+    this.loginService.checkLogin();
   }
 
   onNavigate(feature: string) {
@@ -21,7 +22,6 @@ export class AppComponent {
   }
 
   isLoggendIn() {
-    const[state, setState] = useLocalStorage('madeLogin', true)
     return  this.loginService.madeLogin;
   }
 

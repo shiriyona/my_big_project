@@ -1,18 +1,23 @@
-<br><form class="loginForm" [formGroup]="loginForm">
+<body>
+<br>
+<form class="loginForm" [formGroup]="loginForm"> 
     <h3>Login</h3>
     <mat-form-field appearance="fill">
+      <img class="example-element-symbol userIcon" src="../../../../assets/img/icon_user.png">
         <label for="fname"><i class="fa fa-user"></i> UserName</label>
         <input matInput type="text" id="username" name="usename" placeholder="Enter your userName"
           formControlName="fullName" required>
-        <mat-error *ngIf="loginForm.invalid">please enter a valid userName</mat-error>
+        <mat-error *ngIf="loginForm.invalid || this.loginForm.value.fullName != this.username">please enter a valid userName</mat-error>
       </mat-form-field><br>
       <mat-form-field appearance="fill">
+        <img class="example-element-symbol userIcon" src="../../../../assets/img/password-icon.png">
         <label for="fname"><i class="fa fa-user"></i> Password</label>
         <input matInput id="username" name="password" type="password" placeholder="Enter your userName"
           formControlName="password" required>
-        <mat-error *ngIf="loginForm.invalid">please enter a valid password</mat-error>
+        <mat-error *ngIf="loginForm.invalid || correctPassword===true">please enter a valid password</mat-error>
       </mat-form-field><br>
-<button class="submit" mat-raised-button color="primary" (click)="getErrorMessage()" (click)="submit()">Submit</button>
+<button class="submit" mat-raised-button color="primary" (click)="getErrorMessage()" (click)="submit()">Login</button>
 <span *ngIf="show"> <button mat-button color="accent">Login success !!</button></span>
 </form>
+</body>
 

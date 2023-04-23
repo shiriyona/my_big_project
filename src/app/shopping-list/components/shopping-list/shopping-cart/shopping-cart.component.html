@@ -4,7 +4,8 @@
   </li>
 </ul>
 <mat-menu #menu="matMenu" #aboveMenu="matMenu" yPosition="above" class="cartMenu">
-  <h3 class="hh">Cart</h3><br>
+  <form>
+  <h3 class="title">Cart</h3><br>
   <ul *ngIf="cartItems.length > 0" class="list-group">
     <li class="list-group-item" *ngFor="let item of cartItems">
       <app-shopping-cart-item [cartItem]="item"></app-shopping-cart-item>
@@ -18,6 +19,6 @@
         <button class="btn btn-sm btn-primary" (click)="onPagmentPage(cartItems)">
           <strong>Payment</strong>
         </button> </a></li>
-  </ul>
+  </ul></form>
   <li class="list-group-item" *ngFor="let item of productItems">
 </mat-menu>

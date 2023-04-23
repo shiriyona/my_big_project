@@ -19,6 +19,7 @@ import { ProvidersListComponent } from './components/providers-list/providers-li
 import { ProviderDialogComponent } from './components/providers-list/provider-dialog/provider-dialog.component';
 import { AddProviderDialogComponent } from './components/providers-list/add-provider-dialog/add-provider-dialog.component';
 import { DialogContentExampleDialog, UsersComponent } from './components/users/users.component';
+import { EmailsComponent } from './components/emails/emails.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { DialogContentExampleDialog, UsersComponent } from './components/users/u
     ProviderDialogComponent,
     AddProviderDialogComponent,
     UsersComponent,
-    DialogContentExampleDialog
+    DialogContentExampleDialog,
+    EmailsComponent
   ],
   imports: [
     CommonModule,

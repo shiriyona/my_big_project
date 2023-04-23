@@ -7,7 +7,6 @@ import { LoginService } from 'src/app/login/services/login.service';
   styleUrls: ['./log-out.component.css']
 })
 export class LogOutComponent implements OnInit {
-  madeLogin = true;
 
   constructor(private loginService: LoginService) { }
 
@@ -15,8 +14,7 @@ export class LogOutComponent implements OnInit {
   }
 
   submit() {
-    this.madeLogin = false;
-    this.loginService.login(this.madeLogin)
+    this.loginService.logout();
   }
 
 }

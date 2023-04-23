@@ -1,5 +1,6 @@
 .list-group-item {
   width: 300px;
+  padding: 2px;
 }
 
 .cartMenu {
@@ -31,4 +32,14 @@ button {
   background-color: black;
   border-color: black;
   overflow: hidden;
+  padding: 2px;
+}
+
+li{
+  padding: 2px;
+}
+
+form {
+  overflow: hidden;
+  padding: 2px 2px;
 }
