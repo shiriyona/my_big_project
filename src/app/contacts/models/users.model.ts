@@ -17,6 +17,5 @@ export class User {
     this.age = age;
     this.status = status;
     this.img = img;
-
   }
 }

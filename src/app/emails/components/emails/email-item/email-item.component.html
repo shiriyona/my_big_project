@@ -1,0 +1,6 @@
+<div  (mouseover)="changeText=true" (mouseout)="changeText=false">
+    <div class="name">{{email?.name}}</div> 
+    <div class="subject">{{email?.subject}}</div>
+    <div class="time">{{email?.time}}</div> 
+    <img *ngIf="changeText" class="trash-icon" src="../../../../assets/img/trash-icon.png">
+</div>

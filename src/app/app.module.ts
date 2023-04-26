@@ -23,6 +23,7 @@ import { DrawingModule } from './drawings/drawing.module';
 import { ContactsModule } from './contacts/contacts.module';
 import { loginModule } from './login/login.module';
 import { ShoppingListModule } from './shopping-list/shoppingList.module';
+import { EmailssModule } from './emails/emails.module';
 
 
 @NgModule({
@@ -54,7 +55,7 @@ import { ShoppingListModule } from './shopping-list/shoppingList.module';
     DrawingModule,
     loginModule,
     ShoppingListModule,
-    loginModule
+    EmailssModule
   ],
   exports: [MatTableModule],
   providers: [],

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProvidersListComponent } from './components/providers-list/providers-list.component';
 import { UsersComponent } from './components/users/users.component';
-import { EmailsComponent } from './components/emails/emails.component';
+import { EmailsComponent } from '../emails/components/emails/emails.component';
 import { TabComponent } from './components/tab/tab.component';
 
 

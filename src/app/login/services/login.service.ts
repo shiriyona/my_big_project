@@ -31,21 +31,9 @@ export class LoginService {
     localStorage.setItem("loggenIn", this.madeLogin + '');
   }
 
-  // clickCounter() {
-  //   localStorage.madeLogin = true;
-  //   localStorage.setItem(this.userLogin, "true");
-  //   document.getElementById("demo").innerHTML = localStorage.madeLogin;
-  // }
-
   submitLogin() {
     console.log(this.madeLogin)
     return this.madeLogin;
   }
-
-  // clickCounter() {
-  //   if (localStorage.madeLogin === true) {
-  //     localStorage.madeLogin = (localStorage.madeLogin = true);
-  //   document.getElementById("demo").innerHTML = localStorage.madeLogin;
-  // }
 
 }

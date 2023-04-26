@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>New Email</h2>
+<mat-dialog-content class="mat-typography">  
+  <p>id:</p>
+  <input #idInput><br>
+  <p>name:</p>
+  <input #nameInput><br>
+  <p>subject:</p>
+  <input #subjectInput><br>
+  <p>time:</p>
+  <input #timeInput><br>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="addEmail()" class="btn btn-success">send email</button>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions>
