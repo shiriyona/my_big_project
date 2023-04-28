@@ -1,0 +1,16 @@
+.name{
+    padding: 5px;  
+}
+
+.subject{
+    padding: 4px;  
+}
+
+.time {
+    right: 5px;
+    position: absolute;
+}
+
+trash-icon{
+    cursor: pointer;
+}

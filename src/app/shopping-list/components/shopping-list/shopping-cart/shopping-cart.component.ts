@@ -87,10 +87,19 @@ export class ShoppingCartComponent implements OnInit {
     }
   }
 
+  deleteProduct(deletedproduct){
+    for (let i =  this.productNumber - 1; i >= 0; i--) {
+      if (this.cartItems[i].productId === deletedproduct.productId) {
+        this.cartItems.splice(i, 1);
+        this.productNumber--;
+      }
+    } ;  
+  }
+
   onPagmentPage(cartItems) {
     this.cartService.onPaymentItems(cartItems);
     this.cartService.onPaymentNumber(this.productNumber);
-    this.cartService.onPymentSum(this.cartTotal);
+    this.cartService.onPaymentSum(this.cartTotal);
   }
 }
 

@@ -7,18 +7,23 @@
   <form>
   <h3 class="title">Cart</h3><br>
   <ul *ngIf="cartItems.length > 0" class="list-group">
+    <cdk-virtual-scroll-viewport itemSize="3" class="cart-scroll">
     <li class="list-group-item" *ngFor="let item of cartItems">
       <app-shopping-cart-item [cartItem]="item"></app-shopping-cart-item>
+      <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-primary minus-button" (click)="deleteProduct(item)">-</button>
+      </div>
     </li>
-    <li class="list-group-item active">
+  </cdk-virtual-scroll-viewport>
+    <li class="list-group-item active total-payment">
       <strong>items</strong> {{ productNumber }} <br>
       <strong>Total</strong> {{ cartTotal | currency:'$' }}
     </li>
     <br>
     <li routerLinkActive="active"><a routerLink="shopping-list/shopping-payment">
-        <button class="btn btn-sm btn-primary" (click)="onPagmentPage(cartItems)">
+        <button class="btn btn-sm btn-primary total-payment" (click)="onPagmentPage(cartItems)">
           <strong>Payment</strong>
-        </button> </a></li>
+        </button> </a></li> 
   </ul></form>
   <li class="list-group-item" *ngFor="let item of productItems">
 </mat-menu>

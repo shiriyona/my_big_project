@@ -19,7 +19,7 @@ export class CartService {
     this.productNumber = productNumber
   }
 
-  onPymentSum(cartTotal): void {
+  onPaymentSum(cartTotal): void {
     this.cartTotal = cartTotal;
   }
 
@@ -32,7 +32,15 @@ export class CartService {
   }
 
   onSumPaymentPage(): number {
-    return this.cartTotal
+    return this.cartTotal;
+  }
+
+  deleteProduct(deletedproduct){
+    for (let i =  this.cartTotal - 1; i >= 0; i--) {
+      if (this.allProducts[i].id === deletedproduct.productId) {
+        this.allProducts.splice(i, 1);
+      }
+    } ;  
   }
   
 }

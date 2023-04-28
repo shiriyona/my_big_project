@@ -1,28 +1,26 @@
-<div class="new-email">
-    <button class="new-email-button" (click)="openDialog()">New Email</button>    
-</div>
-<button class="new-email-button" (click)="add()">add</button>
-<button>sort by data</button>
-<div>
-</div>
-<div class="email-wrapper">
-    <div class="email-list">
-        <cdk-virtual-scroll-viewport itemSize="5" class="scroll-data">
-            <div class="email-data" *cdkVirtualFor="let email of emails" (click)="onSelectRow(email)"> 
-                <div  (mouseover)="changeText=true" (mouseout)="changeText=false">
-                    <div class="name">{{email?.name}}</div> 
-                    <div class="subject">{{email?.subject}}</div>
-                    <div class="time">{{email?.time}}</div> 
-                    <img *ngIf="changeText" class="trash-icon" src="../../../../assets/img/trash-icon.png">
-                </div>
-            </div>
-        </cdk-virtual-scroll-viewport>
+<div class="email">
+    <div class="new-email">
+        <button class="new-email-button" (click)="openDialog()">New Email</button>    
     </div>
-    <div class="selected-email">
-        <div *ngIf="selectedRow" class="selected-row">
-           <div class="name">{{selectedRow?.name}}</div> 
-           <div class="subject">{{selectedRow?.subject}}</div>
-           <div class="time">{{selectedRow?.time}}</div> 
-        </div>        
+    <!-- <button class="new-email-button" (click)="add()">add</button> -->
+    <!-- <button>sort by data</button> -->
+    <div>
+    </div>
+    <div class="email-wrapper">
+        <div class="email-list">
+            <cdk-virtual-scroll-viewport itemSize="5" class="scroll-data">
+                <div class="email-data" *cdkVirtualFor="let email of emails" (click)="onSelectRow(email)"> 
+                    <app-email-item [email]="email"></app-email-item>
+                </div>
+            </cdk-virtual-scroll-viewport>
+        </div>
+        <div class="selected-email">
+            <div *ngIf="selectedRow" class="selected-row">
+            <div class="name">{{selectedRow?.name}}</div> 
+            <div class="subject">{{selectedRow?.subject}}</div>   
+            <div class="description">{{selectedRow?.description}}</div>     
+            <div class="time">{{selectedRow?.time}}</div> 
+            </div>        
+        </div>
     </div>
 </div>

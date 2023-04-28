@@ -5,15 +5,13 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class MessengerService {
-
   subject = new Subject();
-  deletedproduct
   reset=false
   
   constructor() { }
 
   resetAll(resetCart){
-    this.reset=resetCart
+    this.reset = resetCart
   }
 
   resetCart(){
@@ -23,20 +21,10 @@ export class MessengerService {
   sendMsg(product) {
     console.log(product)
     this.subject.next(product)
-    // this.subject.next(
-    //   this.subject.getValue().filter(song => (song.id !== id))
   }
 
   getMsg() {
     return this.subject.asObservable()
-  }
-
-  deleteProduct(product){
-    this.deletedproduct = product;  
-  }
-  
-  getDeletedMsg() {
-    return this.deletedproduct;  
   }
 
 }

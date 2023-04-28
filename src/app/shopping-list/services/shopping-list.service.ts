@@ -1,4 +1,3 @@
-import { Ingredient as firstIngredient } from '../models/ingredient.model'; 
 import { EventEmitter, Injectable } from '@angular/core';
 import { ShoppingItem } from '../models/shoppingItem.model';
 import { Observable, of } from 'rxjs';
@@ -53,7 +52,6 @@ export class ShoppingListService {
   }
 
   onPlusItem(item: ShoppingItem) {
-    this.shoppingItems.push(firstIngredient[this.amount++])
     this.shoppingItems.push(item);
     this.shoppingItemsChanged.emit(this.shoppingItems.slice());
 
