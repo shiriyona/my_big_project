@@ -5,6 +5,9 @@
 <div id="printThisCart1" class="cartOfItems">
   <li class="list-group-item" *ngFor="let item of cartItems">
     <app-shopping-payment-item [cartItem]="item"></app-shopping-payment-item>
+    <div class="btn-group">
+      <button type="button" class="btn btn-sm btn-primary minus-button" (click)="deleteProduct(item)">-</button>
+    </div>
     <div class="formCart">
     </div>
 </div>

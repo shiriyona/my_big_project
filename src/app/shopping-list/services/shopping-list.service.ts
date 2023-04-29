@@ -54,7 +54,6 @@ export class ShoppingListService {
   onPlusItem(item: ShoppingItem) {
     this.shoppingItems.push(item);
     this.shoppingItemsChanged.emit(this.shoppingItems.slice());
-
   }
 
 }

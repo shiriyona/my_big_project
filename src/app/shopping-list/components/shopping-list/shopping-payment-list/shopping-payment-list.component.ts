@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ShoppingItem } from '../../../models/shoppingItem.model';
-import { MessengerService } from '../../../services/messeger.service';
 import { Location } from '@angular/common'
 import { CartService } from '../../../services/cart.service';
+import { CartItem } from 'src/app/shopping-list/models/cart.model';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { CartService } from '../../../services/cart.service';
   styleUrls: ['./shopping-payment-list.component.css']
 })
 export class ShoppingPaymentListComponent implements OnInit {
-  cartItems: ShoppingItem[];
+  cartItems: CartItem[];
   items = []
   cartTotal = 0;
   productNumber = 0;
@@ -36,6 +36,21 @@ export class ShoppingPaymentListComponent implements OnInit {
     this.cartItems = this.cartService.onPaymentPage()
     this.productNumber = this.cartService.onProductNumberPaymentPage()
     this.cartTotal = this.cartService.onSumPaymentPage()
+  }
+
+  deleteProduct(deletedproduct){
+    for (let i =  this.cartItems.length - 1; i >= 0; i--) {
+      if (this.cartItems[i].productId === deletedproduct.productId) {
+        if(this.cartItems[i].qty===1) {
+          this.cartItems.splice(i, 1);
+          this.productNumber--;
+        }
+        else {
+          deletedproduct.qty =  deletedproduct.qty - 1;
+          this.productNumber--;
+        }        
+      }
+    } 
   }
 
   printThisPage1(id) {

@@ -18,3 +18,14 @@ button {
   background-color: blue;
   width: 30%
 }
+
+.minus-button {
+  float: left;
+  position: absolute;
+  height: 26px;
+  text-align: center;
+  margin: auto;
+  left: 220px;
+  top: -28px;
+  background-color: black;
+}

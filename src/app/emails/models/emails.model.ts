@@ -1,15 +1,15 @@
 export class Email {
-  id: number;
+    id: string;
     subject: string;
     name: string;
-    time: string;
+    date: number;
     description: string;
   
-    constructor( id: number, subject: string, name: string, time: string, description: string) {     
+    constructor( id: string, subject: string, name: string, date: number, description: string) {     
       this.id = id;
       this.subject = subject;
       this.name = name;
-      this.time = time;
+      this.date = date;
       this.description = description;
     }
 }

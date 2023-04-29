@@ -22,6 +22,7 @@ export class ShoppingCartComponent implements OnInit {
   resetCart = false
   cartTotal = 0;
   productNumber = 0;
+  x
 
   constructor(
     private msg: MessengerService,
@@ -88,12 +89,18 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   deleteProduct(deletedproduct){
-    for (let i =  this.productNumber - 1; i >= 0; i--) {
+    for (let i =  this.cartItems.length - 1; i >= 0; i--) {
       if (this.cartItems[i].productId === deletedproduct.productId) {
-        this.cartItems.splice(i, 1);
-        this.productNumber--;
+        if(this.cartItems[i].qty===1) {
+          this.cartItems.splice(i, 1);
+          this.productNumber--;
+        }
+        else {
+          deletedproduct.qty =  deletedproduct.qty - 1;
+          this.productNumber--;
+        }        
       }
-    } ;  
+    } 
   }
 
   onPagmentPage(cartItems) {

@@ -45,7 +45,7 @@ export class EmailsComponent implements OnInit, OnDestroy {
 
   delete(){
     this.emails.forEach((Email,index)=>{
-      if(Email.id==1) this.emails.splice(index,1);
+      if(Email.id=='1') this.emails.splice(index,1);
    });
   }
 

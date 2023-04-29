@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { CartItem } from '../models/cart.model';
 
 @Injectable({
   providedIn: 'root'
@@ -33,14 +34,6 @@ export class CartService {
 
   onSumPaymentPage(): number {
     return this.cartTotal;
-  }
-
-  deleteProduct(deletedproduct){
-    for (let i =  this.cartTotal - 1; i >= 0; i--) {
-      if (this.allProducts[i].id === deletedproduct.productId) {
-        this.allProducts.splice(i, 1);
-      }
-    } ;  
   }
   
 }

@@ -1,8 +1,8 @@
 import { ChangeDetectorRef, Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ElementRef } from '@angular/core';
-import { Ingredient } from '../../models/ingredient.model';
 import { MessengerService } from '../../services/messeger.service';
 import { ShoppingListService } from '../../services/shopping-list.service';
+import { ShoppingItem } from '../../models/shoppingItem.model';
 
 export class item {
   name: string;
@@ -37,8 +37,8 @@ export class ShoppingListComponent implements OnInit {
     this.postList();
     this.slService.shoppingItemsChanged
       .subscribe(
-        (ingredients: Ingredient[]) => {
-          this.ingredients = ingredients;
+        (items: ShoppingItem[]) => {
+          this.ingredients = items;
           this.sdv.markForCheck;
         }
       );
@@ -62,7 +62,7 @@ export class ShoppingListComponent implements OnInit {
     this.postList();
   }
 
-  handleAddToCart(product: Ingredient) {
+  handleAddToCart(product: ShoppingItem) {
     this.msg.sendMsg(product);
   }
 
