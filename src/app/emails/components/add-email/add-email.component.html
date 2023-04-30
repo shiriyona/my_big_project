@@ -1,17 +1,16 @@
+<div class="modal-header">
+  <button mat-button mat-dialog-close type="button" class="close" data-dismiss="modal"><span>×</span></button>
+</div>
 <div class="new-email">
 <h2 mat-dialog-title>New Email</h2>
 <mat-dialog-content class="mat-typography">  
-  <p>id:</p>
-  <input #idInput><br>
-  <p>name:</p>
+  <span class="name-title">name:</span>
   <input #nameInput><br>
-  <p>subject:</p>
+  <span class="subject-title">subject:</span>
   <input #subjectInput><br>
-  <p>time:</p>
-  <input #timeInput><br>
-  <p>descriotion:</p>
+  <span class="description-title">description:</span>
   <textarea class="description" name="w3review" rows="4" cols="50" #descriptionInput></textarea><br>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="addEmail()" class="btn btn-success">send email</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="addEmail()" class="send-email-button">send email</button>
 </mat-dialog-content></div>
 <!-- <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>

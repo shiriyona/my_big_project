@@ -1,7 +1,8 @@
 <div (mouseover)="changeText=true" (mouseout)="changeText=false">
+    <div class="subject">{{email?.id}}</div> 
     <div class="name">{{email?.name}}</div> 
     <div class="subject">{{email?.subject}}</div>
-    <div class="time">{{email?.date}}</div> 
+    <div class="time">{{email?.date | date: 'short'}}</div> 
     <img *ngIf="changeText" class="trash-icon" (click)="deleteEmail(email)" src="../../../../assets/img/trash-icon.png">
 </div>
 

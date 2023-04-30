@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ShoppingItem } from '../../../models/shoppingItem.model';
 import { Location } from '@angular/common'
 import { CartService } from '../../../services/cart.service';
 import { CartItem } from 'src/app/shopping-list/models/cart.model';
@@ -11,9 +10,9 @@ import { CartItem } from 'src/app/shopping-list/models/cart.model';
   styleUrls: ['./shopping-payment-list.component.css']
 })
 export class ShoppingPaymentListComponent implements OnInit {
-  cartItems: CartItem[];
+  cartItems = [];
   items = []
-  cartTotal = 0;
+  totalSum = 0;
   productNumber = 0;
 
   constructor(private cartService: CartService, private location: Location) { }
@@ -35,7 +34,7 @@ export class ShoppingPaymentListComponent implements OnInit {
   getProducts() {
     this.cartItems = this.cartService.onPaymentPage()
     this.productNumber = this.cartService.onProductNumberPaymentPage()
-    this.cartTotal = this.cartService.onSumPaymentPage()
+    this.totalSum = this.cartService.onSumPaymentPage()
   }
 
   deleteProduct(deletedproduct){
@@ -44,10 +43,12 @@ export class ShoppingPaymentListComponent implements OnInit {
         if(this.cartItems[i].qty===1) {
           this.cartItems.splice(i, 1);
           this.productNumber--;
+          this.totalSum = this.totalSum - deletedproduct.price;
         }
         else {
           deletedproduct.qty =  deletedproduct.qty - 1;
           this.productNumber--;
+          this.totalSum = this.totalSum - deletedproduct.price;
         }        
       }
     } 

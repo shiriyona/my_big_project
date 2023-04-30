@@ -1,6 +1,7 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { EmailsService } from '../../services/emails.service';
 import { Email } from '../../models/emails.model';
+import { v4 as uuidv4 } from 'uuid';
 
 
 @Component({
@@ -22,15 +23,17 @@ export class AddEmailComponent implements OnInit {
   }
 
   addEmail() {
-    const emailId = this.idInputRef.nativeElement.value;
+    var d = new Date;
+    const emailId = uuidv4();
     const emailName = this.nameInputRef.nativeElement.value;
     const emailSubject = this.subjectInputRef.nativeElement.value;
-    const emailTime = this.timeInputRef.nativeElement.value;
+    const emailTime = d;
     const emailDescription = this.descriptionInputRef.nativeElement.value;
     const newEmail = new Email(emailId, emailName, emailSubject, emailTime, emailDescription);
     this.emailAdded.emit(newEmail)
     this.emailsService.addEmailToTheList(newEmail);
-    return this.emailsService.EMAILS_MOCK_DATA
+    return this.emailsService.EMAILS_MOCK_DATA;
+    
   }
 
 }

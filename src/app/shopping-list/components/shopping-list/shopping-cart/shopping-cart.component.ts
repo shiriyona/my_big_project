@@ -20,7 +20,7 @@ export class ShoppingCartComponent implements OnInit {
   private clickSubscription: Subscription;
   items: number = 0;
   resetCart = false
-  cartTotal = 0;
+  totalSum = 0;
   productNumber = 0;
   x
 
@@ -58,9 +58,9 @@ export class ShoppingCartComponent implements OnInit {
     }
 
     this.productNumber = 0;
-    this.cartTotal = 0;
+    this.totalSum = 0;
     this.cartItems.forEach(item => {
-      this.cartTotal += (item.qty * item.price)
+      this.totalSum += (item.qty * item.price)
       this.productNumber += (item.qty)
     })
   }
@@ -88,16 +88,19 @@ export class ShoppingCartComponent implements OnInit {
     }
   }
 
-  deleteProduct(deletedproduct){
+  deleteProduct(deletedproduct, event: Event){
+    event?.stopPropagation();
     for (let i =  this.cartItems.length - 1; i >= 0; i--) {
       if (this.cartItems[i].productId === deletedproduct.productId) {
         if(this.cartItems[i].qty===1) {
           this.cartItems.splice(i, 1);
           this.productNumber--;
+          this.totalSum = this.totalSum - deletedproduct.price;
         }
         else {
           deletedproduct.qty =  deletedproduct.qty - 1;
           this.productNumber--;
+          this.totalSum = this.totalSum - deletedproduct.price;
         }        
       }
     } 
@@ -106,7 +109,7 @@ export class ShoppingCartComponent implements OnInit {
   onPagmentPage(cartItems) {
     this.cartService.onPaymentItems(cartItems);
     this.cartService.onPaymentNumber(this.productNumber);
-    this.cartService.onPaymentSum(this.cartTotal);
+    this.cartService.onPaymentSum(this.totalSum);
   }
 }
 

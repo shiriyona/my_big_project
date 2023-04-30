@@ -11,13 +11,13 @@
     <li class="list-group-item" *ngFor="let item of cartItems">
       <app-shopping-cart-item [cartItem]="item"></app-shopping-cart-item>
       <div class="btn-group">
-        <button type="button" class="btn btn-sm btn-primary minus-button" (click)="deleteProduct(item)">-</button>
+        <button type="button" class="btn btn-sm btn-primary minus-button" (click)="deleteProduct(item, $event)">-</button>
       </div>
     </li>
   </cdk-virtual-scroll-viewport>
     <li class="list-group-item active total-payment">
-      <strong>items</strong> {{ cartItems.qty }} <br>
-      <strong>Total</strong> {{ cartTotal | currency:'$' }}
+      <strong>items</strong> {{ productNumber }} <br>
+      <strong>Total</strong> {{ totalSum }}$
     </li>
     <br>
     <li routerLinkActive="active"><a routerLink="shopping-list/shopping-payment">

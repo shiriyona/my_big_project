@@ -3,10 +3,28 @@
 }
 
 .description{
-    width: 582px;
-    height: 193px;
+  width: 582px;
+  height: 193px;
 }
 
 input{
-    width: 582px; 
+  width: 582px; 
+  display: inline-flex;
+}
+
+#ignismyModal .modal-header{
+  border:0px;
+}
+
+.send-email-button{
+  background-color: gray;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2px 2px;
+  cursor: pointer;
+  width: 98%;
 }

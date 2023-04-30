@@ -1,27 +1,27 @@
 import { Injectable } from '@angular/core';
 import { CartItem } from '../models/cart.model';
+import { Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {  
-  private allProducts;
-  deletedproduct
+  allProducts: CartItem[] = [];
   productNumber = 0;
-  cartTotal = 0;
+  totalSum = 0;
 
   constructor() { }
 
-  onPaymentItems(products) {
+  onPaymentItems(products): void {
     this.allProducts = products;
   }
 
-  onPaymentNumber(productNumber) {
-    this.productNumber = productNumber
+  onPaymentNumber(productNumber): void{
+    this.productNumber = productNumber;
   }
 
-  onPaymentSum(cartTotal): void {
-    this.cartTotal = cartTotal;
+  onPaymentSum(sum): void {
+    this.totalSum = sum;
   }
 
   onPaymentPage() {
@@ -33,7 +33,7 @@ export class CartService {
   }
 
   onSumPaymentPage(): number {
-    return this.cartTotal;
+    return this.totalSum;
   }
   
 }
