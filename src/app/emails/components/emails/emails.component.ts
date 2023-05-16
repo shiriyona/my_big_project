@@ -13,38 +13,63 @@ import { AddEmailComponent } from './add-email/add-email.component';
 export class EmailsComponent implements OnInit, OnDestroy {
   firstemails: Email[] = [];
   emails: Email[] = [];
+  allEmails: Email[] = [];
   deletedEmails: Email[] = [];
   selectedRow: Email;
   getEmailsSubscrition: Subscription;
-  getDeletedEmailsSubscrition: Subscription;
-  private activeSub: Subscription;
-  trashIcon = false
+  deleteIconClicked = false
   emailsActivated = false;
+  emailToList = true;
+  try = 'dhdhddjdjd'
 
   constructor(private emailsService: EmailsService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getEmails();
-    this.activeSub = this.emailsService.activatedEmitter.subscribe(didActivate => {
-      this.emailsActivated = didActivate;
-      if(this.emailsActivated === true) {
-        this.emailsService.onGetEmails().subscribe(res => {
-          this.emails = res;
-          this.emailsActivated === false;
-        });
+    this.emailsService.getEmail().subscribe((email: Email) => {
+      for (let i in this.emails) {
+        if (this.emails[i].id === email.id) {
+          this.deletedEmail(email);
+          this.emailToList = false;
+          break;
+        }
+      }   
+      if (this.emailToList === true) {
+        this.addEmailToTheList(email)
       }
-    })
+      this.emailToList = true;
+    });
+  }
+
+  addEmailToTheList(email){
+    this.emails.push(email);
+    this.try = '44444'
   }
 
   getEmails() {
     this.getEmailsSubscrition = this.emailsService.getEmails().subscribe(res => {
-      this.emails = res;
-      this.emailsService.setEmails(res);
+    this.emails = res;
     });
   }
 
-  addEmail(email){
-    this.emails.push(email)
+  deletedEmail(deletedEmail: Email) {
+    for (let i =  this.emails.length - 1; i >= 0; i--) {
+      if (this.emails[i].id === deletedEmail.id) {
+          this.emails.splice(i, 1);
+          break;
+        }
+      }
+      this.emailsService.sendDeletedEmails(deletedEmail);
+      this.try = '111111'
+
+    // const elementIdx = this.emails?.findIndex((email) => {
+    //   email.id === deletedEmail?.id
+    // });
+    // if (elementIdx >= -1) {
+    //   this.emails.splice(elementIdx, 1);
+    
+    // }
+    // this.getEmails();
   }
 
   onSelectRow(row: Email) {
@@ -64,14 +89,15 @@ export class EmailsComponent implements OnInit, OnDestroy {
   }
 
   getDeletedEmails() {
-    this.getDeletedEmailsSubscrition = this.emailsService.getDeletedEmails().subscribe(res => {
-      this.deletedEmails = res;
-    });
+    this.deleteIconClicked = true;
+  }
+
+  home(){
+    this.deleteIconClicked = false;
   }
 
   ngOnDestroy(): void {
-    this.getEmailsSubscrition?.unsubscribe();
-    this.getDeletedEmailsSubscrition?.unsubscribe();
+    this.getEmailsSubscrition.unsubscribe();
   }
 
 }

@@ -17,8 +17,7 @@ export class EmailItemComponent implements OnInit {
   }
 
   deleteEmail(deleteEmail){
-    this.emailsService.deletedEmail(deleteEmail);
-    this.emailsService.activatedEmitter.next(true);
+    this.emailsService.sendEmail(deleteEmail);
   }
 
 }

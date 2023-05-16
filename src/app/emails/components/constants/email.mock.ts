@@ -18,6 +18,3 @@ export const EMAILS_MOCK_DATA: Email[] = [
   {id: uuidv4(), subject: 'Neon', date: '26/1/23, 10:10 AM', name: 'Neil Wes', description: ''},
   ];
 
-
-    // console.log(uuid);
-    // console.log(d);

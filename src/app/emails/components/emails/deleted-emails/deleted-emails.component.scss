@@ -1,0 +1,30 @@
+.selected-row {       
+    height: 130px;
+    background: whitesmoke;
+    border: 2px solid gray;
+
+    .subject{
+         padding: 10px;  
+    }
+    .name{
+        padding: 10px; 
+        font-weight: bold;
+        border-bottom: 1px solid black; 
+    }
+
+    .description{
+        padding: 10px;  
+    }
+    
+    .time {
+        right:22px;
+        position: absolute;
+    }    
+
+}
+
+//    .scroll-data {
+//         height: 600px;
+//         width: 100%;
+//         border: 1px solid black;
+//     }

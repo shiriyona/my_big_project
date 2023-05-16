@@ -23,15 +23,14 @@ export class AddEmailComponent implements OnInit {
   }
 
   addEmail() {
-    var d = new Date;
+    var d = new Date().toDateString;
     const emailId = uuidv4();
     const emailName = this.nameInputRef.nativeElement.value;
     const emailSubject = this.subjectInputRef.nativeElement.value;
     const emailTime = d;
     const emailDescription = this.descriptionInputRef.nativeElement.value;
     const newEmail = new Email(emailId, emailName, emailSubject, emailTime, emailDescription);
-    this.emailsService.addEmailToTheList(newEmail);
-    this.emailsService.activatedEmitter.next(true);
+    this.emailsService.sendEmail(newEmail);
   }
 
 }

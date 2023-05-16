@@ -1,3 +1,5 @@
+import { DatePipe } from "@angular/common";
+
 export class Email {
     id: string;
     subject: string;
@@ -9,7 +11,7 @@ export class Email {
       this.id = id;
       this.subject = subject;
       this.name = name;
-      this.date = date;
+      this.date = date;;
       this.description = description;
     }
 }

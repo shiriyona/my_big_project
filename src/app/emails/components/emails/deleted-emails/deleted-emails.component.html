@@ -1,6 +1,7 @@
-<div >
-    <div class="name">{{deletedEmails?.id}}</div> 
-    <div class="name">{{deletedEmails?.name}}</div> 
-    <div class="subject">{{deletedEmails?.subject}}</div>
-    <div class="time">{{deletedEmails?.date | date: 'short'}}</div> 
+<div class="selected-row" *ngFor="let deletedEmail of deletedEmails">
+    <div class="name">{{deletedEmail?.name}}</div> 
+    <div class="subject">{{deletedEmail?.subject}}</div>
+    <div class="time">{{deletedEmail?.date | date: 'short'}}</div> 
 </div>
+
+

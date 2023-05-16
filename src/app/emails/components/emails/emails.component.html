@@ -2,21 +2,22 @@
     <div class="new-email">
         <button class="new-email-button" (click)="openDialog()">New Email</button> 
         <img class="trash-icon" src="../../../../assets/img/trash-icon.png" (click)="getDeletedEmails()">     
+        <button class="trash-icon" (click)="home()">Home</button>   
     </div><br>
     <div>
     </div>
     <div class="email-wrapper">
         <div class="email-list">
-            <cdk-virtual-scroll-viewport itemSize="5" class="scroll-data">
-                <div class="email-data" *cdkVirtualFor="let email of emails" (click)="onSelectRow(email)"> 
+            <!-- <cdk-virtual-scroll-viewport itemSize="5" class="scroll-data"> -->
+                <div class="email-data" *ngFor="let email of emails" (click)="onSelectRow(email)"> 
                     <app-email-item [email]="email"></app-email-item>
                 </div>
-            </cdk-virtual-scroll-viewport>
+            <!-- </cdk-virtual-scroll-viewport> -->
         </div>
-        <div class="selected-email" *ngIf="trashIcon===true">
-            <app-trash-emails [email]="getDeletedEmails"></app-trash-emails>        
+        <div class="selected-email" *ngIf="deleteIconClicked===true"> 
+            <app-deleted-emails></app-deleted-emails>        
         </div>
-        <div class="selected-email" *ngIf="trashIcon===false">
+        <div class="selected-email" *ngIf="deleteIconClicked===false">
             <div *ngIf="selectedRow" class="selected-row">
             <div class="subject">{{selectedRow?.subject}}</div> 
             <div class="name">{{selectedRow?.name}}</div>    
@@ -25,4 +26,6 @@
             </div>        
         </div>
     </div>
+    {{try}}
+    {{emails.length}}
 </div>
