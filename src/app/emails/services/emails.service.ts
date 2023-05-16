@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { EventEmitter, Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, Subject, of } from 'rxjs';
 import { EMAILS_MOCK_DATA } from '../components/constants/email.mock';
 import { Email } from '../models/emails.model';
 import { v4 as uuidv4 } from 'uuid';
@@ -8,7 +8,10 @@ import { v4 as uuidv4 } from 'uuid';
   providedIn: 'root'
 })
 export class EmailsService {
-  EMAILS_MOCK_DATA: any;
+  emails: Email[] = [];
+  subject = new Subject();
+  deletedEmails: Email[] = [];
+  activatedEmitter = new Subject<boolean>();
 
   constructor() { }
 
@@ -16,21 +19,30 @@ export class EmailsService {
     return of(EMAILS_MOCK_DATA);
   }
 
+  setEmails(emails: Email[]) {
+    this.emails = emails
+  }
+
   addEmailToTheList(email: Email): void {
-    EMAILS_MOCK_DATA.push(email);
-    this.addNewEmail()
+    this.emails.push(email);
   }
 
-  deleteEmail(deletedEmail){
-    for (let i = EMAILS_MOCK_DATA.length - 1; i >= 0; i--) {
-      if (EMAILS_MOCK_DATA[i].id === deletedEmail.id) {
-          EMAILS_MOCK_DATA.splice(i, 1);
-      }
-    } 
+  deletedEmail(deletedEmail: Email) {
+    const elementIdx = this.emails?.findIndex((email) => {
+      email.id === deletedEmail?.id
+    });
+    if (elementIdx >= -1) {
+      this.emails.splice(elementIdx, 1);
+      this.deletedEmails.push(deletedEmail);
+    }
   }
 
-  addNewEmail(): Observable<any> {
-    return of(EMAILS_MOCK_DATA);
+  onGetEmails() {
+    return of(this.emails);
+  }
+
+  getDeletedEmails(): Observable<any> {
+    return of(this.deletedEmails);
   }
 
 }

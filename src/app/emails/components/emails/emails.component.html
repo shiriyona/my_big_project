@@ -1,7 +1,8 @@
 <div class="email">
     <div class="new-email">
-        <button class="new-email-button" (click)="openDialog()">New Email</button>    
-    </div>
+        <button class="new-email-button" (click)="openDialog()">New Email</button> 
+        <img class="trash-icon" src="../../../../assets/img/trash-icon.png" (click)="getDeletedEmails()">     
+    </div><br>
     <div>
     </div>
     <div class="email-wrapper">
@@ -12,7 +13,10 @@
                 </div>
             </cdk-virtual-scroll-viewport>
         </div>
-        <div class="selected-email">
+        <div class="selected-email" *ngIf="trashIcon===true">
+            <app-trash-emails [email]="getDeletedEmails"></app-trash-emails>        
+        </div>
+        <div class="selected-email" *ngIf="trashIcon===false">
             <div *ngIf="selectedRow" class="selected-row">
             <div class="subject">{{selectedRow?.subject}}</div> 
             <div class="name">{{selectedRow?.name}}</div>    

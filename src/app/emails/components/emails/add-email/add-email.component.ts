@@ -1,6 +1,6 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
-import { EmailsService } from '../../services/emails.service';
-import { Email } from '../../models/emails.model';
+import { EmailsService } from '../../../services/emails.service';
+import { Email } from '../../../models/emails.model';
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -15,7 +15,7 @@ export class AddEmailComponent implements OnInit {
   @ViewChild('subjectInput') subjectInputRef: ElementRef;
   @ViewChild('timeInput') timeInputRef: ElementRef;
   @ViewChild('descriptionInput') descriptionInputRef: ElementRef;
-  @Output() emailAdded = new EventEmitter<Email>()
+  @Output() emailAdded = new EventEmitter<any>()
 
   constructor(private emailsService: EmailsService) { }
 
@@ -30,10 +30,8 @@ export class AddEmailComponent implements OnInit {
     const emailTime = d;
     const emailDescription = this.descriptionInputRef.nativeElement.value;
     const newEmail = new Email(emailId, emailName, emailSubject, emailTime, emailDescription);
-    this.emailAdded.emit(newEmail)
     this.emailsService.addEmailToTheList(newEmail);
-    return this.emailsService.EMAILS_MOCK_DATA;
-    
+    this.emailsService.activatedEmitter.next(true);
   }
 
 }

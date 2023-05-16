@@ -2,7 +2,7 @@ import { Email } from "../../models/emails.model";
 import { v4 as uuidv4 } from 'uuid';
 
 export const EMAILS_MOCK_DATA: Email[] = [
-  {id: uuidv4(), subject: 'Meeting for discussing', date:	'10/2/23, 8:23', name: 'Shlomi Biton',
+  {id: uuidv4(), subject: 'Meeting for discussing', date:	'10/2/23, 8:23 AM', name: 'Shlomi Biton',
    description: 'Hello, I would like to schedule a meeting with you to discuss the progress of the project. Send me your date for the week and we will schedule a meeting.'},
   {id: uuidv4(), subject: 'Finding job', date: '5/2/23, 6:22 PM', name: 'Alex Levi',
    description: 'Hello, I heard that you are looking for employees in your company, I would love to join'},
@@ -17,9 +17,6 @@ export const EMAILS_MOCK_DATA: Email[] = [
   {id: uuidv4(), subject: 'Verify your email address with TikTok', date: '28/1/23, 8:54 AM', name: 'Frank Mosh', description: ''},
   {id: uuidv4(), subject: 'Neon', date: '26/1/23, 10:10 AM', name: 'Neil Wes', description: ''},
   ];
-
-
-
 
 
     // console.log(uuid);

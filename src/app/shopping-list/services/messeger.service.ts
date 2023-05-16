@@ -19,12 +19,12 @@ export class MessengerService {
   }
 
   sendMsg(product) {
-    console.log(product)
-    this.subject.next(product)
+    console.log(product);
+    this.subject.next(product);
   }
 
   getMsg() {
-    return this.subject.asObservable()
+    return this.subject.asObservable();
   }
 
 }
