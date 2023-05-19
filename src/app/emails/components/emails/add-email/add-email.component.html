@@ -10,6 +10,6 @@
   <input #subjectInput><br>
   <span class="description-title">description:</span>
   <textarea class="description" name="w3review" rows="4" cols="50" #descriptionInput></textarea><br>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="addEmail()" class="send-email-button">send email</button>
+  <button mat-button (click)="addEmail()"  mat-dialog-close class="send-email-button">send email</button>
 </mat-dialog-content></div>
 

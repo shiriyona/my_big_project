@@ -10,6 +10,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatIconModule } from '@angular/material/icon';
 import { LoginComponent } from './components/login/login.component';
 import { LogOutComponent } from './components/login/log-out/log-out.component';
 
@@ -31,7 +32,8 @@ import { LogOutComponent } from './components/login/log-out/log-out.component';
     MatExpansionModule,
     MatDialogModule,
     MatTabsModule,
-    MatMenuModule
+    MatMenuModule,
+    MatIconModule
   ],
   providers: [],
   exports: [LoginComponent, LogOutComponent]

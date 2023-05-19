@@ -22,7 +22,7 @@ export class AppComponent {
   }
 
   isLoggendIn() {
-    return  this.loginService.madeLogin;
+    return this.loginService.madeLogin;
   }
 
 }

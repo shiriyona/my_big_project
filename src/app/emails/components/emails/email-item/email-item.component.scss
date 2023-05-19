@@ -1,0 +1,22 @@
+.email-list{
+    .name{
+        padding: 5px;  
+    }
+    
+    .subject{
+        padding: 4px;  
+    }
+    
+    .time {
+        left: 300px;
+        position: relative;
+        display: inline-flex;
+    }
+    
+    .icon{
+        cursor: pointer;
+        vertical-align: middle;
+        right: 100px;
+        position: relative;
+    }
+}

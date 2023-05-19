@@ -18,9 +18,7 @@ export class EmailsComponent implements OnInit, OnDestroy {
   selectedRow: Email;
   getEmailsSubscrition: Subscription;
   deleteIconClicked = false
-  emailsActivated = false;
   emailToList = true;
-  try = 'dhdhddjdjd'
 
   constructor(private emailsService: EmailsService, public dialog: MatDialog) { }
 
@@ -43,7 +41,6 @@ export class EmailsComponent implements OnInit, OnDestroy {
 
   addEmailToTheList(email){
     this.emails.push(email);
-    this.try = '44444'
   }
 
   getEmails() {
@@ -60,7 +57,6 @@ export class EmailsComponent implements OnInit, OnDestroy {
         }
       }
       this.emailsService.sendDeletedEmails(deletedEmail);
-      this.try = '111111'
 
     // const elementIdx = this.emails?.findIndex((email) => {
     //   email.id === deletedEmail?.id

@@ -5,7 +5,7 @@ import { EmailsService } from 'src/app/emails/services/emails.service';
 @Component({
   selector: 'app-email-item',
   templateUrl: './email-item.component.html',
-  styleUrls: ['./email-item.component.css']
+  styleUrls: ['./email-item.component.scss']
 })
 export class EmailItemComponent implements OnInit {
   @Input() email: Email;

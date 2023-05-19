@@ -1,7 +1,18 @@
-<div class="selected-row" *ngFor="let deletedEmail of deletedEmails">
-    <div class="name">{{deletedEmail?.name}}</div> 
-    <div class="subject">{{deletedEmail?.subject}}</div>
-    <div class="time">{{deletedEmail?.date | date: 'short'}}</div> 
+<div class="email-wrapper">
+    <div class="email-list">
+        <div class="email-data" *ngFor="let deletedEmail of deletedEmails" (click)="onSelectRow(deletedEmail)">
+            <div class="name">{{deletedEmail?.name}}</div>
+            <div class="subject">{{deletedEmail?.subject}}</div>
+            <div class="time">{{deletedEmail?.date | date: 'short'}}</div>
+        </div>
+    </div>
+
 </div>
-
-
+<div class="selected-email">
+    <div *ngIf="selectedRow" class="selected-row">
+        <div class="subject">{{selectedRow?.subject}}</div>
+        <div class="name">{{selectedRow?.name}}</div>
+        <div class="description">{{selectedRow?.description}}</div>
+        <div class="time">{{selectedRow?.date}}</div>
+    </div>
+</div>

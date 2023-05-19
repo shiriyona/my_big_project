@@ -7,11 +7,16 @@
         .new-email-button{
             background-color: white;
             width: 100px;
-            height: 50px;
-
-            .trash-icon{
-                cursor: pointer;
-            }
+            height: 50px;         
+        }
+        .trash-icon{
+            cursor: pointer;
+        }
+        
+        .home-icon{
+            width: 30px;
+            cursor: pointer;
+            padding: 2px;
         }
     }
     .email-wrapper {
@@ -20,6 +25,9 @@
         
         .email-list {
             width: 50%;
+            // width: 100%;
+            height: 600px;
+            overflow: auto;
 
             .email-data {
                 height: 100px;
@@ -43,7 +51,7 @@
                 border: 2px solid gray;
 
                 .subject{
-                     padding: 10px;  
+                    padding: 10px;  
                 }
                 .name{
                     padding: 10px; 

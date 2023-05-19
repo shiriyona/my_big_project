@@ -12,6 +12,7 @@ export class DeletedEmailsComponent implements OnInit {
   @Input() deletedEmail
   getDeletedEmailsSubscrition: Subscription;
   deletedEmails: Email[] = [];
+  selectedRow: Email;
 
   constructor(private emailsService: EmailsService) { }
 
@@ -23,5 +24,9 @@ export class DeletedEmailsComponent implements OnInit {
     this.getDeletedEmailsSubscrition = this.emailsService.getDeletedEmails().subscribe(res => {
       this.deletedEmails = res;
     });
+  }
+
+  onSelectRow(row: Email) {
+    this.selectedRow = row;
   }
 }
