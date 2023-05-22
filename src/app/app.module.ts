@@ -24,6 +24,7 @@ import { ContactsModule } from './contacts/contacts.module';
 import { loginModule } from './login/login.module';
 import { ShoppingListModule } from './shopping-list/shoppingList.module';
 import { EmailssModule } from './emails/emails.module';
+import { OnlyLoggedUsersGuard } from './only-logged-user-guard';
 
 
 @NgModule({
@@ -58,7 +59,7 @@ import { EmailssModule } from './emails/emails.module';
     EmailssModule
   ],
   exports: [MatTableModule],
-  providers: [],
+  providers: [OnlyLoggedUsersGuard],
   bootstrap: [AppComponent],
   schemas: []
 })

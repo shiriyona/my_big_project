@@ -27,6 +27,7 @@ export class HeaderComponent implements OnInit {
     else{
       this.admin = false;
     }
+    this.loginService.onRole(this.admin);
     return this.loginService.currentUserRole;
   }
 

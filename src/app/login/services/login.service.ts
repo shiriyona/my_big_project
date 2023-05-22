@@ -14,6 +14,7 @@ export class LoginService {
   loginBackgroundImg: '../../../../assets/img/water-background.jpg';
   currentUser: User;
   currentUserRole;
+  role: boolean;
 
   constructor() {
   }
@@ -41,12 +42,13 @@ export class LoginService {
     return of(this.currentUserRole);
   }
 
-  // login(login) {
-  //   //find in users list 
-  //   this.madeLogin = login;
-  
-  //   localStorage.setItem("loggenIn", this.madeLogin + '');
-  // }
+  onRole(role: boolean) {
+    this.role = role;
+  }
+
+  isLoggedIn() {
+    return this.role;
+  }
 
   checkLogin() {
     if (localStorage.getItem('loggenIn') === 'true') {
