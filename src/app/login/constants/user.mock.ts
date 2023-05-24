@@ -1,4 +1,4 @@
-import { User } from '../../models/login.model';
+import { User } from '../models/login.model';
 import { USER_ROLE } from 'src/app/shared/enums/user-role.enum';
 
 export const userS_MOCK_DATA: User[]  = [

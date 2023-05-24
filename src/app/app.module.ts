@@ -25,6 +25,8 @@ import { loginModule } from './login/login.module';
 import { ShoppingListModule } from './shopping-list/shoppingList.module';
 import { EmailssModule } from './emails/emails.module';
 import { OnlyLoggedUsersGuard } from './only-logged-user-guard';
+import { OrdersModule } from './orders/orders.module';
+import { UserssModule } from './users/users.module';
 
 
 @NgModule({
@@ -56,7 +58,9 @@ import { OnlyLoggedUsersGuard } from './only-logged-user-guard';
     DrawingModule,
     loginModule,
     ShoppingListModule,
-    EmailssModule
+    EmailssModule,
+    OrdersModule,
+    UserssModule
   ],
   exports: [MatTableModule],
   providers: [OnlyLoggedUsersGuard],

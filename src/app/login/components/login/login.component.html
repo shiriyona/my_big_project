@@ -24,7 +24,7 @@
           formControlName="password" required>
         <mat-error *ngIf="loginForm.invalid || correctPassword===true">please enter a valid password</mat-error>
       </mat-form-field><br> -->
-<button class="submit" mat-raised-button color="primary" (click)="getErrorMessage()" (click)="submit()">Login</button>
+<button class="submit" mat-raised-button color="primary" (click)="submit()">Login</button>
 <span *ngIf="show"> <button mat-button color="accent">Login success !!</button></span>
 </form>
 </body>

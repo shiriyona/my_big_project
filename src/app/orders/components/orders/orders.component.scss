@@ -1,0 +1,72 @@
+.add-order {
+  font-size: 36px;
+}
+
+
+
+.order-list {
+  width: 100%;
+  border-collapse: collapse;
+
+  .inner-row {
+    border: 1px solid;
+    padding: 4px;
+
+    .order-code {
+      display: inline-flex;
+
+      .code-title {
+        font-weight: bold;
+      }
+    }
+
+    .order-name {
+      position: absolute;
+      margin-top: 2px;
+
+      .name-title {
+        font-weight: bold;
+      }
+    }
+
+    .date-invitation {
+      display: inline-flex;
+      padding-inline: 144px;
+
+      .date-invitation-title {
+        font-weight: bold;
+      }
+    }
+
+    .date-arrival {
+      padding-inline: 400px;
+      display: inline-flex;
+      padding-inline-end: 10px;
+
+      .date-arrival-title {
+        font-weight: bold;
+      }
+    }
+
+    .total {
+      display: inline-flex;
+      padding-inline: 100px;
+      right: 100px;
+
+      .total-title {
+        font-weight: bold;
+        color: red;
+      }
+
+    }
+
+  }
+
+  .delete-order {
+    top: 21px;
+    position: absolute;
+    display: inline-flex;
+    margin-left: 89%;
+    left: 100px;
+  }
+}

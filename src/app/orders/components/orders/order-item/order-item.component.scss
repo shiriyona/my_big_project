@@ -1,0 +1,76 @@
+.list-group-item {
+    border: 1px solid;
+    border-radius: unset;
+    
+
+    .order-code {
+        display: inline-flex;
+
+        .code-title {
+            font-weight: bold;
+        }
+    }
+
+    .order-name {
+        top: 30px;
+        margin-left: 100px;
+        left: -85px;
+        position: absolute;
+        display: inline-flex;
+
+        .name-title {
+            font-weight: bold;
+        }
+    }
+
+    .date-invitation, .date-arrival {
+        justify-content: flex-start;
+    }
+
+    .date-invitation {
+        display: inline-flex;
+        margin-left: 100px;
+
+
+        .date-invitation-title {
+            font-weight: bold;
+            
+        }
+    }
+
+    .date-arrival {
+        padding-inline: 450px;
+        display: inline-flex;
+        margin-left: -3px;
+
+        .date-arrival-title {
+            font-weight: bold;
+        }
+    }
+
+    .total{
+        display: inline-flex;
+        position: absolute;
+        padding-inline: 100px;
+        right: 100px;
+        top: 10px;
+
+        .total-title {
+            font-weight: bold;
+            color: red;
+        }
+    }
+
+    .delete-order {
+        top: 21px;
+        position: absolute;
+        display: inline-flex;
+        margin-left: 89%;
+        left: 100px;
+    }
+
+}
+
+.title {
+    padding-right: 5px;
+}

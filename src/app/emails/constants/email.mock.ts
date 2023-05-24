@@ -1,4 +1,4 @@
-import { Email } from "../../models/emails.model";
+import { Email } from "../models/emails.model";
 import { v4 as uuidv4 } from 'uuid';
 
 export const EMAILS_MOCK_DATA: Email[] = [

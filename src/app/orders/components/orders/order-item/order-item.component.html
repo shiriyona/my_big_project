@@ -1,0 +1,25 @@
+<div class="list-group-item">
+    <tr  >
+        <td class="order-code">
+            <div class="code-title title">Order Code: </div>
+            {{order?.orderCode}}
+        </td>
+        <td class="order-name">
+            <div class="name-title title">Order Name: </div>            
+            {{order?.orderName}}
+        </td>
+        <td class="date-invitation">
+            <div class="date-invitation-title title">Date of the invitation: </div>            
+            {{order?.dateInvitation}}
+        </td>
+        <td class="date-arrival">
+            <div class="date-arrival-title title">Order arrival date: </div>              
+             {{order?.dateArrival}}
+        </td>
+        <td class="total">
+            <div class="total-title title">total: </div>                        
+            {{order?.total}}
+        </td>
+        <div class="delete-order" (click)="deleteOrder(order)">-</div>
+    </tr>
+</div>

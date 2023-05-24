@@ -9,8 +9,10 @@
       <ul class="nav navbar-nav">
         <li routerLinkActive="active"><a routerLink="/shopping-list">Shopping List</a></li>
         <li routerLinkActive="active"><a routerLink="/drawings">Drawings</a></li>
-        <li routerLinkActive="active" *ngIf="admin===false"><a routerLink="/emails">Emails</a></li>
-        <li routerLinkActive="active" *ngIf="admin===false"><a routerLink="/contacts">Contacts</a></li>
+        <li routerLinkActive="active" *ngIf="!admin"><a routerLink="/emails">Emails</a></li>
+        <li routerLinkActive="active" *ngIf="!admin"><a routerLink="/contacts">Contacts</a></li>
+        <li routerLinkActive="active"><a routerLink="/orders">Orders</a></li>
+        <li routerLinkActive="active"><a routerLink="/users">Users</a></li>
         <app-log-out class="userIcon"></app-log-out>
       </ul>
       <app-shopping-cart class="iconCart"></app-shopping-cart>

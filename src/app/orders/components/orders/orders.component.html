@@ -1,0 +1,26 @@
+<h1>Orders</h1>
+<div class="add-order" mat-button (click)="openDialog()">+</div>
+<div class="order-list">
+    <div class="order-date" *ngFor="let order of orders" (dblclick)="editRow(order)">
+        <app-order-item [order]="order"></app-order-item>
+        <div *ngIf="order.isOpen" class="inner-row">
+            <div class="order-code">order code:
+                <input #orderCodeInput value="{{order?.orderCode}}">
+            </div>
+            <div class="order-name">order name:
+                <input #orderNameInput value="{{order?.orderName}}">
+            </div>
+            <div class="date-invitation">date invitation:
+                <input #dateInvitationInput value="{{order?.dateInvitation}}">
+            </div>
+            <div class="date-arrival">date arrival:
+                <input #dateArrivalInput value="{{order?.dateArrival}}">
+            </div>
+            <div class="total">total:
+                <input #totalInput value="{{order?.total}}">
+
+            </div>
+            <button (click)="saveChanges(order)">Save</button>
+        </div>
+    </div>
+</div>

@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/login.model';
 import { Observable, of } from 'rxjs';
-import { USER_ROLE } from 'src/app/shared/enums/user-role.enum';
-import { userS_MOCK_DATA } from '../components/constants/user.mock';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +20,7 @@ export class LoginService {
   onInit() { }
 
   onLogin(user: User): Observable<any>{
-    this.users = userS_MOCK_DATA;
+    this.users = USER_MOCK_DATA;
     for (let i in this.users) {
       if (this.users[i].userName === user.userName && this.users[i].password === user.password) {
         this.madeLogin = true;

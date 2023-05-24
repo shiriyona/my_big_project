@@ -1,0 +1,18 @@
+
+  <div class="new-order">
+  <h2 mat-dialog-title>New Order</h2>
+  <mat-dialog-content class="mat-typography">  
+    <span class="order-code">order code:</span>
+    <input #orderCodeInput><br>
+    <span class="order-name">order name:</span>
+    <input #orderNameInput><br>
+    <span class="date-invitation">date invitation: </span>
+    <input #dateInvitationInput><br>
+    <span class="date-arrival">date arrival:</span>
+    <input #dateArrivalInput><br>
+    <span class="total">total:</span>
+    <input #totalInput><br>
+    <button mat-button (click)="addOrder()"  mat-dialog-close class="send-order-button">send order</button>
+  </mat-dialog-content></div>
+
+  

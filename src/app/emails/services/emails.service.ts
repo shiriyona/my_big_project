@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject, of } from 'rxjs';
-import { EMAILS_MOCK_DATA } from '../components/constants/email.mock';
+import { EMAILS_MOCK_DATA } from '../constants/email.mock';
 import { Email } from '../models/emails.model';
-import { v4 as uuidv4 } from 'uuid';
 
 
 @Injectable({

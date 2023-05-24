@@ -8,6 +8,7 @@ export class OnlyLoggedUsersGuard implements CanActivate {
 
   canActivate() {
     console.log("OnlyLoggedInUsers");
+    //is admin
     if (this.loginService.isLoggedIn()) { (3)
       return true;
     } else {

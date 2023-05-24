@@ -11,8 +11,6 @@ import { User } from '../../models/login.model';
 })
 export class LoginComponent implements OnInit {
   users: User[] = [];
-  username: string = "admin1";
-  password: string = "123456";
   show: boolean = false;
   madeLogin = false;
   correctName = false;
@@ -29,27 +27,9 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getErrorMessage() {
-    // console.warn(this.loginForm.value);
-    // console.log(this.loginForm);
-    // if (this.loginForm.value.fullName === this.username){
-    //   this.correctName = true;
-    // }
-    // if (this.loginForm.value.password === this.password){
-    //   this.correctPassword = true;
-    // }
-    // if (this.loginForm.invalid) {
-    //   return 'You must enter a value';
-    // }
-    // else if (this.loginForm.value.fullName === this.username && this.loginForm.value.password === this.password){
-    //   this.madeLogin = true
-    // }
-    // return this.loginForm.hasError('fullName') ? 'Not a valid email' : '';
-  }
-
   submit() {
+    console.warn(this.loginForm.value);
     // if (this.madeLogin === true) {
-    console.log("user name is " + this.username);
     const userName = this.loginForm.value.fullName;
     const userPassword = this.loginForm.value.password;
     const userRole = this.role;
@@ -72,8 +52,7 @@ export class LoginComponent implements OnInit {
 
 
   clear() {
-    this.username = "";
-    this.password = "";
-    this.show = true;
+    this.loginForm.value.fullName = "";
+    this.loginForm.value.password = "";
   }
 }

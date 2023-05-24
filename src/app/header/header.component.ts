@@ -9,7 +9,8 @@ import { USER_ROLE } from '../shared/enums/user-role.enum';
 })
 export class HeaderComponent implements OnInit {
   currentUserRole: USER_ROLE;
-  admin: boolean = false
+  admin: boolean = false;
+  usrRole;
 
   constructor(private loginService: LoginService) { }
 
