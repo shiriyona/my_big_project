@@ -11,9 +11,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 
 import { ContactsRoutingModule } from './contacts-routing.module';
-import { ProvidersService } from './services/providers.service';
-import { UsersService } from './services/users.service';
-import { DownloadFileService } from './services/download-file.service';
 import { TabComponent } from './components/tab/tab.component';
 import { ProvidersListComponent } from './components/providers-list/providers-list.component';
 import { ProviderDialogComponent } from './components/providers-list/provider-dialog/provider-dialog.component';
@@ -24,10 +21,10 @@ import { DialogContentExampleDialog, UsersComponent } from './components/users/u
 @NgModule({
   declarations: [
     TabComponent,
+    UsersComponent,
     ProvidersListComponent,
     ProviderDialogComponent,
     AddProviderDialogComponent,
-    UsersComponent,
     DialogContentExampleDialog,
   ],
   imports: [

@@ -6,7 +6,7 @@ export class User {
     password: string;
     role: USER_ROLE;    
     firstName: string;
-    laststName: string;
+    lastName: string;
     img: string;
 
     constructor(id: string, userName: string, firstName: string, lastName: string, password: string, role: USER_ROLE,  img: string) {     
@@ -15,7 +15,7 @@ export class User {
       this.password = password;
       this.role = role;      
       this.firstName = firstName;
-      this.laststName = lastName;
+      this.lastName = lastName;
       this.img = img;
     }
 }

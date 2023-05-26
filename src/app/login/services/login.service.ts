@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/login.model';
 import { Observable, of } from 'rxjs';
+import { USER_MOCK_DATA } from '../constants/user.mock';
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +20,10 @@ export class LoginService {
 
   onInit() { }
 
-  onLogin(user: User): Observable<any>{
+  onLogin(userName: string, userPassword): Observable<any>{
     this.users = USER_MOCK_DATA;
     for (let i in this.users) {
-      if (this.users[i].userName === user.userName && this.users[i].password === user.password) {
+      if (this.users[i].userName === userName && this.users[i].password === userPassword) {
         this.madeLogin = true;
         localStorage.setItem("loggenIn", 'true');
         this.currentUser = this.users[i]
@@ -34,6 +35,10 @@ export class LoginService {
     this.madeLogin = false;
     this.currentUser = null;
     return of(null);
+  }
+
+  onchecksLogin(): boolean{
+    return this.madeLogin;
   }
 
   sendCurrentRole(): Observable<any>{

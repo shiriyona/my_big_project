@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { User } from '../../models/users.model';
-import { UsersService } from '../../services/users.service';
+import { Customer } from '../../models/customers.model';
 import { Subscription } from 'rxjs';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DownloadFileService } from '../../services/download-file.service';
+import { CustomersService } from '../../services/customers.service';
 
 
 @Component({
@@ -13,14 +13,14 @@ import { DownloadFileService } from '../../services/download-file.service';
 })
 export class UsersComponent implements OnInit {
   @Input() img
-  user: User
+  user: Customer
   users: any
   panelOpenState = false;
   loadUsersSubscription: Subscription;
   userColor: boolean = false;
 
 
-  constructor(private usersService: UsersService, public dialog: MatDialog) {
+  constructor(private customersService: CustomersService, public dialog: MatDialog) {
 
   }
 
@@ -29,7 +29,7 @@ export class UsersComponent implements OnInit {
   }
 
   getUsers() {
-    this.loadUsersSubscription = this.usersService.getUsers().subscribe(res => {
+    this.loadUsersSubscription = this.customersService.getUsers().subscribe(res => {
       this.users = res;
     });
   }
@@ -50,7 +50,7 @@ export class UsersComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
-    this.usersService.sendImg(img);
+    this.customersService.sendImg(img);
   }
 
 }
@@ -72,7 +72,7 @@ export class DialogContentExampleDialog {
   img
   selectedFile: ImageSnippet;
 
-  constructor(private imageService: DownloadFileService, private usersService: UsersService) {
+  constructor(private imageService: DownloadFileService, private customersService: CustomersService) {
     this.getImg()
   }
 
@@ -82,7 +82,7 @@ export class DialogContentExampleDialog {
   }
 
   getImg() {
-    this.img = this.usersService.getImg();
+    this.img = this.customersService.getImg();
   }
 
   private onError() {

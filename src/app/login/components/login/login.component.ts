@@ -12,47 +12,44 @@ import { User } from '../../models/login.model';
 export class LoginComponent implements OnInit {
   users: User[] = [];
   show: boolean = false;
-  madeLogin = false;
-  correctName = false;
-  correctPassword= false;
-
-  loginForm = new FormGroup({
-    fullName: new FormControl('', [Validators.required, Validators.min(4)]),
-    password: new FormControl('', [Validators.required, Validators.min(4)]),
-  })
-  role
+  correctLogin = false;
+  userName = new FormControl('', [Validators.required]);
+  userPassword = new FormControl('', [Validators.required, Validators.min(4)]);
 
   constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
 
+  getErrorMessage() {
+    if (this.userName.hasError('required')) {
+      return 'You must enter a value';
+    }
+    if (this.correctLogin === false) {
+      return 'Your userName or password is incorrect';
+    }
+
+    return this.userName.hasError('email') ? 'Not a valid email' : '';
+  }
+
   submit() {
-    console.warn(this.loginForm.value);
-    // if (this.madeLogin === true) {
-    const userName = this.loginForm.value.fullName;
-    const userPassword = this.loginForm.value.password;
-    const userRole = this.role;
-    const user = new User(userName, userPassword, userRole);
-    this.loginService.onLogin(user).subscribe((res:User) => {
+    const userName = this.userName.value;
+    const userPassword = this.userPassword.value;
+    this.loginService.onLogin(userName, userPassword).subscribe((res:User) => {
       //this.user = res;
     })
+  this.correctLogin = this.loginService.onchecksLogin()
+  if (this.correctLogin === false) {
+    return 'Your userName or password is incorrect';
+  }
 
-    // this.loginService.login(this.madeLogin).sub(res => {
-    //   this.user = res;
-    // });
-    // this.loginService.clickCounter();
     this.clear();
-    // }
   }
 
   hide = true;
-  get emailInput() { return this.loginForm.get('email'); }
-  get passwordInput() { return this.loginForm.get('password'); }  
-
 
   clear() {
-    this.loginForm.value.fullName = "";
-    this.loginForm.value.password = "";
+    this.userName.clearValidators();
+    this.userPassword.clearValidators();
   }
 }
