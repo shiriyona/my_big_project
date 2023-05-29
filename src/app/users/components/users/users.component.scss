@@ -1,0 +1,75 @@
+.add-user{
+    font-size: 30px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.content {
+    width: 100%;
+    height: 566px;
+    overflow: auto;
+}
+
+.my-row {
+    display: flex;
+    width: 100%;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    cursor: pointer;
+}
+
+.user-id {
+    width: 100%;
+    border: 2px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+.first-name {
+    width: 100%;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.last-name {
+    width: 100%;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.user-role {
+    width: 60%;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.user-img {
+    width: 30%;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.delete-user {
+    width: 14%;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.inner-row {
+    padding: 8px;
+    border: 1px solid #dddddd;
+    min-height: 100px;
+    display: flex;
+    background-color: #dddddd;
+}
+
+
+img {
+    width: 100%;
+}
+

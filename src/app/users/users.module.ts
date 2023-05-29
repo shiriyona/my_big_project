@@ -12,13 +12,15 @@ import { MatTabsModule } from '@angular/material/tabs';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { UserssRoutingModule } from './users-routing.module';
 import { UsersComponent } from './components/users/users.component';
-import { UserItemComponent } from './components/users/user-item/user-item.component';
+import { AddUserComponent } from './components/users/add-user/add-user.component';
+import { EditUserComponent } from './components/users/edit-user/edit-user.component';
 
 
 @NgModule({
   declarations: [
     UsersComponent,
-    UserItemComponent
+    AddUserComponent,
+    EditUserComponent,
   ],
   imports: [
     CommonModule,

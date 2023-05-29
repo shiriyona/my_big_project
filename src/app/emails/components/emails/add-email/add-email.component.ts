@@ -15,8 +15,7 @@ export class AddEmailComponent implements OnInit {
   @ViewChild('subjectInput') subjectInputRef: ElementRef;
   @ViewChild('timeInput') timeInputRef: ElementRef;
   @ViewChild('descriptionInput') descriptionInputRef: ElementRef;
-  @Output() emailAdded = new EventEmitter<any>()
-
+ 
   constructor(private emailsService: EmailsService) { }
 
   ngOnInit(): void {

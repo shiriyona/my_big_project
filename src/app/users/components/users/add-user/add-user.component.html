@@ -1,0 +1,14 @@
+<mat-dialog-content class="mat-typography">
+  <h3>Develop across all platforms</h3>
+  <label class="id-label">ID:</label><br>
+  <input class="id-input"><br>
+  <label class="first-name-label">First Name:</label><br>
+  <input #firstNameInput><br>
+  <label class="last-name-label">Last Name:</label><br>
+  <input #lastNameInput><br>
+  <label class="role-label">Role:</label><br>
+  <input #roleInput>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button class="add-user-button" mat-dialog-close [disabled]="('#firstNameInput') === null" (click)="addUser()">Add</button>
+</mat-dialog-actions>

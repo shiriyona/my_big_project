@@ -49,4 +49,40 @@ export const USER_MOCK_DATA: User[]  = [
     lastName: 'Weis',
     img: '../../../../assets/img/providers_pic.png'
   },
+  {
+    id: uuidv4(),
+    userName: 'rinat',
+    password: '1111',
+    role: USER_ROLE.SALER,
+    firstName: 'Rinat',
+    lastName: 'Levi',
+    img: '../../../../assets/img/providers_pic.png'
+  },
+  {
+    id: uuidv4(),
+    userName: 'user4',
+    password: '1111',
+    role: USER_ROLE.SALER,
+    firstName: 'Bill',
+    lastName: 'Dolev',
+    img: '../../../../assets/img/providers_pic.png'
+  },
+  {
+    id: uuidv4(),
+    userName: 'admin5',
+    password: '1111',
+    role: USER_ROLE.ADMIN,
+    firstName: 'Ron',
+    lastName: 'Daz',
+    img: '../../../../assets/img/providers_pic.png'
+  },
+  {
+    id: uuidv4(),
+    userName: 'admin5',
+    password: '1111',
+    role: USER_ROLE.ADMIN,
+    firstName: 'Liv',
+    lastName: 'Kaz',
+    img: '../../../../assets/img/providers_pic.png'
+  },
   ];

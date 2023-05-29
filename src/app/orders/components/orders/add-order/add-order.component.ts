@@ -20,6 +20,7 @@ export class AddOrderComponent implements OnInit {
   }
 
   addOrder() {
+    var d = new Date().toDateString;
     const orderCode = this.orderCodeInputRef.nativeElement.value;
     const oredrName = this.orderNameInputRef.nativeElement.value;
     const dateInvitation = this.dateInvitationInputRef.nativeElement.value;

@@ -4,9 +4,9 @@
     <div class="order-date" *ngFor="let order of orders" (dblclick)="editRow(order)">
         <app-order-item [order]="order"></app-order-item>
         <div *ngIf="order.isOpen" class="inner-row">
-            <div class="order-code">order code:
+            <!-- <div class="order-code">order code:
                 <input #orderCodeInput value="{{order?.orderCode}}">
-            </div>
+            </div> -->
             <div class="order-name">order name:
                 <input #orderNameInput value="{{order?.orderName}}">
             </div>
@@ -20,7 +20,7 @@
                 <input #totalInput value="{{order?.total}}">
 
             </div>
-            <button (click)="saveChanges(order)">Save</button>
+            <button class="btn btn-primary" (click)="saveChanges(order)">Save</button>
         </div>
     </div>
 </div>

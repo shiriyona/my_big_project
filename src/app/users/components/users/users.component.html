@@ -1,3 +1,25 @@
-<div *ngFor="let user of users">
-    <app-user-item [user]="user"></app-user-item>
+<div class="add-user" (click)="addUser()">+</div>
+<div class="tbl-users">
+    <!-- <div class="header">
+        <div class="id col">ID</div>
+        <div class="first-name col">First Name</div>
+        <div class="first-name col">Last Name</div>
+        <div class="first-name col">Role</div>
+        <div class="img col">Img</div>
+    </div> -->
+    <div class="content">
+        <div class="full-width" *ngFor="let user of users">
+            <div class="my-row" (dblclick)="editUser(user)"
+                [ngClass]="{'userColor': user.id%2 , 'fullScreen': !user.id%2}">
+                <div class="user-id">ID: {{user?.id}} </div>
+                <div class="first-name">{{user?.firstName}}</div>
+                <div class="last-name">{{user?.lastName}}</div>
+                <div class="user-role">{{user?.role}}</div>
+                <div class="user-img">
+                    <img [src]="user?.img">
+                </div>
+                <div class="delete-user" (click)="deleteUser(user)">-</div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -6,36 +6,36 @@ export const ORDERS_MOCK_DATA: Order[] = [
   {
     orderCode: uuidv4(),
     orderName: 'bamba',
-    dateInvitation: '2',
-    dateArrival: '3',
+    dateInvitation: '2/2/23',
+    dateArrival: '3/3/23',
     total: 4
   },
   {
     orderCode: uuidv4(),
     orderName: 'chocolate',
-    dateInvitation: '',
-    dateArrival: '',
+    dateInvitation: '1/2/23',
+    dateArrival: '23/2/23',
     total: 13
   },
   {
     orderCode: uuidv4(),
     orderName: 'pasta',
-    dateInvitation: 'd',
-    dateArrival: '',
+    dateInvitation: '1/1/23',
+    dateArrival: '7/1/23',
     total: 22
   },
   {
     orderCode: uuidv4(),
     orderName: 'pizza',
-    dateInvitation: 'd',
-    dateArrival: '',
+    dateInvitation: '5/4/23',
+    dateArrival: '1/5/23',
     total: 22
   },
   {
     orderCode: uuidv4(),
     orderName: 'sushi',
-    dateInvitation: 'd',
-    dateArrival: '',
+    dateInvitation: '2/6/23',
+    dateArrival: '22/6/23',
     total: 22
   },
 ];
