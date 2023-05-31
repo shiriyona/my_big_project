@@ -65,7 +65,7 @@ class ImageSnippet {
 
 @Component({
   selector: 'dialog-content-example-dialog',
-  templateUrl: 'dialog-content-example-dialog.html',
+  templateUrl: 'add-customer.html',
   styleUrls: ['./users.component.scss']
 })
 export class DialogContentExampleDialog {

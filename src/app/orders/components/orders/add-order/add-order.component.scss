@@ -1,19 +1,24 @@
 .new-order {
-  width: 600px;
+  width: 300px;
 }
 
-input {
-  width: 582px;
-  display: inline-flex;
-}
-
-#ignismyModal .modal-header{
+#ignismyModal .modal-header {
   border:0px;
   display: inline;
 }
 
-.modal-header {
-  padding: 6px;
+h3 {
+  display: inline;
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .send-order-button {

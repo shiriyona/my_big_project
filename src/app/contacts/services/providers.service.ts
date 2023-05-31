@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, Subject, of } from 'rxjs';
 import { Provider } from '../models/providers.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProvidersService {
-  private providerDetails: Provider[] = [
+  subject = new Subject();
+  private providers: Provider[] = [
     {
       position: 1,
       firstName: 'Deal',
@@ -121,17 +122,16 @@ export class ProvidersService {
 
   constructor() { }
 
-  sendProviders(): Observable<any> {
-    return of(this.providerDetails.slice());
+  addProviders(): Observable<any> {
+    return of(this.providers.slice());
   }
 
-  addProviderToTheList(provider: Provider) {
-    this.providerDetails.push(provider);
-    this.sendNewProviders()
+  sendNewProvider(provider: Provider) {
+    this.subject.next(provider);
   }
 
-  sendNewProviders() {
-    return of(this.providerDetails.slice());
+  addNewProvider() {
+    return this.subject.asObservable();
   }
 
 }

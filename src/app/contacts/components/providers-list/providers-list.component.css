@@ -1,83 +1,129 @@
-table {
-  width: 100%;
+.tbl-providers {
+  .header {
+      display: flex;
+      width: 100%;
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      font-weight: bold;
+      background-color: #E8E8E8;
+
+      .col {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+      }
+
+      .content {
+
+          .full-width {
+              width: 100%;
+          }
+
+          .my-row {
+              display: flex;
+              width: 100%;
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+
+              .inner-row {
+                  min-height: 100px;
+              }
+          }
+      }
+  }
+
 }
 
-tr.example-detail-row {
-  height: 0;
-}
-
-tr.example-element-row:not(.example-expanded-row):hover {
-  background: whitesmoke;
-}
-
-tr.example-element-row:not(.example-expanded-row):active {
-  background: #efefef;
-}
-
-.example-element-row td {
-  border-bottom-width: 0;
-}
-
-.example-element-detail {
-  overflow: hidden;
+.my-row {
   display: flex;
+  width: 100%;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
   cursor: pointer;
 }
 
-td {
-  cursor: pointer;
-}
-
-.example-element-diagram {
-  min-width: 80px;
-  border: 2px solid black;
+.first-name {
+  width: 100%;
+  border: 1px solid #dddddd;
+  text-align: left;
   padding: 8px;
-  font-weight: lighter;
-  margin: 8px 0;
-  height: 104px;
-  cursor: pointer;
 }
 
-.example-element-symbol {
-  font-weight: bold;
-  font-size: 40px;
-  line-height: normal;
+.last-name {
+  width: 100%;
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
 }
 
-.example-element-description {
-  padding: 16px;
+.phone {
+  width: 100%;
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
 }
 
-.example-element-description-attribution {
-  opacity: 0.5;
-}
-
-img {
-  width: 12%;
-  left: 1200px;
-  position: sticky;
+.inner-row {
+  padding: 8px;
+  border: 1px solid #dddddd;
+  min-height: 100px;
+  display: flex;
+  background-color: #dddddd;
 }
 
 .edit-provider-button {
-  position: sticky;
-  left: 761px;
-  width: 80px;
-  margin-top: 4.5em;
-  height: 30px;
-}
-
-.providerColorColor {
-  background-color: #F0F0F0;
-}
-
-button {
-  background-color: #555555; color: white;
+  background-color: #f44336;
   border: none;
-  padding: 8px 20px;
+  color: white;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 2px 2px;
+  margin: 4px 2px;
+  padding: 6px;
+  border-radius: 4px;
   cursor: pointer;
+  height: 40px;
 }
+
+.add-provider-button {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  padding: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 15%;
+}
+
+.fa {
+  font-size: 4em;
+}
+
+.title {
+  font-weight: bold;
+  margin-top: 1.5em;
+  padding-bottom: 1em;
+  left: 20px;
+}
+
+.info {
+  font-weight: bold;
+  margin-top: 1.5em;
+  padding-bottom: 1em;
+  margin-inline: 0.6em auto;
+  left: 60px;
+}
+
+.content {
+  width: 100%;
+  height: 500px;
+  overflow: auto;
+}
+

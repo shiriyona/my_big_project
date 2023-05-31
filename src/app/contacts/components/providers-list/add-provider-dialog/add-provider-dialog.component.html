@@ -1,24 +1,27 @@
-<h2 mat-dialog-title>details</h2>
-<mat-dialog-content class="mat-typography">
-  <p>first name:</p>
-  <input #firstNameInput><br>
-  <p>last name:</p>
-  <input #lastNameInput><br>
-  <p>phone:</p>
-  <input #phoneInput><br>
-  <p>id:</p>
-  <input #idInput><br>
-  <p>email:</p>
-  <input #emailInput><br>
-  <p>addres:</p>
-  <input #addresInput><br>
-  <p>description:</p>
-  <input #descriptionInput><br>
-  <p>img:</p>
-  <input #imgInput><br>
-  <p>position:</p>
-  <input #positionInput><br>
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="addProvider()" class="btn btn-success">add</button>
-</mat-dialog-actions>
+<div class="new-provider">
+  <div class="modal-header">
+    <button mat-button mat-dialog-close type="button" class="close" data-dismiss="modal"><span>×</span></button>
+    <h3>New Provider</h3>
+  </div><br>
+  <mat-dialog-content class="mat-typography">
+    <span>First Name:</span>
+    <input #firstNameInput>
+    <span>Last Name:</span>
+    <input #lastNameInput>
+    <span>Phone:</span>
+    <input #phoneInput>
+    <span>ID:</span>
+    <input #idInput><br>
+    <span>Email:</span>
+    <input #emailInput>
+    <span>Addres:</span>
+    <input #addresInput>
+    <span>Description:</span>
+    <input #descriptionInput>
+    <span>Position:</span>
+    <input #positionInput>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button class="add-button" mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="addProvider()">Add</button>
+  </mat-dialog-actions>
+</div>

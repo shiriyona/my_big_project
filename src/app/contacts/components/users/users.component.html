@@ -4,7 +4,6 @@
     <div class="last-name col">Last Name</div>
   </div>
   <div class="content">
-
     <div class="full-width" *ngFor="let user of users">
       <div class="my-row" (dblclick)="openRow(user)" [ngClass]="{'userColor': user.id%2 , 'fullScreen': !user.id%2}">
         <div class="first-name">{{user.firstName}}</div>

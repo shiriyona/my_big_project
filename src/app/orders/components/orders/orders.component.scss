@@ -23,9 +23,8 @@
     }
 
     .order-name {
-      // position: absolute;
-      // margin-top: 2px;
       padding: 2px;
+      display: inline;
 
       .name-title {
         font-weight: bold;
@@ -33,10 +32,8 @@
     }
 
     .date-invitation {
-      // display: inline-flex;
-      // padding-inline: 144px;
       padding: 2px;
-
+      display: inline;
 
       .date-invitation-title {
         font-weight: bold;
@@ -44,11 +41,8 @@
     }
 
     .date-arrival {
-      // padding-inline: 400px;
-      // display: inline-flex;
-      // padding-inline-end: 10px;
       padding: 2px;
-
+      display: inline;
 
       .date-arrival-title {
         font-weight: bold;
@@ -56,11 +50,8 @@
     }
 
     .total {
-      // display: inline-flex;
-      // padding-inline: 100px;
-      // right: 100px;
       padding: 2px;
-
+      display: inline;
 
       .total-title {
         font-weight: bold;
@@ -73,16 +64,18 @@
 }
 
 
-input{
+input {
   // width: 582px; 
-  display: inline-flex;
+  width: 16%;
+  padding: 5px 20px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-#ignismyModal .modal-header{
-  border:0px;
-}
-
-.send-order-button{
+.send-order-button {
   background-color: gray;
   color: white;
   border: none;
@@ -93,4 +86,18 @@ input{
   margin: 2px 2px;
   cursor: pointer;
   width: 98%;
+}
+
+.save-button {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  padding: 6px;
+  border-radius: 4px;
+  cursor: pointer;
 }

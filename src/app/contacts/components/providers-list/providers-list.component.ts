@@ -5,6 +5,7 @@ import { ProvidersService } from '../../services/providers.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ProviderDialogComponent } from './provider-dialog/provider-dialog.component';
 import { AddProviderDialogComponent } from './add-provider-dialog/add-provider-dialog.component';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-providers-list',
@@ -19,10 +20,9 @@ import { AddProviderDialogComponent } from './add-provider-dialog/add-provider-d
   ],
 })
 export class ProvidersListComponent implements OnInit {
-  dataSource;
-  columnsToDisplay = ['firstName', 'lastName', 'phone'];
-  columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
-  expandedElement: Provider | null;
+  providers: Provider[] = [];
+  getProvidersSubscription: Subscription;
+  getAddProviderSubscription: Subscription;
 
   constructor(private providersService: ProvidersService, public dialog: MatDialog) { }
 
@@ -31,7 +31,16 @@ export class ProvidersListComponent implements OnInit {
   }
 
   getProviders() {
-    this.dataSource = this.providersService.sendProviders()
+    this.getProvidersSubscription = this.providersService.addProviders().subscribe(res => {
+      this.providers = res;
+    });
+    this.providersService.addNewProvider().subscribe((provider: Provider) => {
+      this.addProvider(provider)
+    });
+  }
+
+  openRow(provider) {
+    provider.isOpen = !provider.isOpen;
   }
 
   openEditProviderDialog() {
@@ -42,13 +51,8 @@ export class ProvidersListComponent implements OnInit {
     });
   }
 
-  onProviderAdded(provider: Provider) {
-    this.dataSource.push({ provider })
-    console.log(this.dataSource);
-  }
-
-  refresh(): void {
-    this.getProviders();
+  addProvider(provider: Provider) {
+    this.providers.push(provider)
   }
 
   openAddProviderDialog() {
@@ -57,6 +61,10 @@ export class ProvidersListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  ngOnDestroy(): void {
+    this.getProvidersSubscription.unsubscribe();
   }
 
 }

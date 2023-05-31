@@ -10,17 +10,17 @@
             <div class="order-name">order name:
                 <input #orderNameInput value="{{order?.orderName}}">
             </div>
-            <div class="date-invitation">date invitation:
+            <div class="date-invitation"> date invitation:
                 <input #dateInvitationInput value="{{order?.dateInvitation}}">
             </div>
-            <div class="date-arrival">date arrival:
+            <div class="date-arrival"> date arrival:
                 <input #dateArrivalInput value="{{order?.dateArrival}}">
             </div>
-            <div  class="total">total:
+            <div  class="total"> total:
                 <input type="number" #totalInput value="{{order?.total}}">
 
             </div>
-            <button class="btn btn-primary" (click)="saveChanges(order)">Save</button>
+            <button class="save-button" (click)="saveChanges(order)">Save</button>
         </div>
     </div>
 </div>

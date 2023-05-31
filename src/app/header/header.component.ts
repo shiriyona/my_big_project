@@ -14,6 +14,12 @@ export class HeaderComponent implements OnInit {
   admin: boolean = false;
   management: boolean = false;
 
+  shoppingListActive = true;
+  emailsActive = false;
+  contactsActive = false;
+  odersActive = false;
+  usersActive = false;
+
   constructor(private loginService: LoginService, router:Router) { 
     // router.navigate(['/shopping-list']);
   }
@@ -41,6 +47,39 @@ export class HeaderComponent implements OnInit {
     }
     // this.loginService.onRole(this.admin);
     return this.loginService.currentUser;
+  }
+
+  nonActive() {
+    this.shoppingListActive = false;
+    this.emailsActive = false;
+    this.contactsActive = false;
+    this.odersActive = false;
+    this.usersActive = false;
+  }
+
+  activeShoppingList() {
+    this.nonActive();
+    this.shoppingListActive = true;
+  }
+
+  activeEmails() {
+    this.nonActive();
+    this.emailsActive = true;
+  }
+
+  activeContacts() {
+    this.nonActive();
+    this.contactsActive = true;
+  }
+
+  activeOrders() {
+    this.nonActive();
+    this.odersActive = true;
+  }
+
+  activeUsers() {
+    this.nonActive();
+    this.usersActive = true;
   }
 
 }

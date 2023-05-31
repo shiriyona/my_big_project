@@ -1,7 +1,7 @@
 <div class="modal-header"> 
   <h3>Edit User</h3>
   <button mat-button mat-dialog-close type="button" class="close" data-dismiss="modal"><span>×</span></button>
-</div>
+</div><br>
    <mat-dialog-content class="mat-typography">
     <div class="first-name title">First Name:</div>
     <input #firstNameInput value="{{user.firstName}}"><br>
@@ -11,7 +11,7 @@
     <input #userNameInput  value="{{user.userName}}"><br>
     <div class="password title">Password:</div>
     <input #passwordInput  value="{{user.password}}"><br>
-    <div class="role title">Role:</div>
+    <div class="role title">Role:</div><br>
       <mat-form-field appearance="fill"> 
         <mat-select value="{{user.role | enumToDescription}}">
           <mat-option *ngFor="let userRole of userRoles" [value]="userRole"

@@ -31,11 +31,11 @@ export class AddProviderDialogComponent implements OnInit {
     const proId = this.idInputRef.nativeElement.value
     const proEmail = this.emailInputRef.nativeElement.value
     const proAddres = this.addresInputRef.nativeElement.value
-    const proImg = this.imgInputRef.nativeElement.value
+    const proImg = ""
     const proPosition = this.positionInputRef.nativeElement.value
     const newProvider = new Provider(proFirstName, proLastName, proPhone, proId, proEmail, proAddres, proImg, proPosition)
     this.providerAdded.emit(newProvider)
-    this.proService.addProviderToTheList(newProvider);
+    this.proService.sendNewProvider(newProvider);
   }
 
 }

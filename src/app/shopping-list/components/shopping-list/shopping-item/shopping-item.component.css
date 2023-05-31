@@ -4,6 +4,8 @@ button {
     text-align: center;
     margin: auto;
     margin-top: 6px;
+    background-color: #eb4b3f;
+    border-color: #eb4b3f;
 }
 
 .list-group-item {
@@ -16,3 +18,4 @@ img {
     width: 230px;
     height: 170px;
 }
+

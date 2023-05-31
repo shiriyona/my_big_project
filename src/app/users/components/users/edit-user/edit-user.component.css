@@ -1,5 +1,21 @@
 .title {
     padding: 8px;
+    font-weight: bold;
+    display: inline;
+}
+
+input {
+    width: 100%;
+    padding: 8px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+h3 {
+    display: inline;
 }
 
 #ignismyModal .modal-header {
@@ -7,6 +23,11 @@
     border: 0px;
     display: inline;
 }
+
+/* .modal-header {
+    display: inline;
+    padding: 6px;
+ } */
 
 .close {
     margin-left: 100px;
