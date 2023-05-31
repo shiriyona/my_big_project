@@ -1,13 +1,28 @@
+<div class="modal-header">
+  <button mat-button mat-dialog-close type="button" class="close" data-dismiss="modal"><span>×</span></button>
+  <h3>New User</h3>
+</div>
+
 <mat-dialog-content class="mat-typography">
-  <h3>Develop across all platforms</h3>
-  <label class="id-label">ID:</label><br>
-  <input class="id-input"><br>
-  <label class="first-name-label">First Name:</label><br>
+  <div class="id-label">ID:</div>
+  <input class="id-input" #idInput><br>
+  <div class="first-name-label">First Name:</div>
   <input #firstNameInput><br>
-  <label class="last-name-label">Last Name:</label><br>
+  <div class="last-name-label">Last Name:</div>
   <input #lastNameInput><br>
-  <label class="role-label">Role:</label><br>
-  <input #roleInput>
+  <div class="last-name-label">UserName:</div>
+  <input #userNameInput><br>
+  <div class="last-name-label">Password:</div>
+  <input #passwordInput><br>
+  <div class="role-label">Role:</div>
+  <mat-form-field appearance="fill"> 
+    <mat-select>
+      <mat-option *ngFor="let userRole of userRoles" [value]="userRole"
+      (click)="selectRole(userRole)">
+      {{userRole | enumToDescription}}
+    </mat-option>
+    </mat-select>
+  </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button class="add-user-button" mat-dialog-close [disabled]="('#firstNameInput') === null" (click)="addUser()">Add</button>

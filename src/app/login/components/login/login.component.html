@@ -5,8 +5,8 @@
     <div class="example-container">
       <mat-form-field appearance="fill">
       <img class="example-element-symbol userIcon" src="../../../../assets/img/icon_user.png">
-        <mat-label>Enter your userName</mat-label>
-        <input matInput placeholder="admin" [formControl]="userName" required>
+      <label for="fname"><i class="fa fa-user"></i>UserName</label>
+        <input matInput placeholder="enter your userNmae" [formControl]="userName" required>
         <mat-error *ngIf="userName.invalid">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
     </div>
@@ -14,12 +14,13 @@
     <div class="example-container">
       <mat-form-field appearance="fill">
         <img class="example-element-symbol userIcon" src="../../../../assets/img/password-icon.png">
-        <mat-label>Enter your password</mat-label>
-        <input matInput type="password" type="number" placeholder="1234" [formControl]="userPassword" required>
+        <label for="fname"><i class="fa fa-user"></i>Password</label>
+        <input matInput type="password" placeholder="enter your password" [formControl]="userPassword" required>
         <mat-error *ngIf="userPassword.invalid">{{getErrorMessage()}}</mat-error>
         <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </mat-form-field>
     </div>
+    
 
     <!-- <mat-form-field appearance="fill">
       <img class="example-element-symbol userIcon" src="../../../../assets/img/icon_user.png">

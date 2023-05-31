@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login/services/login.service';
 import { USER_ROLE } from '../shared/enums/user-role.enum';
+import { User } from '../login/models/login.model';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,9 @@ import { USER_ROLE } from '../shared/enums/user-role.enum';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  currentUserRole: USER_ROLE;
+  currentUser: User;
   admin: boolean = false;
-  usrRole;
+  management: boolean = false;
 
   constructor(private loginService: LoginService) { }
 
@@ -19,17 +20,24 @@ export class HeaderComponent implements OnInit {
   }
   
   userRole() {
-    this.loginService.sendCurrentRole().subscribe((res) => {
-      this.currentUserRole = res;
-    })
-    if(this.currentUserRole === USER_ROLE.ADMIN){
+    this.loginService.sendCurrentUser().subscribe((res) => {
+      this.currentUser = res;
+    });
+    if(this.currentUser.role === USER_ROLE.ADMIN){
       this.admin = true;
     }
     else{
       this.admin = false;
     }
-    this.loginService.onRole(this.admin);
-    return this.loginService.currentUserRole;
+
+    if(this.currentUser.role === USER_ROLE.MANAGEMENT){
+      this.management = true;
+    }
+    else{
+      this.management = false;
+    }
+    // this.loginService.onRole(this.admin);
+    return this.loginService.currentUser;
   }
 
 }

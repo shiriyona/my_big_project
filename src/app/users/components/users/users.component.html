@@ -1,20 +1,14 @@
 <div class="add-user" (click)="addUser()">+</div>
 <div class="tbl-users">
-    <!-- <div class="header">
-        <div class="id col">ID</div>
-        <div class="first-name col">First Name</div>
-        <div class="first-name col">Last Name</div>
-        <div class="first-name col">Role</div>
-        <div class="img col">Img</div>
-    </div> -->
     <div class="content">
         <div class="full-width" *ngFor="let user of users">
-            <div class="my-row" (dblclick)="editUser(user)"
-                [ngClass]="{'userColor': user.id%2 , 'fullScreen': !user.id%2}">
-                <div class="user-id">ID: {{user?.id}} </div>
-                <div class="first-name">{{user?.firstName}}</div>
-                <div class="last-name">{{user?.lastName}}</div>
-                <div class="user-role">{{user?.role}}</div>
+            <div class="my-row" (dblclick)="editUser(user)">
+                <span class="user-id"><span class="title">ID: </span>{{user?.id}} </span>
+                <span class="first-name"><span class="title">First Name: </span>{{user?.firstName}}</span>
+                <span class="last-name"><span class="title">Last Name: </span>{{user?.lastName}}</span>
+                <span class="first-name"><span class="title">UserName: </span>{{user?.userName}}</span>
+                <span class="last-name"><span class="title">Password: </span>{{user?.password}}</span>
+                <span class="user-role"><span class="title">role: </span>{{user?.role | enumToDescription}}</span>
                 <div class="user-img">
                     <img [src]="user?.img">
                 </div>

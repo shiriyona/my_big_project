@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDetails } from '../../models/user.model';
 import { Subscription } from 'rxjs';
 import { UsersServices } from '../../services/users.services';
 import { MatDialog } from '@angular/material/dialog';
@@ -12,8 +11,10 @@ import { EditUserComponent } from './edit-user/edit-user.component';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss']
 })
+
 export class UsersComponent implements OnInit {
   users: User[] = [];
+  editedUser: User
   getUsersSubscrition: Subscription;
 
   constructor(private usersService: UsersServices, public dialog: MatDialog) { }
@@ -22,6 +23,9 @@ export class UsersComponent implements OnInit {
     this.getUsers();
     this.usersService.onNewUser().subscribe((user: User) => {
       this.onNewUser(user)
+    });
+    this.usersService.onGetUserEdit().subscribe((user: User) => {
+      this.onEditUser(user)
     });
   }
 
@@ -41,6 +45,7 @@ export class UsersComponent implements OnInit {
 
   onNewUser(user: User) {
     this.users.push(user)
+    localStorage.setItem('usersInfo', JSON.stringify(this.users));
   }
 
   editUser(user){
@@ -50,6 +55,15 @@ export class UsersComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  onEditUser(editedUser: User) {
+    for (let i = this.users.length - 1; i >= 0; i--) {
+      if (editedUser.id === this.users[i].id) {
+        this.users[i] = editedUser;
+        break;
+      }
+    }
   }
 
   deleteUser(user: User) {

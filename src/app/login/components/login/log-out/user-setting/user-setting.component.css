@@ -1,0 +1,11 @@
+#ignismyModal .modal-header{
+    border:0px;
+}
+
+.modal-header {
+    padding: 1px;
+}
+
+.title {
+    font-weight: bold;
+}

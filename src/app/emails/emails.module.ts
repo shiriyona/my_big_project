@@ -14,15 +14,13 @@ import { EmailsRoutingModule } from './emails-routing.module';
 import { EmailsComponent } from './components/emails/emails.component';
 import { AddEmailComponent } from './components/emails/add-email/add-email.component';
 import { EmailItemComponent } from './components/emails/email-item/email-item.component';
-import { DeletedEmailsComponent } from './components/emails/deleted-emails/deleted-emails.component';
 
 
 @NgModule({
   declarations: [
     EmailsComponent,
     AddEmailComponent,
-    EmailItemComponent,
-    DeletedEmailsComponent
+    EmailItemComponent
   ],
   imports: [
     CommonModule,

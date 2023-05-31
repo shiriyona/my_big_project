@@ -26,9 +26,10 @@ export class LoginService {
       if (this.users[i].userName === userName && this.users[i].password === userPassword) {
         this.madeLogin = true;
         localStorage.setItem("loggenIn", 'true');
-        this.currentUser = this.users[i]
+        this.currentUser = this.users[i];      
+        localStorage.setItem("currentUser", JSON.stringify(this.currentUser));
         this.currentUserRole = this.users[i].role
-        return of(this.currentUserRole);
+        return of(this.currentUser);
       }    
     } 
     localStorage.setItem("loggenIn", 'false');
@@ -41,17 +42,18 @@ export class LoginService {
     return this.madeLogin;
   }
 
-  sendCurrentRole(): Observable<any>{
-    return of(this.currentUserRole);
+  sendCurrentUser(): Observable<any>{
+    var storedUser = JSON.parse(localStorage.getItem("currentUser"));
+    return of(storedUser);
   }
 
-  onRole(role: boolean) {
-    this.role = role;
-  }
+  // onRole(role: boolean) {
+  //   this.role = role;
+  // }
 
-  isLoggedIn() {
-    return this.role;
-  }
+  // isLoggedIn() {
+  //   return this.role;
+  // }
 
   checkLogin() {
     if (localStorage.getItem('loggenIn') === 'true') {

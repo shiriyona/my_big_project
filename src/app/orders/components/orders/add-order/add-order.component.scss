@@ -1,25 +1,29 @@
-.new-order{
-    width: 600px;  
-  }
+.new-order {
+  width: 600px;
+}
 
-  input{
-    width: 582px; 
-    display: inline-flex;
-  }
-  
-  #ignismyModal .modal-header{
-    border:0px;
-  }
-  
-  .send-order-button{
-    background-color: gray;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 2px 2px;
-    cursor: pointer;
-    width: 98%;
-  }
+input {
+  width: 582px;
+  display: inline-flex;
+}
+
+#ignismyModal .modal-header {
+  border: 0px;
+}
+
+.send-order-button {
+  background-color: gray;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2px 2px;
+  cursor: pointer;
+  width: 98%;
+}
+
+#ignismyModal .modal-header {
+  border: 0px;
+}

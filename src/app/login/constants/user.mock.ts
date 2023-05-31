@@ -5,16 +5,16 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const USER_MOCK_DATA: User[]  = [
   {
-    id: uuidv4(),
-    userName: 'admin1',
+    id: '22125372',
+    userName: 'shiri',
     password: '1234',
-    role: USER_ROLE.ADMIN,
+    role: USER_ROLE.MANAGEMENT,
     firstName: 'Nicole',
     lastName: 'Love',
     img: '../../../../assets/img/providers_pic.png'
   },
   {
-    id: uuidv4(),
+    id: '22125383',
     userName: 'admin2',
     password: '1234',
     role: USER_ROLE.ADMIN,
@@ -23,7 +23,7 @@ export const USER_MOCK_DATA: User[]  = [
     img: '../../../../assets/img/providers_pic.png'
   },
   {
-    id: uuidv4(),
+    id: '22125341',
     userName: 'admin3',
     password: '3333',
     role: USER_ROLE.ADMIN,
@@ -32,7 +32,7 @@ export const USER_MOCK_DATA: User[]  = [
     img: '../../../../assets/img/providers_pic.png'
   },
   {
-    id: uuidv4(),
+    id: '22125322',
     userName: 'user1',
     password: '1111',
     role: USER_ROLE.SALER,
@@ -41,7 +41,7 @@ export const USER_MOCK_DATA: User[]  = [
     img: '../../../../assets/img/providers_pic.png'
   },
   {
-    id: uuidv4(),
+    id: '22125333',
     userName: 'user2',
     password: '2222',
     role: USER_ROLE.SALER,
@@ -50,7 +50,7 @@ export const USER_MOCK_DATA: User[]  = [
     img: '../../../../assets/img/providers_pic.png'
   },
   {
-    id: uuidv4(),
+    id: '22125344',
     userName: 'rinat',
     password: '1111',
     role: USER_ROLE.SALER,
@@ -59,7 +59,7 @@ export const USER_MOCK_DATA: User[]  = [
     img: '../../../../assets/img/providers_pic.png'
   },
   {
-    id: uuidv4(),
+    id: '22125355',
     userName: 'user4',
     password: '1111',
     role: USER_ROLE.SALER,
@@ -68,7 +68,7 @@ export const USER_MOCK_DATA: User[]  = [
     img: '../../../../assets/img/providers_pic.png'
   },
   {
-    id: uuidv4(),
+    id: '22125366',
     userName: 'admin5',
     password: '1111',
     role: USER_ROLE.ADMIN,
@@ -77,7 +77,7 @@ export const USER_MOCK_DATA: User[]  = [
     img: '../../../../assets/img/providers_pic.png'
   },
   {
-    id: uuidv4(),
+    id: '22125377',
     userName: 'admin5',
     password: '1111',
     role: USER_ROLE.ADMIN,

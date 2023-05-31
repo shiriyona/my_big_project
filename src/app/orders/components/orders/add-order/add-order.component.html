@@ -1,7 +1,9 @@
-
-  <div class="new-order">
+<div class="modal-header">
+  <button mat-button mat-dialog-close type="button" class="close" data-dismiss="modal"><span>×</span></button>
   <h2 mat-dialog-title>New Order</h2>
-  <mat-dialog-content class="mat-typography">  
+</div>
+<div class="new-order">
+  <mat-dialog-content class="mat-typography">
     <span class="order-code">order code:</span>
     <input #orderCodeInput><br>
     <span class="order-name">order name:</span>
@@ -12,7 +14,7 @@
     <input #dateArrivalInput><br>
     <span class="total">total:</span>
     <input #totalInput><br>
-    <button mat-button class="send-order-button" (click)="addOrder()"  mat-dialog-close class="send-order-button">Add Order</button>
-  </mat-dialog-content></div>
-
-  
+    <button mat-button class="send-order-button" (click)="addOrder()" mat-dialog-close class="send-order-button">Add
+      Order</button>
+  </mat-dialog-content>
+</div>

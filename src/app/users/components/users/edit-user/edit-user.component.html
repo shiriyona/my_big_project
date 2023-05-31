@@ -1,11 +1,27 @@
-<mat-dialog-content class="mat-typography">
-    <h3>Develop across all platforms</h3>
-    <!-- <label class="id-label">ID:</label><br>
-    <input class="id-input" value="user.id"><br> -->
-    <div class="first-name-label">First Name:</div>
-    <input #firstNameInput  value="{{user.firstName}}"><br>
-    <div class="last-name-label">Last Name:</div>
+<div class="modal-header"> 
+  <h3>Edit User</h3>
+  <button mat-button mat-dialog-close type="button" class="close" data-dismiss="modal"><span>×</span></button>
+</div>
+   <mat-dialog-content class="mat-typography">
+    <div class="first-name title">First Name:</div>
+    <input #firstNameInput value="{{user.firstName}}"><br>
+    <div class="last-name title">Last Name:</div>
     <input #lastNameInput  value="{{user.lastName}}"><br>
-    <div class="role-label">Role:</div>
-    <input #roleInput  value="{{user.role}}">
-  </mat-dialog-content>
+    <div class="user-name title">UserName:</div>
+    <input #userNameInput  value="{{user.userName}}"><br>
+    <div class="password title">Password:</div>
+    <input #passwordInput  value="{{user.password}}"><br>
+    <!-- <div class="role title">Role:</div>
+    <input #roleInput value="{{user.role}}"><br> -->
+    <div class="role title">Role:</div>
+      <mat-form-field appearance="fill"> 
+        <mat-select value="{{user.role | enumToDescription}}">
+          <mat-option *ngFor="let userRole of userRoles" [value]="userRole"
+          (click)="selectRole(userRole)">
+          {{userRole | enumToDescription}}
+        </mat-option>
+        </mat-select>
+      </mat-form-field><br>
+    <button mat-button class="save-button" mat-dialog-close (click)="saveChanges()">Save</button>
+</mat-dialog-content>
+

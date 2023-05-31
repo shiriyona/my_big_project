@@ -13,29 +13,33 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { LoginComponent } from './components/login/login.component';
 import { LogOutComponent } from './components/login/log-out/log-out.component';
+import { UserSettingComponent } from './components/login/log-out/user-setting/user-setting.component';
+import { UserssModule } from "../users/users.module";
 
 
 @NgModule({
-  declarations: [
-    LoginComponent,
-    LogOutComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    MatSelectModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatTableModule,
-    MatExpansionModule,
-    MatDialogModule,
-    MatTabsModule,
-    MatMenuModule,
-    MatIconModule
-  ],
-  providers: [],
-  exports: [LoginComponent, LogOutComponent]
+    declarations: [
+        LoginComponent,
+        LogOutComponent,
+        UserSettingComponent
+    ],
+    providers: [],
+    exports: [LoginComponent, LogOutComponent],
+    imports: [
+        CommonModule,
+        FormsModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        MatSelectModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatTableModule,
+        MatExpansionModule,
+        MatDialogModule,
+        MatTabsModule,
+        MatMenuModule,
+        MatIconModule,
+        UserssModule
+    ]
 })
 export class loginModule { }

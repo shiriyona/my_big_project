@@ -17,6 +17,7 @@ export class EmailsComponent implements OnInit, OnDestroy {
   deletedEmails: Email[] = [];
   selectedRow: Email;
   getEmailsSubscrition: Subscription;
+  getDeletedEmailsSubscrition: Subscription;
   deleteIconClicked = false
   emailToList = true;
 
@@ -85,16 +86,23 @@ export class EmailsComponent implements OnInit, OnDestroy {
   }
 
   getDeletedEmails() {
-    this.deleteIconClicked = true;
+    this.getDeletedEmailsSubscrition = this.emailsService.getDeletedEmails().subscribe(res => {
+      this.deletedEmails = res;
+    });
+    this.selectedRow = null;
+    this.deleteIconClicked = true;  
   }
 
   home(){
+    this.selectedRow = null
     this.deleteIconClicked = false;
   }
 
   ngOnDestroy(): void {
     this.getEmailsSubscrition.unsubscribe();
+    this.getDeletedEmailsSubscrition.unsubscribe();
   }
+
 
 }
 

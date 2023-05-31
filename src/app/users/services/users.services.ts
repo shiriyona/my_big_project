@@ -9,7 +9,8 @@ import { User } from "src/app/login/models/login.model";
 })
 export class UsersServices {
     users: User[] = []
-    subject = new Subject()
+    subject = new Subject();
+    subject2 = new Subject();
     editedUser: User
 
     constructor() {
@@ -36,5 +37,13 @@ export class UsersServices {
 
     getEditUser(){
         return this.editedUser;
+    }
+    
+    onUserEdit(editUser){
+        this.subject2.next(editUser);
+    }
+
+    onGetUserEdit() {
+        return this.subject2.asObservable();
     }
 }

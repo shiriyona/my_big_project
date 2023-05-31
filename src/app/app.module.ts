@@ -17,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { DrawingModule } from './drawings/drawing.module';
@@ -27,12 +28,13 @@ import { EmailssModule } from './emails/emails.module';
 import { OnlyLoggedUsersGuard } from './only-logged-user-guard';
 import { OrdersModule } from './orders/orders.module';
 import { UserssModule } from './users/users.module';
+import { UsersRoleGuard } from './user-role-guard';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +56,7 @@ import { UserssModule } from './users/users.module';
     MatExpansionModule,
     MatDialogModule,
     MatTabsModule,
+    MatButtonToggleModule,
     ContactsModule,
     DrawingModule,
     loginModule,
@@ -63,7 +66,7 @@ import { UserssModule } from './users/users.module';
     UserssModule
   ],
   exports: [MatTableModule],
-  providers: [OnlyLoggedUsersGuard],
+  providers: [OnlyLoggedUsersGuard, UsersRoleGuard],
   bootstrap: [AppComponent],
   schemas: []
 })

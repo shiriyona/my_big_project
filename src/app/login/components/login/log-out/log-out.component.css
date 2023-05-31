@@ -2,3 +2,12 @@ button {
     background-color: transparent;
     border:none;
 }
+
+.user-details {
+    padding: 4px;
+    color: blue;
+}
+
+.user-setting {
+    cursor: pointer;
+}

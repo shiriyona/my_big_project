@@ -1,0 +1,17 @@
+.title{
+    padding: 8px;
+}
+
+#ignismyModal .modal-header {
+    border: 0px;
+}
+
+.modal-header {
+    padding: 1px;
+    display: inline-flex;
+    width: 100%;
+}
+
+.close {
+    margin-left: 100px;
+}

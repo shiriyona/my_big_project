@@ -1,29 +1,36 @@
 <div class="email">
     <div class="new-email">
-        <button class="new-email-button" (click)="openDialog()">New Email</button>  
-        <img class="home-icon" src="../../../../assets/img/home.png" (click)="home()">   
-        <img class="trash-icon" src="../../../../assets/img/trash-icon.png" (click)="getDeletedEmails()">     
+        <button class="new-email-button" (click)="openDialog()">New Email</button>
+        <img class="home-icon" src="../../../../assets/img/home.png" (click)="home()">
+        <img class="trash-icon" src="../../../../assets/img/trash-icon.png" (click)="getDeletedEmails()">
     </div><br>
     <div>
     </div>
     <div class="email-wrapper">
-        <div class="email-list" *ngIf="deleteIconClicked===false">
-            <!-- <cdk-virtual-scroll-viewport itemSize="5" class="scroll-data"> -->
-                <div class="email-data" *ngFor="let email of emails" (click)="onSelectRow(email)"> 
+        <div class="email-list">
+            <div class="emails" *ngIf="deleteIconClicked===false">
+                <div class="email-data" *ngFor="let email of emails" (click)="onSelectRow(email)">
                     <app-email-item [email]="email"></app-email-item>
                 </div>
-            <!-- </cdk-virtual-scroll-viewport> -->
-        </div>
-        <div  *ngIf="deleteIconClicked===true">  
-            <app-deleted-emails></app-deleted-emails>        
+
+
+            </div>
+            <div class="deleted-emails" *ngIf="deleteIconClicked===true">
+                <div class="email-data" *ngFor="let deletedEmail of deletedEmails" (click)="onSelectRow(deletedEmail)">
+                    <div class="name">{{deletedEmail?.name}}</div>
+                    <div class="subject">{{deletedEmail?.subject}}</div>
+                    <div class="time">{{deletedEmail?.date | date: 'short'}}</div>
+                </div>
+            </div>
+
         </div>
         <div class="selected-email">
             <div *ngIf="selectedRow" class="selected-row">
-            <div class="subject">{{selectedRow?.subject}}</div> 
-            <div class="name">{{selectedRow?.name}}</div>    
-            <div class="description">{{selectedRow?.description}}</div>     
-            <div class="time">{{selectedRow?.date}}</div> 
-            </div>        
+                <div class="subject">{{selectedRow?.subject}}</div>
+                <div class="name">{{selectedRow?.name}}</div>
+                <div class="description">{{selectedRow?.description}}</div>
+                <div class="time">{{selectedRow?.date}}</div>
+            </div>
         </div>
     </div>
 </div>

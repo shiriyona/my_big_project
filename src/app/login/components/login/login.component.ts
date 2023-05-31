@@ -42,7 +42,6 @@ export class LoginComponent implements OnInit {
   if (this.correctLogin === false) {
     return 'Your userName or password is incorrect';
   }
-
     this.clear();
   }
 

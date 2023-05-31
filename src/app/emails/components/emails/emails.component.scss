@@ -1,7 +1,4 @@
 .email {
-    // background-color: white;
-    // width: 100%;
-    // border: 2px solid black;
 
     .new-email{
         .new-email-button{
@@ -31,7 +28,7 @@
 
             .email-data {
                 height: 100px;
-                background: rgb(248, 248, 248);
+                background-color: #F8F8FF;
                 border: 2px solid gray;
                 padding: 5px; 
                 cursor: pointer;
@@ -47,7 +44,7 @@
         
             .selected-row {       
                 height: 600px;
-                background: whitesmoke;
+                background-color: #F8F8FF;
                 border: 2px solid gray;
 
                 .subject{

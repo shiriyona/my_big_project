@@ -9,11 +9,13 @@ import { MatTableModule } from '@angular/material/table';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { UserssRoutingModule } from './users-routing.module';
 import { UsersComponent } from './components/users/users.component';
 import { AddUserComponent } from './components/users/add-user/add-user.component';
 import { EditUserComponent } from './components/users/edit-user/edit-user.component';
+import { EnumToDescriptionPipe } from '../shared/enums/user-role.enum';
 
 
 @NgModule({
@@ -21,6 +23,7 @@ import { EditUserComponent } from './components/users/edit-user/edit-user.compon
     UsersComponent,
     AddUserComponent,
     EditUserComponent,
+    EnumToDescriptionPipe
   ],
   imports: [
     CommonModule,
@@ -34,10 +37,12 @@ import { EditUserComponent } from './components/users/edit-user/edit-user.compon
     MatExpansionModule,
     MatDialogModule,
     MatTabsModule,
+    MatButtonToggleModule,
     ScrollingModule,
     UserssRoutingModule
   ],
   providers: [],
+  exports: [EnumToDescriptionPipe]
 })
 
 export class UserssModule { }
