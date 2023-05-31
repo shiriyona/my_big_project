@@ -13,10 +13,15 @@ export class AddOrderComponent implements OnInit {
   @ViewChild('dateInvitationInput') dateInvitationInputRef: ElementRef;
   @ViewChild('dateArrivalInput') dateArrivalInputRef: ElementRef;
   @ViewChild('totalInput') totalInputRef: ElementRef;
+  dateArrival
 
   constructor(private ordersService: OrdersService) { }
 
   ngOnInit(): void {
+  }
+
+  dateArrivalSelected(date) {
+    this.dateArrival = date
   }
 
   addOrder() {

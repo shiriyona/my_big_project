@@ -5,9 +5,6 @@
   <div class="user-details">
     <div class="user-name">{{currentUser.userName}}</div>
     <div class="user-setting" (click)="userSetting()">User setting</div>
-    <!-- <div class="user-name">{{currentUser.firstName}}</div>
-    <div class="user-name">{{currentUser.lastName}}</div>
-    <div class="user-name">{{currentUser.role}}</div> -->
   </div>
-  <button mat-menu-item (click)="submit()">log out</button>
+  <button class="log-out-button" mat-menu-item (click)="submit()">log out</button>
 </mat-menu>

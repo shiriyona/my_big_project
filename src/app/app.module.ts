@@ -18,6 +18,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { DrawingModule } from './drawings/drawing.module';
@@ -57,6 +58,7 @@ import { UsersRoleGuard } from './user-role-guard';
     MatDialogModule,
     MatTabsModule,
     MatButtonToggleModule,
+    MatDatepickerModule,
     ContactsModule,
     DrawingModule,
     loginModule,

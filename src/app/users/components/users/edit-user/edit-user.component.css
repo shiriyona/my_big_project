@@ -1,17 +1,32 @@
-.title{
+.title {
     padding: 8px;
 }
 
 #ignismyModal .modal-header {
+    padding: 6px;
     border: 0px;
-}
-
-.modal-header {
-    padding: 1px;
-    display: inline-flex;
-    width: 100%;
+    display: inline;
 }
 
 .close {
     margin-left: 100px;
+}
+
+.save-button {
+    background-color: #f44336;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  padding: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 98%;
+}
+
+.title {
+    padding-top: 10px;
 }

@@ -100,7 +100,7 @@ export class EmailsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.getEmailsSubscrition.unsubscribe();
-    this.getDeletedEmailsSubscrition.unsubscribe();
+    // this.getDeletedEmailsSubscrition.unsubscribe();
   }
 
 

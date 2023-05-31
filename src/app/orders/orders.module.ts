@@ -11,6 +11,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import { OrdersComponent } from './components/orders/orders.component';
 import { OrdersRoutingModule } from './orders-routing.module';
 import { OrderItemComponent } from './components/orders/order-item/order-item.component';
@@ -37,6 +38,7 @@ import { AddOrderComponent } from './components/orders/add-order/add-order.compo
     MatTabsModule,
     MatMenuModule,
     MatIconModule,
+    MatDatepickerModule,
     OrdersRoutingModule
   ],
   providers: [],

@@ -1,7 +1,7 @@
 .list-group-item {
     border: 1px solid;
     border-radius: unset;
-    
+
 
     .order-code {
         display: inline-flex;
@@ -23,7 +23,8 @@
         }
     }
 
-    .date-invitation, .date-arrival {
+    .date-invitation,
+    .date-arrival {
         justify-content: flex-start;
     }
 
@@ -34,7 +35,7 @@
 
         .date-invitation-title {
             font-weight: bold;
-            
+
         }
     }
 
@@ -48,7 +49,7 @@
         }
     }
 
-    .total{
+    .total {
         display: inline-flex;
         position: absolute;
         padding-inline: 100px;
@@ -62,11 +63,12 @@
     }
 
     .delete-order {
-        top: 21px;
+        top: 8px;
         position: absolute;
         display: inline-flex;
         margin-left: 89%;
         left: 100px;
+        font-size: 26px;
     }
 
 }

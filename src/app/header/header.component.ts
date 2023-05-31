@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login/services/login.service';
 import { USER_ROLE } from '../shared/enums/user-role.enum';
 import { User } from '../login/models/login.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,9 @@ export class HeaderComponent implements OnInit {
   admin: boolean = false;
   management: boolean = false;
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, router:Router) { 
+    // router.navigate(['/shopping-list']);
+  }
 
   ngOnInit(): void {
     this.userRole()

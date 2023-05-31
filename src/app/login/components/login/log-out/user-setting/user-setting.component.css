@@ -1,11 +1,22 @@
 #ignismyModal .modal-header{
     border:0px;
+    display: inline;
 }
 
 .modal-header {
-    padding: 1px;
+    padding: 6px;
 }
 
 .title {
     font-weight: bold;
 }
+
+.close-button {
+    background-color: black;
+    color: white;
+}
+
+.title {
+    padding-top: 10px;
+}
+

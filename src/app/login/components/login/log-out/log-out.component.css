@@ -11,3 +11,11 @@ button {
 .user-setting {
     cursor: pointer;
 }
+
+.log-out-button {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    background-color: red;
+}

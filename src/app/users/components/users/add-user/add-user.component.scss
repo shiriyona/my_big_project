@@ -9,18 +9,29 @@ input {
 
 
 .add-user-button {
-  background-color: gray;
-  color: white;
+  background-color: #f44336;
   border: none;
-  padding: 10px 20px;
+  color: white;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin: 2px 2px;
+  font-size: 16px;
+  margin: 4px 2px;
+  padding: 6px;
+  border-radius: 4px;
   cursor: pointer;
-  width: 100%;
+  width: 98%;
 }
 
-#ignismyModal .modal-header {
-  border: 0px;
+#ignismyModal .modal-header{
+  border:0px;
+  display: inline;
+}
+
+.modal-header {
+  padding: 6px;
+}
+
+.title {
+  padding-top: 10px;
 }

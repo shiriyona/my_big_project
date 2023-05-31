@@ -4,17 +4,17 @@
 </div>
 
 <mat-dialog-content class="mat-typography">
-  <div class="id-label">ID:</div>
+  <div class="id title">ID:</div>
   <input class="id-input" #idInput><br>
-  <div class="first-name-label">First Name:</div>
+  <div class="first-name title">First Name:</div>
   <input #firstNameInput><br>
-  <div class="last-name-label">Last Name:</div>
+  <div class="last-name title">Last Name:</div>
   <input #lastNameInput><br>
-  <div class="last-name-label">UserName:</div>
+  <div class="last-name title">UserName:</div>
   <input #userNameInput><br>
-  <div class="last-name-label">Password:</div>
+  <div class="last-name title">Password:</div>
   <input #passwordInput><br>
-  <div class="role-label">Role:</div>
+  <div class="role title">Role:</div>
   <mat-form-field appearance="fill"> 
     <mat-select>
       <mat-option *ngFor="let userRole of userRoles" [value]="userRole"

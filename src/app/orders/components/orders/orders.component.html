@@ -16,8 +16,8 @@
             <div class="date-arrival">date arrival:
                 <input #dateArrivalInput value="{{order?.dateArrival}}">
             </div>
-            <div class="total">total:
-                <input #totalInput value="{{order?.total}}">
+            <div  class="total">total:
+                <input type="number" #totalInput value="{{order?.total}}">
 
             </div>
             <button class="btn btn-primary" (click)="saveChanges(order)">Save</button>
