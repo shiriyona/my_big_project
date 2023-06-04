@@ -5,6 +5,25 @@ button {
   width: 100%
 }
 
+button ::hover {
+  background-color: gray;
+}
+
+.back-button {
+  background-color: gray; 
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
 .list-group-item.active,
 .list-group-item.active:focus,
 .list-group-item.active:hover {
@@ -14,18 +33,20 @@ button {
   border-color: black;
 }
 
-.backButton {
-  background-color: blue;
-  width: 30%
-}
-
 .minus-button {
-  float: left;
+  margin-left: 100px;
+  background-color: gray;
+  border: none;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 4px;
   position: absolute;
   height: 26px;
   text-align: center;
   margin: auto;
-  left: 220px;
-  top: -28px;
-  background-color: black;
+  left: 1080px;
+  bottom: 10px;
 }

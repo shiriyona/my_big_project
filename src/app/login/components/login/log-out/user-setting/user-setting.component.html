@@ -1,15 +1,17 @@
-<div class="modal-header">
+<div class="user-setting">
+  <div class="modal-header">
     <button mat-button mat-dialog-close type="button" class="close" data-dismiss="modal"><span>×</span></button>
-    <h2 mat-dialog-title>User Setting</h2>
+    <h3>User Setting</h3>
   </div>
-<mat-dialog-content class="mat-typography">
-  <div class="title">First Name:</div>
-    <div class="user-name title">{{currentUser.firstName}}</div>
-  <div class="title">Last Name:</div>
-    <div class="user-name title">{{currentUser.lastName}}</div>
-  <div class="title">Role:</div>
-    <div class="user-name title">{{currentUser.role | enumToDescription}}</div>
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button class="close-button" mat-button mat-dialog-close>Close</button>
-</mat-dialog-actions>
+  <mat-dialog-content class="mat-typography">
+    <div class="title">First Name:</div>
+    <div class="user-name">{{currentUser.firstName}}</div>
+    <div class="title">Last Name:</div>
+    <div class="user-name">{{currentUser.lastName}}</div>
+    <div class="title">Role:</div>
+    <div class="user-name">{{currentUser.role | enumToDescription}}</div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button class="close-button" mat-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+</div>

@@ -1,21 +1,17 @@
-.user-setting {
-    width: 300px;
+.new-customer{
+    width: 650px;
 }
 
 #ignismyModal .modal-header{
     border:0px;
     display: inline;
-}
-
-h3 {
+  }
+  
+  h3 {
     display: inline;
-}
-
-.title {
-    font-weight: bold;
-}
-
-.close-button {
+  }
+  
+  .save-button{
     background-color: #f44336;
     border: none;
     color: white;
@@ -28,9 +24,18 @@ h3 {
     border-radius: 4px;
     cursor: pointer;
     width: 98%;
-}
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
 
-.title {
-    padding-top: 10px;
-}
-
+  .img-upload{
+    width: 200px;
+  }

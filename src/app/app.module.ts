@@ -30,6 +30,7 @@ import { OnlyLoggedUsersGuard } from './only-logged-user-guard';
 import { OrdersModule } from './orders/orders.module';
 import { UserssModule } from './users/users.module';
 import { UsersRoleGuard } from './user-role-guard';
+import { BouquetsModule } from './bouquets/bouquets.module';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { UsersRoleGuard } from './user-role-guard';
     ShoppingListModule,
     EmailssModule,
     OrdersModule,
-    UserssModule
+    UserssModule,
+    BouquetsModule
   ],
   exports: [MatTableModule],
   providers: [OnlyLoggedUsersGuard, UsersRoleGuard],

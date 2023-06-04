@@ -20,6 +20,7 @@ export class EmailsComponent implements OnInit, OnDestroy {
   getDeletedEmailsSubscrition: Subscription;
   deleteIconClicked = false
   emailToList = true;
+  noselect = true;
 
   constructor(private emailsService: EmailsService, public dialog: MatDialog) { }
 
@@ -69,8 +70,10 @@ export class EmailsComponent implements OnInit, OnDestroy {
     // this.getEmails();
   }
 
-  onSelectRow(row: Email) {
+  onSelectRow(row: Email) {    
+    this.noselect = false;
     this.selectedRow = row;
+
   }
 
   openDialog() {
@@ -91,11 +94,13 @@ export class EmailsComponent implements OnInit, OnDestroy {
     });
     this.selectedRow = null;
     this.deleteIconClicked = true;  
+    this.noselect = true;
   }
 
   home(){
     this.selectedRow = null
     this.deleteIconClicked = false;
+    this.noselect = true;
   }
 
   ngOnDestroy(): void {

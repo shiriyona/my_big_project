@@ -9,11 +9,11 @@
                 <span class="last-name"><span class="title">Last Name: </span>{{user?.lastName}}</span>
                 <span class="first-name"><span class="title">UserName: </span>{{user?.userName}}</span>
                 <span class="last-name"><span class="title">Password: </span>{{user?.password}}</span>
-                <span class="user-role"><span class="title">role: </span>{{user?.role | enumToDescription}}</span>
+                <span class="user-role"><span class="title">Role: </span>{{user?.role | enumToDescription}}</span>
                 <div class="user-img">
                     <i class="fa fa-user" aria-hidden="true"></i>
                 </div>
-                <div class="delete-user" (click)="deleteUser(user)">-</div>
+                <img class="delete-user" src="../../../../assets/img/trash-icon.png" (click)="deleteUser(user)">
             </div>
         </div>
     </div>

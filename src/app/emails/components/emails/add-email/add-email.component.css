@@ -12,6 +12,10 @@
   display: inline;
 }
 
+h3 {
+  display: inline;
+}
+
 
 .send-email-button{
   background-color: #f44336;
@@ -46,4 +50,13 @@ textarea {
 
 .title {
   padding-top: 10px;
+}
+
+.mat-dialog-content {
+  display: block;
+  margin: 0 -24px;
+  padding: 0 24px;
+  max-height: 65vh;
+  overflow: auto;
+  height: 440px;
 }

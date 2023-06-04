@@ -26,6 +26,10 @@
       [ngClass]="{'active': shoppingListActive , 'single': !shoppingListActive}">
       <a routerLink="/shopping-list">Shopping List</a>
     </li>
+    <li (click)="activeBouquets()" class="single active"
+    [ngClass]="{'active': bouquetsActive , 'single': !shoppingListActive}">
+    <a routerLink="/bouquets">Bouquets</a>
+  </li>
     <!-- <li routerLinkActive="active"><a routerLink="/drawings">Drawings</a></li> -->
     <li (click)="activeEmails()" class="active single" *ngIf="!admin"
       [ngClass]="{'active': emailsActive , 'single': !emailsActive}">

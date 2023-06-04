@@ -41,7 +41,9 @@ mat-form-field {
 }
 
 body {
-  background-image: url('../../../../assets/img/water-background.jpg');
+  background-color: #f4433658;
+
+  /* background-image: url('../../../../assets/img/water-background.jpg'); */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

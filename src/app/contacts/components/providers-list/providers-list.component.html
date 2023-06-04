@@ -1,5 +1,5 @@
 <script src="https://kit.fontawesome.com/6ee598a42d.js" crossorigin="anonymous"></script>
-<button class="add-provider-button" (click)="openAddProviderDialog()">Add New Provider</button><br>
+<br><button class="add-provider-button" (click)="openAddProviderDialog()">Add New Provider</button><br>
   <div class="tbl-providers">
     <div class="header">
       <div class="first-name col">First Name</div>
@@ -14,12 +14,12 @@
           <div class="phone">{{provider.phone}}</div>
         </div>
         <div *ngIf="provider.isOpen" class="inner-row">
-          <span class="id title">ID: </span><span class="id info">{{provider.id}}</span> 
-          <span class="email title">Email: </span><span class="email info">{{provider.email}}</span> 
-          <span class="addres title">Addres: </span><span class="addres info">{{provider.addres}} </span>
-          <span class="description title">Description: </span> <span class="description info">{{provider.description}}</span>
+          <div class="provider-id"><span class="id title">ID: </span><span class="id info">{{provider.id}}</span></div><br>
+          <div class="provider-email"><span class="email title">Email: </span><span class="email info">{{provider.email}}</span></div> 
+          <div class="provider-addres"><span class="addres title">Addres: </span><span class="addres info">{{provider.addres}} </span><br></div>
+          <div class="provider-description"><span class="description title">Description: </span> <span class="description info">{{provider.description}}</span></div>
           <i class="fa fa-user" aria-hidden="true"></i>
-          <button mat-button class="edit-provider-button" (click)="openDialog(provider.img)">edit</button>
+          <button mat-button class="edit-provider-button" (click)="openAddProviderDialog()">edit</button>
         </div>
       </div>
     </div>

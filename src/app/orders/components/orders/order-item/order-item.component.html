@@ -17,9 +17,9 @@
              {{order?.dateArrival}}
         </td>
         <td class="total">
-            <div class="total-title title">total: </div>                        
+            <div class="total-title title">Total: </div>                        
             {{order?.total}}
         </td>
-        <div class="delete-order" (click)="deleteOrder(order)">-</div>
+        <img class="delete-order" src="../../../../assets/img/trash-icon.png" (click)="deleteOrder(order)">
     </tr>
 </div>

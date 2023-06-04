@@ -4,18 +4,31 @@ button {
 }
 
 .user-details {
-    padding: 4px;
-    color: blue;
+    padding: 6px;
+    color: black;
 }
 
 .user-setting {
     cursor: pointer;
+    padding: 10px;
+}
+
+.user-name {
+    padding: 10px;
+
 }
 
 .log-out-button {
-    width: 100%;
+    color: white;
+    background-color: #f44336;
+    width: 80%;
+    margin: 10px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 40px;
     text-align: center;
-    margin: auto;
-    width: 100%;
-    background-color: red;
+}
+
+.log-out-button:hover {
+    background-color: gray;
 }

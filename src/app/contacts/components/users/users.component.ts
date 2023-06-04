@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DownloadFileService } from '../../services/download-file.service';
 import { CustomersService } from '../../services/customers.service';
+import { AddCustomerComponent } from './add-customer/add-customer.component';
 
 
 @Component({
@@ -14,9 +15,9 @@ import { CustomersService } from '../../services/customers.service';
 export class UsersComponent implements OnInit {
   @Input() img
   user: Customer
-  users: any
+  customers: Customer[] = [];
   panelOpenState = false;
-  loadUsersSubscription: Subscription;
+  loadCustomersSubscription: Subscription;
   userColor: boolean = false;
 
 
@@ -25,88 +26,40 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getUsers()
-  }
-
-  getUsers() {
-    this.loadUsersSubscription = this.customersService.getUsers().subscribe(res => {
-      this.users = res;
+    this.getCustomers();
+    this.customersService.getEditCustomer().subscribe((customer: Customer) => {
+      this.getEditCustomer(customer)
     });
   }
 
-  openRow(user) {
-    user.isOpen = !user.isOpen;
+  getCustomers() {
+    this.loadCustomersSubscription = this.customersService.getUsers().subscribe(res => {
+      this.customers = res;
+    });
   }
 
-  g(user) {
-    if (this.user.id % 2 === 1) {
-      this.userColor = true;
-    }
+  openRow(customer) {
+    customer.isOpen = !customer.isOpen;
   }
 
-  openDialog(img) {
-    const dialogRef = this.dialog.open(DialogContentExampleDialog);
+  editCustomer(customer: Customer) {
+    const dialogRef = this.dialog.open(AddCustomerComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
-    this.customersService.sendImg(img);
+    this.customersService.sendEditCustomer(customer);
+  }
+
+  getEditCustomer(editCustomer: Customer) {
+    for (let i = this.customers.length - 1; i >= 0; i--) {
+      if (editCustomer.id === this.customers[i].id) {
+        this.customers[i] = editCustomer;
+        break;
+      }
+    }
   }
 
 }
 
-class ImageSnippet {
-  pending: boolean = false;
-  status: string = 'init';
 
-  constructor(public src: string, public file: File) { }
-}
-
-
-@Component({
-  selector: 'dialog-content-example-dialog',
-  templateUrl: 'add-customer.html',
-  styleUrls: ['./users.component.scss']
-})
-export class DialogContentExampleDialog {
-  img
-  selectedFile: ImageSnippet;
-
-  constructor(private imageService: DownloadFileService, private customersService: CustomersService) {
-    this.getImg()
-  }
-
-  private onSuccess() {
-    this.selectedFile.pending = false;
-    this.selectedFile.status = 'ok';
-  }
-
-  getImg() {
-    this.img = this.customersService.getImg();
-  }
-
-  private onError() {
-  }
-
-  processFile(imageInput: any) {
-    const file: File = imageInput.files[0];
-    const reader = new FileReader();
-
-    reader.addEventListener('load', (event: any) => {
-
-      this.selectedFile = new ImageSnippet(event.target.result, file);
-
-      this.selectedFile.pending = true;
-      this.imageService.uploadImage(this.selectedFile.file).subscribe(
-        (res) => {
-          this.onSuccess();
-        },
-        (err) => {
-          this.onError();
-        })
-      this.img = this.selectedFile.src
-    });
-
-    reader.readAsDataURL(file);
-  }
-}

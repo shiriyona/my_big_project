@@ -1,22 +1,24 @@
-<br><div class="tbl-users">
+<br><div class="tbl-customers">
   <div class="header">
     <div class="first-name col">First Name</div>
     <div class="last-name col">Last Name</div>
+    <div class="phone col">Phone</div>
   </div>
   <div class="content">
-    <div class="full-width" *ngFor="let user of users">
-      <div class="my-row" (dblclick)="openRow(user)" [ngClass]="{'userColor': user.id%2 , 'fullScreen': !user.id%2}">
-        <div class="first-name">{{user.firstName}}</div>
-        <div class="last-name">{{user.lastName}}</div>
+    <div class="full-width" *ngFor="let customer of customers">
+      <div class="my-row" (dblclick)="openRow(customer)" [ngClass]="{'customer-color': customer.id%2 , 'full-screen': !customer.id%2}">
+        <div class="first-name">{{customer.firstName}}</div>
+        <div class="last-name">{{customer.lastName}}</div>
+        <div class="last-name">{{customer.phone}}</div>
       </div>
-      <div *ngIf="user.isOpen" class="inner-row">
-        <div class="user-id">ID: {{user.id}} </div>
-        <div class="user-country">Country: {{user.country}} </div>
-        <div class="user-city">City: {{user.city}} </div>
-        <div class="user-age">Age: {{user.age}} </div>
-        <div class="user-status">Status: {{user.status}} </div>
-        <img class="bd-placeholder-img card-img-top p-2 user-img" [src]="user.img">
-        <button mat-button class="btn btn-dark edit-user-button" (click)="openDialog(user.img)">edit</button>
+      <div *ngIf="customer.isOpen" class="inner-row">
+        <div class="customer-id">ID: {{customer.id}} </div>
+        <div class="customer-country">Country: {{customer.country}} </div>
+        <div class="customer-city">City: {{customer.city}} </div>
+        <div class="customer-age">Age: {{customer.age}} </div>
+        <div class="customer-status">Status: {{customer.status}} </div>
+        <img class="bd-placeholder-img card-img-top p-2 customer-img" [src]="customer.img">
+        <button mat-button class="edit-button" (click)="editCustomer(customer)">Edit</button>
       </div>
     </div>
   </div>

@@ -70,7 +70,7 @@ export class OrdersComponent implements OnInit {
   }
 
   saveChanges(order) {
-    const orderCode = this.orderCodeInputRef.nativeElement.value;
+    const orderCode = order.orderCode;
     const oredrName = this.orderNameInputRef.nativeElement.value;
     const dateInvitation = this.dateInvitationInputRef.nativeElement.value;
     const dateArrival = this.dateArrivalInputRef.nativeElement.value;

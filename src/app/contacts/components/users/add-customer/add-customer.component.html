@@ -1,0 +1,29 @@
+<div class="new-customer">
+    <div class="modal-header">
+      <button mat-button mat-dialog-close type="button" class="close" data-dismiss="modal"><span>×</span></button>
+      <h3 mat-dialog-title>Edit Customer</h3>
+    </div><br>
+    <mat-dialog-content class="mat-typography">
+      <span>First Name:</span>
+      <input #firstNameInput value="{{editCustomer.firstName}}">
+      <span>Last Name:</span>
+      <input #lastNameInput value="{{editCustomer.lastName}}">
+      <span>Phone:</span>
+      <input type="number" #phoneInput value="{{editCustomer.phone}}">
+      <span>Country:</span>
+      <input #countryInput value="{{editCustomer.country}}">
+      <span>City:</span>
+      <input #cityInput value="{{editCustomer.city}}">
+      <span>Age:</span>
+      <input type="number" #ageInput value="{{editCustomer.age}}">
+      <span>Status:</span>
+      <input #statusInput value="{{editCustomer.status}}">
+      <label class="image-upload-container btn btn-bwm">
+        <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)"> <br>
+        <img class="img-upload" [src]="img">
+      </label>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button class="save-button" mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="saveChanges()">Save</button>
+    </mat-dialog-actions>
+  </div>

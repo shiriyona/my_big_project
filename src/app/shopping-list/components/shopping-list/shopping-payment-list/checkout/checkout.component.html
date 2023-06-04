@@ -105,11 +105,11 @@
       <ul>
         <h4 class="cart" (dblclick)="openCart()">Cart
           <span class="price" style="color:black">
-            <i class="fa fa-shopping-cart"></i> <b>{{productNumber}}</b>
+            <i class="fa fa-shopping-cart product-number"></i> <b>{{productNumber}}</b>
           </span>
-        </h4>
-        <hr>
+        </h4>  
       </ul>
+      <hr>
       <div *ngIf="cart===true" class="inner-row">
         <li class="list-group-item" *ngFor="let item of cartItems">
           <app-checkout-item [cartItem]="item"></app-checkout-item>

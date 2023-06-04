@@ -9,26 +9,14 @@ import { MatTableModule } from '@angular/material/table';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
-
-import { ContactsRoutingModule } from './contacts-routing.module';
-import { TabComponent } from './components/tab/tab.component';
-import { ProvidersListComponent } from './components/providers-list/providers-list.component';
-import { ProviderDialogComponent } from './components/providers-list/provider-dialog/provider-dialog.component';
-import { AddProviderDialogComponent } from './components/providers-list/add-provider-dialog/add-provider-dialog.component';
-import { AddCustomerComponent } from './components/users/add-customer/add-customer.component';
-import { UsersComponent } from './components/users/users.component';
-
+import { BouquetsRoutingModule } from './bouquets-routing.module';
+import { BouquetsComponent } from './components/bouquets/bouquets.component';
 
 
 @NgModule({
   declarations: [
-    TabComponent,
-    UsersComponent,
-    ProvidersListComponent,
-    ProviderDialogComponent,
-    AddProviderDialogComponent,
-    AddCustomerComponent
-
+  
+    BouquetsComponent
   ],
   imports: [
     CommonModule,
@@ -42,9 +30,9 @@ import { UsersComponent } from './components/users/users.component';
     MatExpansionModule,
     MatDialogModule,
     MatTabsModule,
-    ContactsRoutingModule
+    BouquetsRoutingModule
   ],
   providers: [],
 })
 
-export class ContactsModule { }
+export class BouquetsModule { }

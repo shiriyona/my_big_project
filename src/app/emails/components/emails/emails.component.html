@@ -12,8 +12,6 @@
                 <div class="email-data" *ngFor="let email of emails" (click)="onSelectRow(email)">
                     <app-email-item [email]="email"></app-email-item>
                 </div>
-
-
             </div>
             <div class="deleted-emails" *ngIf="deleteIconClicked===true">
                 <div class="email-data" *ngFor="let deletedEmail of deletedEmails" (click)="onSelectRow(deletedEmail)">
@@ -24,13 +22,16 @@
             </div>
 
         </div>
-        <div class="selected-email">
-            <div *ngIf="selectedRow" class="selected-row">
-                <div class="subject">{{selectedRow?.subject}}</div>
-                <div class="name">{{selectedRow?.name}}</div>
-                <div class="description">{{selectedRow?.description}}</div>
-                <div class="time">{{selectedRow?.date}}</div>
-            </div>
+    <div class="selected-email">
+        <div *ngIf="noselect===true" class="selected-row">
+            <h3 class="no-select">No email has been selected</h3>
+        </div>
+        <div *ngIf="selectedRow" class="selected-row">
+            <div class="subject">{{selectedRow?.subject}}</div>
+            <div class="name">{{selectedRow?.name}}</div>
+            <div class="description">{{selectedRow?.description}}</div>
+            <div class="time">{{selectedRow?.date}}</div>
         </div>
     </div>
+</div>
 </div>

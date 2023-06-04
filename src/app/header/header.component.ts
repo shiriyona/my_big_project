@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   management: boolean = false;
 
   shoppingListActive = true;
+  bouquetsActive = false;
   emailsActive = false;
   contactsActive = false;
   odersActive = false;
@@ -51,6 +52,7 @@ export class HeaderComponent implements OnInit {
 
   nonActive() {
     this.shoppingListActive = false;
+    this.bouquetsActive = false;
     this.emailsActive = false;
     this.contactsActive = false;
     this.odersActive = false;
@@ -60,6 +62,11 @@ export class HeaderComponent implements OnInit {
   activeShoppingList() {
     this.nonActive();
     this.shoppingListActive = true;
+  }
+
+  activeBouquets() {
+    this.nonActive();
+    this.bouquetsActive = false; 
   }
 
   activeEmails() {
