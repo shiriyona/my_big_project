@@ -11,13 +11,13 @@
                 <input #orderNameInput value="{{order?.orderName}}">
             </div>
             <div class="date-invitation"> Date Invitation:
-                <input #dateInvitationInput value="{{order?.dateInvitation}}">
+                <input type="date" #dateInvitationInput value="{{order?.dateInvitation}}">
             </div>
             <div class="date-arrival"> Date Arrival:
-                <input #dateArrivalInput value="{{order?.dateArrival}}">
+                <input type="date" #dateArrivalInput value="{{order?.dateArrival | shortDate}}">
             </div>
             <div  class="total"> Total:
-                <input type="number" #totalInput value="{{order?.total}}">
+                <input type="number" #totalInput value="{{order?.total | shortDate}}">
 
             </div>
             <button class="save-button" (click)="saveChanges(order)">Save</button>

@@ -11,11 +11,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BouquetsRoutingModule } from './bouquets-routing.module';
 import { BouquetsComponent } from './components/bouquets/bouquets.component';
+import { MessengerService } from '../shopping-list/services/messeger.service';
 
 
 @NgModule({
   declarations: [
-  
     BouquetsComponent
   ],
   imports: [
@@ -32,7 +32,7 @@ import { BouquetsComponent } from './components/bouquets/bouquets.component';
     MatTabsModule,
     BouquetsRoutingModule
   ],
-  providers: [],
+  providers: [MessengerService],
 })
 
 export class BouquetsModule { }

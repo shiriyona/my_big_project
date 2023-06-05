@@ -10,7 +10,7 @@ const routes: Routes = [
     { path: 'users', component: UsersComponent },
     { path: 'providers', component: ProvidersListComponent }, 
     { path: 'emails', component: EmailsComponent },
-    { path: 'contacts', component: TabComponent },
+    { path: '', component: TabComponent },
     {
         path: '',
         redirectTo: 'contacts',

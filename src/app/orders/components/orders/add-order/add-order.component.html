@@ -9,16 +9,9 @@
     <span class="order-name title">Order name:</span>
     <input #orderNameInput><br>
     <span class="date-invitation title">Date Invitation: </span>
-    <input #dateInvitationInput><br>
+    <input type="date" #dateInvitationInput><br>
     <span class="date-arrival title">Date Arrival:</span>
-    <input #dateArrivalInput><br>
-    <!-- <mat-form-field>
-      <mat-label>Choose a date</mat-label>
-      <input matInput [matDatepicker]="picker">
-      <mat-hint>MM/DD/YYYY</mat-hint>
-      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker (click)="dateArrivalSelected(date)"></mat-datepicker>
-    </mat-form-field> -->
+    <input type="date" #dateArrivalInput><br>
     <span  class="total">Total:</span>
     <input type="number" #totalInput><br>
     <button mat-button class="send-order-button" (click)="addOrder()" mat-dialog-close class="send-order-button">Add

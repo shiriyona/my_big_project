@@ -4,7 +4,7 @@ import { EmailsComponent } from './components/emails/emails.component';
 
 
 const routes: Routes = [
-    { path: 'emails', component: EmailsComponent },
+    { path: '', component: EmailsComponent },
     {
         path: '',
         redirectTo: 'emails',

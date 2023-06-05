@@ -7,54 +7,63 @@ export const BOUQUEtS_MOCK_DATA: Bouquets[]  = [
     id: uuidv4(),
     name: 'Roses',
     price: 30,
-    img: '../../../../assets/img/bouquet-roses.png'
+    qty: 1,
+    img: '../../../../assets/img/bouquet-roses.jpg'
   },
   {
     id: uuidv4(),
     name: 'Roses',
     price: 30,
-    img: '../../../../assets/img/bouquet-roses.png'
+    qty: 1,
+    img: '../../../../assets/img/bouquet-roses.jpg'
   },
   {
     id: uuidv4(),
     name: 'Roses',
     price: 30,
-    img: '../../../../assets/img/bouquet-roses.png'
+    qty: 1,
+    img: '../../../../assets/img/bouquet-roses.jpg'
   },
   {
     id: uuidv4(),
     name: 'Roses',
     price: 30,
-    img: '../../../../assets/img/bouquet-roses.png'
+    qty: 1,
+    img: '../../../../assets/img/bouquet-roses.jpg'
   },
   {
     id: uuidv4(),
     name: 'Roses',
     price: 30,
-    img: '../../../../assets/img/bouquet-roses.png'
+    qty: 1,
+    img: '../../../../assets/img/bouquet-roses.jpg'
   },
   {
     id: uuidv4(),
     name: 'Roses',
     price: 30,
-    img: '../../../../assets/img/bouquet-roses.png'
+    qty: 1,
+    img: '../../../../assets/img/bouquet-roses.jpg'
   },
   {
     id: uuidv4(),
     name: 'Roses',
     price: 30,
-    img: '../../../../assets/img/bouquet-roses.png'
+    qty: 1,
+    img: '../../../../assets/img/bouquet-roses.jpg'
   },
   {
     id: uuidv4(),
     name: 'Roses',
     price: 30,
-    img: '../../../../assets/img/bouquet-roses.png'
+    qty: 1,
+    img: '../../../../assets/img/bouquet-roses.jpg'
   },
   {
     id: uuidv4(),
     name: 'Roses',
     price: 30,
-    img: '../../../../assets/img/bouquet-roses.png'
+    qty: 1,
+    img: '../../../../assets/img/bouquet-roses.jpg'
   },
   ];

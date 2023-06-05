@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
 })
 export class MessengerService {
   subject = new Subject();
-  reset=false
+  reset = false
   
   constructor() { }
 
@@ -19,7 +19,6 @@ export class MessengerService {
   }
 
   sendMsg(product) {
-    console.log(product);
     this.subject.next(product);
   }
 
