@@ -42,7 +42,15 @@ export class AddUserComponent implements OnInit {
     const userPassword = this.passwordInputRef.nativeElement.value;;
     const userRole = this.role;
     const userImg = "../../../../assets/img/providers_pic.png";
-    const newUser = new User(userId, userName, userFirstName, userLasttName, userPassword, userRole, userImg);
+    const newUser = {
+      id: userId,
+      userName: userName,
+      firstName: userFirstName,
+      lastName: userLasttName,
+      password: userPassword,
+      role: userRole,
+      img: userImg
+    };
     this.usersServices.sendNewUser(newUser);
   }
 

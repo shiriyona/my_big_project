@@ -16,8 +16,6 @@ export class AddProviderDialogComponent implements OnInit {
   @ViewChild('addresInput') addresInputRef: ElementRef;
   @ViewChild('descriptionInput') descriptionInputRef: ElementRef;
   @ViewChild('imgInput') imgInputRef: ElementRef;
-  @ViewChild('positionInput') positionInputRef: ElementRef;
-  @Output() providerAdded = new EventEmitter<Provider>()
 
   constructor(private proService: ProvidersService) { }
 
@@ -25,16 +23,23 @@ export class AddProviderDialogComponent implements OnInit {
   }
 
   addProvider() {
-    const proFirstName = this.firstNameInputRef.nativeElement.value
-    const proLastName = this.lastNameInputRef.nativeElement.value
-    const proPhone = this.phoneInputRef.nativeElement.value
-    const proId = this.idInputRef.nativeElement.value
-    const proEmail = this.emailInputRef.nativeElement.value
-    const proAddres = this.addresInputRef.nativeElement.value
-    const proImg = ""
-    const proPosition = this.positionInputRef.nativeElement.value
-    const newProvider = new Provider(proFirstName, proLastName, proPhone, proId, proEmail, proAddres, proImg, proPosition)
-    this.providerAdded.emit(newProvider)
+    const proFirstName = this.firstNameInputRef.nativeElement.value;
+    const proLastName = this.lastNameInputRef.nativeElement.value;
+    const proPhone = this.phoneInputRef.nativeElement.value;
+    const proId = this.idInputRef.nativeElement.value;
+    const proEmail = this.emailInputRef.nativeElement.value;
+    const proAddres = this.addresInputRef.nativeElement.value;
+    const proDescription = this.descriptionInputRef.nativeElement.value;
+    const newProvider = 
+    {
+      firstName: proFirstName,
+      lastName: proLastName,
+      phone: proPhone,
+      id: proId,
+      email: proEmail,
+      addres: proAddres,
+      description: proDescription,
+    }
     this.proService.sendNewProvider(newProvider);
   }
 

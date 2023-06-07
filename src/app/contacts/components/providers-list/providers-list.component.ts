@@ -3,9 +3,9 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { Provider } from '../../models/providers.model';
 import { ProvidersService } from '../../services/providers.service';
 import { MatDialog } from '@angular/material/dialog';
-import { ProviderDialogComponent } from './provider-dialog/provider-dialog.component';
 import { AddProviderDialogComponent } from './add-provider-dialog/add-provider-dialog.component';
 import { Subscription } from 'rxjs';
+import { EditProviderComponent } from 'src/app/contacts/components/providers-list/edit-provider/edit-provider.component';
 
 @Component({
   selector: 'app-providers-list',
@@ -28,6 +28,9 @@ export class ProvidersListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProviders();
+    this.providersService.getEditprovider().subscribe((provider: Provider) => {
+      this.onEditProvider(provider)
+    });
   }
 
   getProviders() {
@@ -43,12 +46,22 @@ export class ProvidersListComponent implements OnInit {
     provider.isOpen = !provider.isOpen;
   }
 
-  openEditProviderDialog() {
-    const dialogRef = this.dialog.open(ProviderDialogComponent);
+  openEditProviderDialog(provider) {
+    this.providersService.providerEdit(provider);
+    const dialogRef = this.dialog.open(EditProviderComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  onEditProvider(editProvider: Provider) {
+    for (let i = this.providers.length - 1; i >= 0; i--) {
+      if (editProvider.id === this.providers[i].id) {
+        this.providers[i] = editProvider;
+        break;
+      }
+    }
   }
 
   addProvider(provider: Provider) {

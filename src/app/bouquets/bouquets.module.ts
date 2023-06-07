@@ -9,14 +9,18 @@ import { MatTableModule } from '@angular/material/table';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { BouquetsRoutingModule } from './bouquets-routing.module';
 import { BouquetsComponent } from './components/bouquets/bouquets.component';
 import { MessengerService } from '../shopping-list/services/messeger.service';
+import { BouquetItemComponent } from './components/bouquets/bouquet-item/bouquet-item.component';
 
 
 @NgModule({
   declarations: [
-    BouquetsComponent
+    BouquetsComponent,
+    BouquetItemComponent
   ],
   imports: [
     CommonModule,
@@ -30,6 +34,8 @@ import { MessengerService } from '../shopping-list/services/messeger.service';
     MatExpansionModule,
     MatDialogModule,
     MatTabsModule,
+    MatPaginatorModule,
+    NgxPaginationModule,
     BouquetsRoutingModule
   ],
   providers: [MessengerService],

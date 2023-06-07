@@ -1,18 +1,10 @@
-<div id="print11">
-  <div class="row">
-    <div class="partScreen">
-      <div class="childCartList fullScreen" [ngClass]="{'partScreen': printClick , 'fullScreen': !printClick}">
-      </div>
-    </div>
-  </div>
-</div>
 <div class="row">
-  <div class="col-md-4" *ngFor="let ingredient of ingredients | paginate:{
+  <div class="col-md-4" *ngFor="let item of ingredients | paginate:{
     itemsPerPage: tableSize,
      currentPage: page,
       totalItem: count
     }; let i index">
-    <app-shopping-item [productItem]="ingredient"></app-shopping-item>
+    <app-shopping-item [productItem]="item"></app-shopping-item>
   </div>
 </div>
 <div><br>

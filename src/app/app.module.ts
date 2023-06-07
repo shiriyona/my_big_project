@@ -31,12 +31,13 @@ import { OrdersModule } from './orders/orders.module';
 import { UserssModule } from './users/users.module';
 import { UsersRoleGuard } from './user-role-guard';
 import { BouquetsModule } from './bouquets/bouquets.module';
+import { SyntheticGrassModule } from './synthetic-grass/synthetic-grass-module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,7 +68,8 @@ import { BouquetsModule } from './bouquets/bouquets.module';
     EmailssModule,
     OrdersModule,
     UserssModule,
-    BouquetsModule
+    BouquetsModule,
+    SyntheticGrassModule
   ],
   exports: [MatTableModule],
   providers: [OnlyLoggedUsersGuard, UsersRoleGuard],

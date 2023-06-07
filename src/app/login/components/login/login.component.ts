@@ -13,23 +13,26 @@ export class LoginComponent implements OnInit {
   users: User[] = [];
   show: boolean = false;
   correctLogin = false;
-  userName = new FormControl('', [Validators.required]);
-  userPassword = new FormControl('', [Validators.required, Validators.min(4)]);
+  fieldTextType: boolean;
+  userName = new FormControl('', [Validators.required, Validators.requiredTrue]);
+  userPassword = new FormControl('', [Validators.required, Validators.requiredTrue]);
 
   constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
 
-  getErrorMessage() {
+  toggleFieldTextType() {
+    this.fieldTextType = !this.fieldTextType;
+  }
+
+  getErrorMessage() {  
     if (this.userName.hasError('required')) {
       return 'You must enter a value';
     }
     if (this.correctLogin === false) {
       return 'Your userName or password is incorrect';
     }
-
-    return this.userName.hasError('email') ? 'Not a valid email' : '';
   }
 
   submit() {

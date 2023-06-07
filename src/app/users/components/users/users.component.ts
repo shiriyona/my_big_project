@@ -49,7 +49,7 @@ export class UsersComponent implements OnInit {
   }
 
   editUser(user){
-    this.usersService.onEditUser(user)
+    this.usersService.onEditUser(user);
     const dialogRef = this.dialog.open(EditUserComponent);
 
     dialogRef.afterClosed().subscribe(result => {

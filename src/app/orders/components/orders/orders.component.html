@@ -4,9 +4,6 @@
     <div class="order-date" *ngFor="let order of orders" (dblclick)="editRow(order)">
         <app-order-item [order]="order"></app-order-item>
         <div *ngIf="order.isOpen" class="inner-row">
-            <!-- <div class="order-code">order code:
-                <input #orderCodeInput value="{{order?.orderCode}}">
-            </div> -->
             <div class="order-name">Order Name:
                 <input #orderNameInput value="{{order?.orderName}}">
             </div>
@@ -14,10 +11,10 @@
                 <input type="date" #dateInvitationInput value="{{order?.dateInvitation}}">
             </div>
             <div class="date-arrival"> Date Arrival:
-                <input type="date" #dateArrivalInput value="{{order?.dateArrival | shortDate}}">
+                <input type="date" #dateArrivalInput value="{{order?.dateArrival}}">
             </div>
             <div  class="total"> Total:
-                <input type="number" #totalInput value="{{order?.total | shortDate}}">
+                <input type="number" #totalInput value="{{order?.total}}">
 
             </div>
             <button class="save-button" (click)="saveChanges(order)">Save</button>

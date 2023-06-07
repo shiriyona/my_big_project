@@ -13,10 +13,10 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { ContactsRoutingModule } from './contacts-routing.module';
 import { TabComponent } from './components/tab/tab.component';
 import { ProvidersListComponent } from './components/providers-list/providers-list.component';
-import { ProviderDialogComponent } from './components/providers-list/provider-dialog/provider-dialog.component';
 import { AddProviderDialogComponent } from './components/providers-list/add-provider-dialog/add-provider-dialog.component';
 import { AddCustomerComponent } from './components/users/add-customer/add-customer.component';
 import { UsersComponent } from './components/users/users.component';
+import { EditProviderComponent } from './components/providers-list/edit-provider/edit-provider.component';
 
 
 
@@ -25,10 +25,9 @@ import { UsersComponent } from './components/users/users.component';
     TabComponent,
     UsersComponent,
     ProvidersListComponent,
-    ProviderDialogComponent,
     AddProviderDialogComponent,
-    AddCustomerComponent
-
+    AddCustomerComponent,
+    EditProviderComponent
   ],
   imports: [
     CommonModule,

@@ -62,8 +62,4 @@ export class ShoppingListComponent implements OnInit {
     this.postList();
   }
 
-  handleAddToCart(product: ShoppingItem) {
-    this.msg.sendMsg(product);
-  }
-
 }

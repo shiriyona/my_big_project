@@ -1,0 +1,23 @@
+<div class="edit-provider">
+    <div class="modal-header">
+      <button mat-button mat-dialog-close type="button" class="close" data-dismiss="modal"><span>×</span></button>
+      <h3>Edit Provider</h3>
+    </div><br>
+    <mat-dialog-content class="mat-typography">
+      <span>First Name:</span>
+      <input #firstNameInput value="{{provider.firstName}}">
+      <span>Last Name:</span>
+      <input #lastNameInput value="{{provider.lastName}}">
+      <span>Phone:</span>
+      <input #phoneInput value="{{provider.phone}}">
+      <span>Email:</span>
+      <input #emailInput value="{{provider.email}}">
+      <span>Addres:</span>
+      <input #addresInput value="{{provider.addres}}">
+      <span>Description:</span>
+      <input #descriptionInput value="{{provider.description}}">
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button class="save-button" mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="saveProvider()">Add</button>
+    </mat-dialog-actions>
+  </div>

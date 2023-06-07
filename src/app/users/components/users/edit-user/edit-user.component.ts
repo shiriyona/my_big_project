@@ -27,6 +27,7 @@ export class EditUserComponent implements OnInit {
     this.userRoles.push(USER_ROLE.ADMIN);
     this.userRoles.push(USER_ROLE.SALER);
     this.userRoles.push(USER_ROLE.MANAGEMENT);
+    this.role = this.user.role
   }
 
   getEditUser(){
@@ -44,7 +45,15 @@ export class EditUserComponent implements OnInit {
     const userFirstName = this.firstNameInputRef.nativeElement.value;
     const userLasttName = this.lastNameInputRef.nativeElement.value;
     const userImg = "../../../../assets/img/providers_pic.png";
-    const editUser = new User(this.user.id, userName, userFirstName, userLasttName, userPassword, userRole, userImg);
+    const editUser = {
+      id: this.user.id,
+      userName: userName,
+      firstName: userFirstName,
+      lastName: userLasttName,
+      password: userPassword,
+      role: userRole,
+      img: userImg
+    };
     this.usersService.onUserEdit(editUser)
   }
 

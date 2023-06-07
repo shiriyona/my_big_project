@@ -1,8 +1,17 @@
 <div class="row">
-    <div class="bouquets-list col-md-4" *ngFor="let bouquet of bouquets">
-        <div class="name">{{bouquet.name}}</div>
-        <div class="price">{{bouquet.price}}$</div>
-        <img class="bouquet-img" [src]='bouquet.img'>
-        <button class="plus-button" (click)="addToCart(bouquet)">+</button>
-    </div>
+  <div class="col-md-4" *ngFor="let bouquet of bouquets | paginate:{
+    itemsPerPage: tableSize,
+     currentPage: page,
+      totalItem: count
+    }; let i index">
+    <app-bouquet-item [productItem]="bouquet"></app-bouquet-item>
+  </div>
 </div>
+<div><br>
+  <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+  </pagination-controls>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="scripts.js">
+</script>

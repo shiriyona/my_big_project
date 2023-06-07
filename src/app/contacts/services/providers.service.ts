@@ -7,116 +7,99 @@ import { Provider } from '../models/providers.model';
 })
 export class ProvidersService {
   subject = new Subject();
+  subject2 = new Subject();
+  editProvider: Provider;
   private providers: Provider[] = [
     {
-      position: 1,
       firstName: 'Deal',
       lastName: 'Lenson',
       phone: '0543657847',
-      id: '235368475',
+      id: '245334471',
       email: 'deallenson@gamil.com',
       addres: 'New York',
-      img: '../../../../assets/img/providers_pic.png',
       description: `Deal is a company With a standard weight of 10`,
     },
     {
-      position: 2,
       firstName: 'Max',
       lastName: 'Stock',
       phone: '0543657847',
-      id: '235368475',
+      id: '222368492',
       email: 'maxstock@gamil.com',
       addres: 'New York',
-      img: '../../../../assets/img/providers_pic.png',
       description: `Deal is a company With a standard weight of 10`,
     },
     {
-      position: 3,
       firstName: 'Don',
       lastName: 'Levi',
-      phone: '0543657847',
-      id: '235368475',
+      phone: '054362227',
+      id: '235368473',
       email: 'donlevi@gamil.com',
       addres: 'New York',
-      img: '../../../../assets/img/providers_pic.png',
       description: `Deal is a company With a standard weight of 10`,
     },
     {
-      position: 4,
       firstName: 'Bar',
       lastName: 'zeg',
       phone: '0543657847',
-      id: '235368475',
+      id: '235361114',
       email: 'barzeg@gamil.com',
       addres: 'New York',
-      img: '../../../../assets/img/providers_pic.png',
       description: `Deal is a company With a standard weight of 10`,
     },
     {
-      position: 5,
       firstName: 'Shark',
       lastName: 'Mak',
       phone: '0543657847',
-      id: '235368475',
+      id: '235118475',
       email: 'sharkmak@gamil.com',
       addres: 'New York',
-      img: '../../../../assets/img/providers_pic.png',
       description: `Deal is a company With a standard weight of 10`,
     },
     {
-      position: 6,
       firstName: 'Zar',
       lastName: 'Fox',
       phone: '0543657847',
-      id: '235368475',
+      id: '235368996',
       email: 'zarFox@gamil.com',
       addres: 'New York',
-      img: '../../../../assets/img/providers_pic.png',
       description: `Deal is a company With a standard weight of 10`,
     },
     {
-      position: 7,
       firstName: 'Guy',
       lastName: 'Hail',
-      phone: '0543657847',
-      id: '235368475',
+      phone: '0543657888',
+      id: '235368477',
       email: 'guyhail@gamil.com',
       addres: 'New York',
-      img: '../../../../assets/img/providers_pic.png',
       description: `Deal is a company With a standard weight of 10`,
     },
     {
-      position: 8,
       firstName: 'Lock',
       lastName: 'Jars',
       phone: '0543657847',
-      id: '235368475',
+      id: '235368668',
       email: 'lockJars@gamil.com',
       addres: 'New York',
-      img: '../../../../assets/img/providers_pic.png',
       description: `Deal is a company With a standard weight of 10`,
     },
     {
-      position: 9,
       firstName: 'Mas',
       lastName: 'Sahn',
       phone: '0543657847',
-      id: '235368475',
+      id: '235366979',
       email: 'masshn@gamil.com',
       addres: 'New York',
-      img: '../../../../assets/img/providers_pic.png',
       description: `Deal is a company With a standard weight of 10`,
     },
     {
-      position: 10,
       firstName: 'Lix',
       lastName: 'Dar',
       phone: '0543657847',
-      id: '235368475',
-      email: 'lixdar@gamil.com',
+      id: '215268675',
+      email: 'lixdar@gamil.com',   
       addres: 'New York',
-      img: '../../../../assets/img/providers_pic.png',
       description: `Deal is a company With a standard weight of 10`,
+   
     },
   ];
 
@@ -132,6 +115,22 @@ export class ProvidersService {
 
   addNewProvider() {
     return this.subject.asObservable();
+  }
+
+  providerEdit(provider: Provider) {
+    this.editProvider = provider;
+  }
+
+  onEditprovider() {
+    return this.editProvider;
+  }
+
+  sendEditprovider(editProvider: Provider) {
+    this.subject2.next(editProvider);
+  }
+
+  getEditprovider() {
+    return this.subject2.asObservable();
   }
 
 }
