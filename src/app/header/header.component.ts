@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
   usersActive = false;
 
   constructor(private loginService: LoginService, router:Router) { 
-    // router.navigate(['/shopping-list']);
+    router.navigate(['/shopping-list']);
   }
 
   ngOnInit(): void {

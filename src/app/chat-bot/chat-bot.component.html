@@ -1,0 +1,48 @@
+<div class="chat-bot" cdkDrag>
+  <input type="checkbox" name="checkbox" id="input-toggle" class="input-toggle"/>
+  <div class="checkbox__container" >
+    <button mat-button mat-dialog-close type="button" class="close" data-dismiss="modal"><span>×</span></button>
+    <label for="input-toggle" class="label-for-toggle">
+      <span class="message">Hello I'm your chatbot, can I help you?</span>
+      <span class="ball arrow">
+        <i class="fas fa-arrow-right"></i>
+      </span>
+      <input class="help-input" (click)="openChatBot()">
+    </label>
+  </div>
+
+  <div class="chatbot-container" *ngIf="open">
+    <button class="chatbot-close" (click)="closeChatBot()">close</button>
+
+    <div class="header">
+      <h1>Chatbot</h1>
+    </div>
+    <div class="chatbot">
+      <div class="conversation">
+        <div class="chatbot-message">
+          <p class="chatbot-text">Hi! 👋 it's great to see you!</p>
+        </div>
+      </div>
+      <form class="input-form">
+        <input class="input-field" type="text" placeholder="Type your message here">
+        <button class="submit-button" type="submit">
+          <img class="send-icon" src="send-message.png" alt="">
+        </button>
+
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+ 
+
+  <script src="chatbot.js"></script>
+</body>

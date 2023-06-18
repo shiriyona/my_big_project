@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
   getErrorMessage() {  
     if (this.userName.hasError('required')) {
-      return 'You must enter a value';
+      return 'You must enter a valid value';
     }
     if (this.correctLogin === false) {
       return 'Your userName or password is incorrect';

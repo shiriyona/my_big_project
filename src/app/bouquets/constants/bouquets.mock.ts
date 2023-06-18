@@ -5,65 +5,65 @@ import { Bouquets } from '../models/bouquets.model';
 export const BOUQUEtS_MOCK_DATA: Bouquets[]  = [
   {
     id: uuidv4(),
-    name: 'Roses',
+    name: 'floral embrace',
     price: 30,
     qty: 1,
-    img: '../../../../assets/img/bouquet-roses.jpg'
+    img: '../../../../assets/img/floral-embrace.jpg'
   },
   {
     id: uuidv4(),
-    name: 'Roses',
+    name: 'lavender medley',
     price: 30,
     qty: 1,
-    img: '../../../../assets/img/bouquet-roses.jpg'
+    img: '../../../../assets/img/lavender-medley.jpg'
   },
   {
     id: uuidv4(),
-    name: 'Roses',
+    name: 'fields of europe',
     price: 30,
     qty: 1,
-    img: '../../../../assets/img/bouquet-roses.jpg'
+    img: '../../../../assets/img/fields-of-europe.jpg'
   },
   {
     id: uuidv4(),
-    name: 'Roses',
+    name: 'coastal breeze',
     price: 30,
     qty: 1,
-    img: '../../../../assets/img/bouquet-roses.jpg'
+    img: '../../../../assets/img/coastal-breeze.jpg'
   },
   {
     id: uuidv4(),
-    name: 'Roses',
+    name: 'vibrant floral medley',
     price: 30,
     qty: 1,
-    img: '../../../../assets/img/bouquet-roses.jpg'
+    img: '../../../../assets/img/vibrant-floral-medley.jpg'
   },
   {
     id: uuidv4(),
-    name: 'Roses',
+    name: 'splendid beauty',
     price: 30,
     qty: 1,
-    img: '../../../../assets/img/bouquet-roses.jpg'
+    img: '../../../../assets/img/splendid-beauty.jpg'
   },
   {
     id: uuidv4(),
-    name: 'Roses',
+    name: 'daydream',
     price: 30,
     qty: 1,
-    img: '../../../../assets/img/bouquet-roses.jpg'
+    img: '../../../../assets/img/daydream.jpg'
   },
   {
     id: uuidv4(),
-    name: 'Roses',
+    name: 'citrus sunshine',
     price: 30,
     qty: 1,
-    img: '../../../../assets/img/bouquet-roses.jpg'
+    img: '../../../../assets/img/citrus-sunshine.jpg'
   },
   {
     id: uuidv4(),
-    name: 'Roses',
+    name: 'garden pathway',
     price: 30,
     qty: 1,
-    img: '../../../../assets/img/bouquet-roses.jpg'
+    img: '../../../../assets/img/garden-pathway.jpg'
   },
   ];

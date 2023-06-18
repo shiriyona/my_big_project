@@ -19,6 +19,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {DragDropModule, CdkDrag} from '@angular/cdk/drag-drop';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { DrawingModule } from './drawings/drawing.module';
@@ -32,12 +33,14 @@ import { UserssModule } from './users/users.module';
 import { UsersRoleGuard } from './user-role-guard';
 import { BouquetsModule } from './bouquets/bouquets.module';
 import { SyntheticGrassModule } from './synthetic-grass/synthetic-grass-module';
+import { ChatBotComponent } from './chat-bot/chat-bot.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    ChatBotComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +64,7 @@ import { SyntheticGrassModule } from './synthetic-grass/synthetic-grass-module';
     MatTabsModule,
     MatButtonToggleModule,
     MatDatepickerModule,
+    DragDropModule,
     ContactsModule,
     DrawingModule,
     loginModule,
@@ -69,9 +73,9 @@ import { SyntheticGrassModule } from './synthetic-grass/synthetic-grass-module';
     OrdersModule,
     UserssModule,
     BouquetsModule,
-    SyntheticGrassModule
+    SyntheticGrassModule,
   ],
-  exports: [MatTableModule],
+  exports: [MatTableModule, CdkDrag],
   providers: [OnlyLoggedUsersGuard, UsersRoleGuard],
   bootstrap: [AppComponent],
   schemas: []

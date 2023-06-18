@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Bouquets } from 'src/app/bouquets/models/bouquets.model';
 import { MessengerService } from 'src/app/shopping-list/services/messeger.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { MessengerService } from 'src/app/shopping-list/services/messeger.servic
   styleUrls: ['./bouquet-item.component.css']
 })
 export class BouquetItemComponent implements OnInit {
-  @Input() productItem
+  @Input() productItem: Bouquets
 
   constructor(private msg: MessengerService) { }
 
