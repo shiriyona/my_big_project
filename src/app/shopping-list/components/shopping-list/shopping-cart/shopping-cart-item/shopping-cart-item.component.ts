@@ -9,13 +9,10 @@ import { CartService } from 'src/app/shopping-list/services/cart.service';
 export class ShoppingCartItemComponent implements OnInit {
   @Input() cartItem;
 
-  constructor(private casrtService: CartService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  // onMinus(cartItem) {
-  //   this.casrtService.deleteProduct(cartItem);
-  // }
 
 }

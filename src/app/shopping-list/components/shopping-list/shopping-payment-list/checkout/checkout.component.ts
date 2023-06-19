@@ -6,7 +6,7 @@ import {
 } from '@angular/animations';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/shopping-list/services/cart.service';
-import { MessengerService } from 'src/app/shopping-list/services/messeger.service';
+import { MessengerService } from 'src/app/shared/services/messeger.service';
 
 
 @Component({

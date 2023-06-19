@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Bouquets } from '../../models/bouquets.model';
 import { Subscription } from 'rxjs';
 import { BouquetsService } from '../../services/bouquets.services';
-import { MessengerService } from 'src/app/shopping-list/services/messeger.service';
+import { MessengerService } from 'src/app/shared/services/messeger.service';
 
 @Component({
   selector: 'app-bouquets',
@@ -32,10 +32,6 @@ export class BouquetsComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.getBouquetsSubscription.unsubscribe();
-  }
-
-  addToCart(bouquet) {
-    this.msg.sendMsg(bouquet);
   }
 
   postList() {

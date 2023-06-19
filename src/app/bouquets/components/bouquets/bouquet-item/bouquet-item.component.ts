@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Bouquets } from 'src/app/bouquets/models/bouquets.model';
-import { MessengerService } from 'src/app/shopping-list/services/messeger.service';
+import { MessengerService } from 'src/app/shared/services/messeger.service';
+import { ShoppingItem } from 'src/app/shopping-list/models/shoppingItem.model';
 
 @Component({
   selector: 'app-bouquet-item',
@@ -8,7 +8,7 @@ import { MessengerService } from 'src/app/shopping-list/services/messeger.servic
   styleUrls: ['./bouquet-item.component.css']
 })
 export class BouquetItemComponent implements OnInit {
-  @Input() productItem: Bouquets
+  @Input() productItem: ShoppingItem
 
   constructor(private msg: MessengerService) { }
 

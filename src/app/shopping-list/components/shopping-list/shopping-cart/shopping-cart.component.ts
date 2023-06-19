@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { CartItem } from '../../../models/cart.model';
 import { CartService } from '../../../services/cart.service';
-import { MessengerService } from '../../../services/messeger.service';
+import { MessengerService } from '../../../../shared/services/messeger.service';
 import { ElementRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';

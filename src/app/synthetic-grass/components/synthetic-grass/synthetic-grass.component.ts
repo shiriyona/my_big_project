@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SyntheticGrasService } from '../../services/synthetic-grass.services';
-import { MessengerService } from 'src/app/shopping-list/services/messeger.service';
+import { MessengerService } from 'src/app/shared/services/messeger.service';
 import { SyntheticGrass } from '../../models/synthetic-grass.model';
 import { Subscription } from 'rxjs';
 

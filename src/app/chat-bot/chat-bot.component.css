@@ -266,3 +266,7 @@ p[sentTime]:hover::after {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.robot-icon{
+  width: 50px;
+}

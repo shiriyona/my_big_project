@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
 
   shoppingListActive = true;
   bouquetsActive = false;
+  syntheticGrassActive = false;
   emailsActive = false;
   contactsActive = false;
   odersActive = false;
@@ -53,6 +54,7 @@ export class HeaderComponent implements OnInit {
   nonActive() {
     this.shoppingListActive = false;
     this.bouquetsActive = false;
+    this.syntheticGrassActive = false; 
     this.emailsActive = false;
     this.contactsActive = false;
     this.odersActive = false;
@@ -66,7 +68,12 @@ export class HeaderComponent implements OnInit {
 
   activeBouquets() {
     this.nonActive();
-    this.bouquetsActive = false; 
+    this.bouquetsActive = true; 
+  }
+
+  activeSyntheticGrass() {
+    this.nonActive();
+    this.syntheticGrassActive = true; 
   }
 
   activeEmails() {

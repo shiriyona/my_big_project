@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MessengerService } from 'src/app/shopping-list/services/messeger.service';
+import { MessengerService } from 'src/app/shared/services/messeger.service';
+import { ShoppingItem } from 'src/app/shopping-list/models/shoppingItem.model';
 import { SyntheticGrass } from 'src/app/synthetic-grass/models/synthetic-grass.model';
 
 @Component({
@@ -8,7 +9,7 @@ import { SyntheticGrass } from 'src/app/synthetic-grass/models/synthetic-grass.m
   styleUrls: ['./synthetic-grass-item.component.css']
 })
 export class SyntheticGrassItemComponent implements OnInit {
-  @Input() productItem: SyntheticGrass;
+  @Input() productItem: ShoppingItem;
 
   constructor(private msg: MessengerService) { }
 
@@ -16,7 +17,7 @@ export class SyntheticGrassItemComponent implements OnInit {
   }
 
   addToCart(product) {
-    this.msg.sendMsg(product);
+    this.msg.sendMsg(this.productItem);
   }
 
 }

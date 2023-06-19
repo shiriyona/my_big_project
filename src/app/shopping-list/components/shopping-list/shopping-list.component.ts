@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ElementRef } from '@angular/core';
-import { MessengerService } from '../../services/messeger.service';
+import { MessengerService } from '../../../shared/services/messeger.service';
 import { ShoppingListService } from '../../services/shopping-list.service';
 import { ShoppingItem } from '../../models/shoppingItem.model';
 

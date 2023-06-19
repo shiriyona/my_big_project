@@ -57,7 +57,6 @@ import { CheckoutComponent, CheckOutDialog } from './components/shopping-list/sh
     ShoppingListRoutingModule
   ],
   providers: [],
-  schemas: [],
   exports: [ShoppingCartComponent]
 })
 export class ShoppingListModule { }

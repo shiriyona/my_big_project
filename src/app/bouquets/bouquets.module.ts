@@ -13,7 +13,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BouquetsRoutingModule } from './bouquets-routing.module';
 import { BouquetsComponent } from './components/bouquets/bouquets.component';
-import { MessengerService } from '../shopping-list/services/messeger.service';
+import { MessengerService } from '../shared/services/messeger.service';
 import { BouquetItemComponent } from './components/bouquets/bouquet-item/bouquet-item.component';
 
 
@@ -39,6 +39,7 @@ import { BouquetItemComponent } from './components/bouquets/bouquet-item/bouquet
     BouquetsRoutingModule
   ],
   providers: [MessengerService],
+  exports:[BouquetsComponent]
 })
 
 export class BouquetsModule { }

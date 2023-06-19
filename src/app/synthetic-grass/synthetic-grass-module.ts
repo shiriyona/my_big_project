@@ -15,7 +15,7 @@ import { SyntheticGrassRoutingModule } from './synthetic-grass-routing.module';
 import { SyntheticGrassComponent } from './components/synthetic-grass/synthetic-grass.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { MessengerService } from '../shopping-list/services/messeger.service';
+import { MessengerService } from '../shared/services/messeger.service';
 import { SyntheticGrassItemComponent } from './components/synthetic-grass/synthetic-grass-item/synthetic-grass-item.component';
 
 
