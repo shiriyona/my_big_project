@@ -33,14 +33,14 @@ import { UserssModule } from './users/users.module';
 import { UsersRoleGuard } from './user-role-guard';
 import { BouquetsModule } from './bouquets/bouquets.module';
 import { SyntheticGrassModule } from './synthetic-grass/synthetic-grass-module';
-import { ChatBotComponent } from './chat-bot/chat-bot.component';
+import { ChatBotComponent } from './chat-bot/components/chat-bot/chat-bot.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ChatBotComponent
+    ChatBotComponent,
   ],
   imports: [
     BrowserModule,

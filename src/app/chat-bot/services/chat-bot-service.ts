@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Message } from '../model/login.model';
-import { Subject } from 'rxjs';
+import { Message } from '../model/message.model';
+import { Subject, of } from 'rxjs';
 
 
 @Injectable({
     providedIn: 'root'
 })
 export class ChatBotService {
-    userMessage: Message[] = [{message: "Hi! 👋 it's great to see you!"}
+    message: Message[] = [
+        {con: "Hi! 👋 it's great to see you!", bot: true},
+        {con: "Hi! 👋 it's great to see you!", bot: false}
 ]
     subject = new Subject
 
@@ -16,11 +18,15 @@ export class ChatBotService {
 
     onInit() { }
 
+    getMessages() {
+        return of(this.message);
+    }
+
     sendMessage(messgae) {
         this.subject.next(messgae);
     }
 
-    getMessage() {
+    getNewMessage() {
         return this.subject.asObservable();
     }
 

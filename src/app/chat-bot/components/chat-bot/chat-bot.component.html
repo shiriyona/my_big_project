@@ -1,7 +1,8 @@
-<img class="robot-icon" src="../../../../assets/img/robot.png" (dblclick)="openBot()" cdkDrag>
-<div class="chat-bot" cdkDrag *ngIf="botClose">
+<div class="chat-" cdkDrag>
+<img class="robot-icon" src="../../../../assets/img/robot.png" (dblclick)="openBot()">
+
   <input type="checkbox" name="checkbox" id="input-toggle" class="input-toggle"/>
-  <div class="checkbox__container" >
+  <div *ngIf="botClose">
     <button mat-button mat-dialog-close type="button" class="close" data-dismiss="modal" (click)="closeBot()"><span>×</span></button>
     <label for="input-toggle" class="label-for-toggle">
       <span class="message">Hello I'm your chatbot, can I help you?</span>
@@ -21,12 +22,22 @@
     <div class="chatbot">
       <div class="conversation">
         <div class="chatbot-message">
-          <p class="chatbot-text">Hi! 👋 it's great to see you!</p>
-          <div class="chat-" *ngFor="let message of messages">{{message.message}}</div>
-        </div>
+          <!-- <div class="list-group" 
+          *ngFor="let message of messages">
+          <div class="chatbot-text user-text"
+          [ngClass]="{'chatbot-text': message.bot , 'user-text': !message.bot}">{{message.message}}<br></div></div>
+        </div> -->
+
+        <div class="content">
+          <div class="full-width" *ngFor="let message of messages">
+            <div class="my-row">
+              <div class="chatbot-text user-text"
+              [ngClass]="{'chatbot-text': message.bot , 'user-text': !message.bot}">{{message.con}}</div>
+            </div>
+
       </div>
       <form class="input-form">
-        <input class="input-field" type="text" placeholder="Type your message here" #messageInput>
+        <input [(ngModel)]="value" (keyup.enter)="sendMessage()" class="input-field" type="text" placeholder="Type your message here" #messageInput>
         <button class="submit-button" type="submit" (click)="sendMessage()">
           send
         </button>
