@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  isMenuOpen = false;
+
   currentUser: User;
   admin: boolean = false;
   management: boolean = false;
@@ -28,6 +30,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.userRole()
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
   
   userRole() {

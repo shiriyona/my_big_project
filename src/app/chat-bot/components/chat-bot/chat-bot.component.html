@@ -1,6 +1,5 @@
 <div class="chat-" cdkDrag>
 <img class="robot-icon" src="../../../../assets/img/robot.png" (dblclick)="openBot()">
-
   <input type="checkbox" name="checkbox" id="input-toggle" class="input-toggle"/>
   <div *ngIf="botClose">
     <button mat-button mat-dialog-close type="button" class="close" data-dismiss="modal" (click)="closeBot()"><span>×</span></button>
@@ -12,41 +11,37 @@
       <input class="help-input" (click)="openChatBot()">
     </label>
   </div>
-
   <div class="chatbot-container" *ngIf="open">
     <button class="chatbot-close" (click)="closeChatBot()">close</button>
-
     <div class="header">
       <h1>Chatbot</h1>
     </div>
     <div class="chatbot">
       <div class="conversation">
         <div class="chatbot-message">
-          <!-- <div class="list-group" 
-          *ngFor="let message of messages">
-          <div class="chatbot-text user-text"
-          [ngClass]="{'chatbot-text': message.bot , 'user-text': !message.bot}">{{message.message}}<br></div></div>
-        </div> -->
-
         <div class="content">
           <div class="full-width" *ngFor="let message of messages">
-            <div class="my-row">
-              <div class="chatbot-text user-text"
-              [ngClass]="{'chatbot-text': message.bot , 'user-text': !message.bot}">{{message.con}}</div>
-            </div>
-
+              <div class="message" [ngClass]="{from: message.author === 'bot',to: message.author === 'user'}">
+    {{ message.content }}
+  </div>
+  
       </div>
-      <form class="input-form">
-        <input [(ngModel)]="value" (keyup.enter)="sendMessage()" class="input-field" type="text" placeholder="Type your message here" #messageInput>
-        <button class="submit-button" type="submit" (click)="sendMessage()">
-          send
-        </button>
+  <label *ngIf="messages.length == 0; else dialogInfo" for="nameField">Chat Bot</label>
 
-      </form>
     </div>
 
   </div>
 </div>
+<form class="input-form">
+  <input [(ngModel)]="value" name="something" (keyup.enter)="sendMessage()" class="input-field" type="text" 
+  placeholder="Type your message here">
+  <button class="submit-button" type="submit" (click)="sendMessage()">
+    Send
+  </button>
+  <ng-template #dialogInfo>
+    <span [className]="'float-right'">Total messages: {{ messages.length }}</span>
+  </ng-template>
+</form>
 
 <head>
   <meta charset="UTF-8">
@@ -58,4 +53,16 @@
  
 
   <script src="chatbot.js"></script>
-</body>
+</body> 
+
+<!-- <ng-container *ngFor="let message of messages">
+  <div class="message" [ngClass]="{from: message.author === 'bot',to: message.author === 'user'}">
+    {{ message.content }}
+  </div>
+</ng-container>
+<label *ngIf="messages.length == 0; else dialogInfo" for="nameField">Chat Bot</label>
+<input [(ngModel)]="value" (keyup.enter)="sendMessage()" type="text" />
+<button (click)="sendMessage()">Send</button>
+<ng-template #dialogInfo>
+  <span [className]="'float-right'">Total messages: {{ messages.length }}</span>
+</ng-template> -->

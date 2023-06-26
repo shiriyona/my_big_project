@@ -3,8 +3,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<div class="topnav">
-  <ul class="nav navbar-nav">
+<div class="topnav" >
+  <li class="burger" (click)="toggleMenu()">
+  <i class="material-icons">{{ isMenuOpen ? "close" : "menu" }}</i>
+</li>
+  <ul class="nav navbar-nav" [class.is-open]="isMenuOpen">
     <li (click)="activeShoppingList()" class="single active"
       [ngClass]="{'active': shoppingListActive , 'single': !shoppingListActive}">
       <a routerLink="/shopping-list">Shopping List</a>

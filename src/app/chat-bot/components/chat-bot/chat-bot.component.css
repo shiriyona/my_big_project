@@ -115,6 +115,10 @@ body {
   justify-content: center;
 }
 
+.ng-star-inserted{
+  width: 400px;
+}
+
 .chatbot-container {
   width: 400px;
   margin: 0 auto;
@@ -207,7 +211,7 @@ message-container {
 
 .input-form {
   width: 100%;
-  top: 400px;
+  bottom: 10px;
   position: absolute;
   display: flex;
   align-items: center;
@@ -280,4 +284,34 @@ p[sentTime]:hover::after {
 
 .robot-icon{
   width: 50px;
+}
+
+
+
+
+.message {
+  border-radius: 50px;
+  margin: 0 15px 2px;
+  padding: 10px 20px;
+  position: relative;
+  font-size: 20px;
+}
+.message.to {
+  background-color: 
+#2095FE;
+  color: 
+#fff;
+  margin-left: 100px;
+  text-align: right;
+}
+.message.from {
+  background-color: 
+#E5E4E9;
+  color: 
+#363636;
+  margin-right: 100px;
+}
+.message.to + .message.to,
+.message.from + .message.from {
+  margin-top: -10px;
 }

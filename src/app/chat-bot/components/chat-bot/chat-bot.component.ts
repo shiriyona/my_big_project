@@ -1,7 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ChatBotService } from '../../services/chat-bot-service';
-import { Message } from '../../model/message.model';
-import { ChatMessagesService } from '../../services/chat-messages.service';
+import { ChatBotService, Message } from '../../services/chat-bot-service';
+// import { Message } from '../../model/message.model';
 
 @Component({
   selector: 'app-chat-bot',
@@ -18,21 +17,19 @@ export class ChatBotComponent implements OnInit {
   botClose: boolean = true;
   open: boolean = false;
 
-  constructor(private chatBotService: ChatBotService, private msg: ChatMessagesService) { }
+  constructor(private chatService: ChatBotService) { }
 
-  ngOnInit(): void {
-    this.getMessages()
-    this.chatBotService.getNewMessage().subscribe((message: Message) => {
-      this.addMessage(message)
-    })
+  ngOnInit() {
+      this.chatService.conversation.subscribe((val) => {
+      this.messages = this.messages.concat(val);
+    });
+  }
+  sendMessage() {
+    this.chatService.getBotAnswer(this.value);
+    this.value = '';
   }
 
-  getMessages() {
-    this.chatBotService.getMessages().subscribe(res => {
-      this.messages = res;
-    }); 
 
-  }
 
   closeBot() {
     this.open = false;
@@ -49,22 +46,6 @@ export class ChatBotComponent implements OnInit {
 
   closeChatBot() {
     this.open = false;
-  }
-
-  sendMessage() {
-    const message: string = this.messageInputRef.nativeElement.value;
-    const bot = false;
-    const newMessage = {
-      con: message,
-      bot: bot
-    }
-    this.chatBotService.sendMessage(newMessage);
-    this.msg.getBotAnswer(this.value);
-    this.value = '';
-  }
-
-  addMessage(message: Message) {
-    this.messages.push(message);
   }
 
 }

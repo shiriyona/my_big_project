@@ -1,53 +1,103 @@
+$menuHeight: 60px;
+$menuBreakpoint: 768px;
+
 .iconCart {
-    right: 100px;
-    position: absolute;
+  right: 100px;
+  position: absolute;
 }
 
 .login-icon {
-    background: #a4c4fc;
-    color: #4374e3;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
+  background: #a4c4fc;
+  color: #4374e3;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
 }
 
 .userIcon {
-    right: 30px;
-    position: absolute;
-    height: 25px;
-    top: 10px;
+  right: 30px;
+  position: absolute;
+  height: 25px;
+  top: 10px;
 }
-  
-  .topnav {
-    overflow: hidden;
-    background-color: #f44336;
+
+.topnav {
+  overflow: hidden;
+  background-color: #f44336;
+}
+
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: gray;
+  color: white;
+}
+
+.topnav a:active {
+  background-color: black;
+  color: white;
+}
+
+.topnav a:visited {
+  background-color: black;
+  color: white;
+}
+
+.active {
+  background-color: black;
+}
+
+.burger {
+  padding: 0 10px;
+  border-left: 1px solid #eee;
+  display: none;
+  cursor: pointer;
+
+  i {
+    color: #999;
+    line-height: $menuHeight;
   }
-  
-  .topnav a {
-    float: left;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+
+  @media (max-width: $menuBreakpoint) {
+    display: block;
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: $menuBreakpoint) {
+    display: none;
+
+    &.is-open {
+      display: block;
+      position: absolute;
+      top: #{$menuHeight + 2};
+      background: #fff;
+      width: 100%;
+
+      .menu-item {
+        border-bottom: 1px solid #cccccc;
+      }
+    }
+  }
+
+  .menu-item {
+    padding: 0 10px;
+    height: $menuHeight;
+    line-height: $menuHeight;
     text-decoration: none;
-    font-size: 17px;
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #454545;
   }
-  
-  .topnav a:hover {
-    background-color: gray;
-    color: white;
-  }
-  
-  .topnav a:active {
-    background-color: black;
-    color: white;
-  }
-
-  .topnav a:visited  {
-    background-color: black;
-    color: white;
-  }
-
-  .active {
-    background-color: black;
-  }
-
-  
+}
